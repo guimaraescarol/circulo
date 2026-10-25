@@ -488,7 +488,7 @@
     </div>
   </sc-if>
   <sc-if value="{{welcomeOpen}}" hint-placeholder-val="{{false}}">
-    <div style="position: absolute; inset: 0; z-index: 40; background: rgba(0,0,0,0.62); display: flex; align-items: flex-end; justify-content: center; padding: 16px;">
+    <div style="position: absolute; inset: 0; z-index: 40; background: rgba(0,0,0,0.62); display: flex; align-items: center; justify-content: center; padding: 16px;">
       <div role="dialog" aria-modal="true" aria-label="Bem-vindo ao seu quarto" style="width: 100%; max-height: calc(100% - 40px); overflow-y: auto; border-radius: 24px; background: #18181B; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 24px 60px rgba(0,0,0,0.6); padding: 22px 18px 18px; animation: qt-rise .25s ease;">
         <div class="qt-title" style="font-size: 22px; font-weight: 700; line-height: 1.15;">Este é o seu quarto</div>
         <div style="margin-top: 6px; font-size: 13.5px; line-height: 1.5; color: #A1A1AA;">Seu cantinho no Círculo: um lugar para mostrar quem você é e receber os amigos.</div>
@@ -1795,11 +1795,11 @@ class Component extends DCLogic {
       welcomeOpen: !!s.welcomeOpen && !s.visit,
       closeWelcome: () => { self.setState({ welcomeOpen: false, glowOff: false }); self.later(30000, () => self.setState({ glowOff: true })); if (self.props.closeWelcome) self.props.closeWelcome(); },
       welcomeItems: [
-        { title: 'Decore do seu jeito', text: 'Toque no lápis no topo para mover, girar e trocar móveis, piso e parede.', icon: 'M18.4 2.6a2 2 0 0 1 2.9 2.9L11 15.8l-3.2.6.6-3.2zM7.6 16.4c-2.1 0-3.4 1.4-3.6 3.6L3 21c2.8.4 5.6-.6 6-3.2', c: '#8FC7FF' },
-        { title: 'Mostre seus jogos', text: 'Os móveis com brilho são interativos: estantes e mesas guardam seus jogos digitais e analógicos.', icon: 'M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z', c: '#F5C451' },
-        { title: 'Receba amigos', text: 'Convide pelo botão azul. Vocês conversam por balões e podem visitar o quarto um do outro.', icon: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M19 8v6M22 11h-6', c: '#17C964' },
-        { title: 'Escolha a trilha', text: 'Toque na caixa de som ou no botão de música para escolher o que toca para quem visita.', icon: 'M9 18V5l12-2v13M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6M18 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6', c: '#C4A7FF' },
-        { title: 'Você decide quem entra', text: 'Na engrenagem, deixe o quarto aberto para amigos ou privado, só com aprovação.', icon: 'M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z', c: '#F38CB0' }
+        { title: 'Decore do seu jeito', text: 'Toque no lápis no topo da tela para mover, girar e editar os móveis, o piso e a parede.', icon: 'M18.4 2.6a2 2 0 0 1 2.9 2.9L11 15.8l-3.2.6.6-3.2zM7.6 16.4c-2.1 0-3.4 1.4-3.6 3.6L3 21c2.8.4 5.6-.6 6-3.2', c: '#8FC7FF' },
+        { title: 'Móveis interativos', text: 'Os móveis com brilho são interativos. Toque neles para interagir.', icon: 'M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z', c: '#F5C451' },
+        { title: 'Receba amigos', text: 'Convide seus amigos pelo botão azul. Vocês podem conversar e visitar o quarto um do outro.', icon: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M19 8v6M22 11h-6', c: '#17C964' },
+        { title: 'Escolha uma música', text: 'Toque no botão de música ou em uma caixa de som para escolher o que toca no seu quarto.', icon: 'M9 18V5l12-2v13M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6M18 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6', c: '#C4A7FF' },
+        { title: 'Privacidade', text: 'Na engrenagem no topo da tela, você decide quem entra: quarto aberto a todos ou privado, só com aprovação.', icon: 'M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z', c: '#F38CB0' }
       ].map((it) => Object.assign({}, it, { iconBox: 'flex: none; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: ' + it.c + '; background: rgba(255,255,255,0.06);' })),
       roomBoxStyle: 'position: absolute; left: 50%; width: 352px; height: 316px; margin-left: -176px; ' + (chatUp ? 'top: 8px; margin-top: 0;' : 'top: 50%; margin-top: -158px;'),
       hintStyle: 'position: absolute; left: 12px; top: 10px; padding: 5px 10px; border-radius: 999px; background: rgba(9,9,11,0.72); border: 1px solid rgba(255,255,255,0.1); font-size: 11.5px; color: #D4D4D8; font-weight: 600; pointer-events: none; z-index: 6;',

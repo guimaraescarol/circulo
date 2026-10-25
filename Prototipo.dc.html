@@ -127,6 +127,25 @@
       </button>
     </sc-for>
   </nav>
+  <sc-if value="{{showTour}}" hint-placeholder-val="{{false}}">
+    <div style="position:absolute;inset:0;z-index:90;">
+      <sc-if value="{{tourHasSpot}}" hint-placeholder-val="{{true}}"><div style="{{tourSpot}}"></div></sc-if>
+      <sc-if value="{{tourNoSpot}}" hint-placeholder-val="{{false}}"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.66);"></div></sc-if>
+      <div role="dialog" aria-modal="true" aria-label="Tour do Círculo" style="{{tourCardStyle}}">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8FC7FF;">{{tourCount}}</span>
+          <button type="button" onClick="{{tourSkip}}" style="height:32px;padding:0 6px;border:none;background:transparent;color:#A1A1AA;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Pular tour</button>
+        </div>
+        <div style="margin-top:4px;font-family:'Space Grotesk','Segoe UI',sans-serif;font-size:20px;font-weight:700;line-height:1.2;color:#ECEDEE;">{{tourTitle}}</div>
+        <div style="margin-top:6px;font-size:14px;line-height:1.55;color:#D4D4D8;">{{tourText}}</div>
+        <div style="margin-top:16px;display:flex;gap:8px;">
+          <sc-if value="{{tourCanBack}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{tourBack}}" style="height:46px;padding:0 18px;border-radius:13px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#ECEDEE;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">Voltar</button></sc-if>
+          <button type="button" onClick="{{tourNext}}" style="flex:1;height:46px;border:none;border-radius:13px;background:#006FEE;color:#FFFFFF;font-size:14.5px;font-weight:800;cursor:pointer;font-family:inherit;">{{tourCta}}</button>
+        </div>
+        <span style="{{tourArrow}}"></span>
+      </div>
+    </div>
+  </sc-if>
 
   <div style="{{toastStyle}}">{{toastText}}</div>
   <sc-if value="{{hasMsgBanner}}" hint-placeholder-val="{{false}}">
@@ -597,6 +616,42 @@ class Component extends DCLogic {
   openRoom = () => this.setState({ roomOpen: true, roomTop: true });
   // onboarding: aparece sempre ao abrir o protótipo
   skipOnboarding = () => this.setState({ onboarding: false });
+  // tour guiado depois do onboarding: passa pelas abas e termina no quarto
+  tourSteps() {
+    return [
+      { screen: 'inicio', tab: 0, title: 'Início', text: 'Seu feed com as avaliações e novidades de quem você segue. No topo ficam as notificações e as mensagens.' },
+      { screen: 'avaliacoes', tab: 1, title: 'Avaliações', text: 'Avalie jogos digitais e analógicos, veja o que está em alta e acompanhe as suas avaliações.' },
+      { screen: 'match', tab: 2, title: 'Jogar', text: 'Encontre um Duo para jogar junto ou entre em um Squad com mais gente. Aqui o Círculo junta quem joga na tela e na mesa.' },
+      { screen: 'foruns', tab: 3, title: 'Fóruns', text: 'Comunidades de cada jogo para tirar dúvidas, trocar dicas e combinar partidas.' },
+      { screen: 'noticias', tab: 4, title: 'Notícias', text: 'Lançamentos e novidades do mundo dos jogos digitais e de tabuleiro.' },
+      { screen: 'inicio', tab: -1, title: 'Por último, o seu quarto', text: 'Seu cantinho no Círculo, para mostrar seus jogos e receber os amigos. Ele também fica no menu, no canto superior esquerdo.' }
+    ];
+  }
+  tourVals() {
+    const i = this.state.tour; const steps = this.tourSteps();
+    if (i === null || i === undefined || !steps[i]) return { showTour: false, tourHasSpot: false, tourNoSpot: false, tourSpot: '', tourCardStyle: '', tourCount: '', tourTitle: '', tourText: '', tourCanBack: false, tourCta: '', tourArrow: '', tourNext: this.tourNext, tourBack: this.tourBack, tourSkip: this.tourSkip };
+    const st = steps[i], last = i === steps.length - 1, tw = 390 / 5;
+    const spot = st.tab >= 0;
+    const cx = spot ? Math.round(st.tab * tw + tw / 2) : 195;
+    return {
+      showTour: true, tourHasSpot: spot, tourNoSpot: !spot,
+      tourSpot: 'position:absolute;left:' + Math.round(st.tab * tw + 5) + 'px;top:780px;width:' + Math.round(tw - 10) + 'px;height:60px;border-radius:16px;box-shadow:0 0 0 2px #8FC7FF, 0 0 0 9999px rgba(0,0,0,0.66);pointer-events:none;',
+      tourCardStyle: 'position:absolute;left:16px;right:16px;' + (spot ? 'bottom:96px;' : 'top:50%;transform:translateY(-50%);') + 'padding:16px 16px 16px 18px;border-radius:22px;background:#18181B;border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 50px rgba(0,0,0,0.6);font-family:Manrope,system-ui,sans-serif;',
+      tourArrow: spot ? 'position:absolute;bottom:-7px;left:' + (cx - 16 - 7) + 'px;width:14px;height:14px;background:#18181B;border-right:1px solid rgba(255,255,255,0.14);border-bottom:1px solid rgba(255,255,255,0.14);transform:rotate(45deg);' : 'display:none;',
+      tourCount: (i + 1) + ' de ' + steps.length, tourTitle: st.title, tourText: st.text,
+      tourCanBack: i > 0, tourCta: last ? 'Entrar no meu quarto' : 'Próximo',
+      tourNext: this.tourNext, tourBack: this.tourBack, tourSkip: this.tourSkip
+    };
+  }
+  tourGo = (i) => { const st = this.tourSteps()[i]; if (!st) return; this.go(st.screen); this.setState({ tour: i }); };
+  tourNext = () => {
+    const i = this.state.tour, steps = this.tourSteps();
+    if (i === null || i === undefined) return;
+    if (i >= steps.length - 1) { this.setState({ tour: null, roomOpen: true, roomTop: true, roomWelcome: true }); return; }
+    this.tourGo(i + 1);
+  };
+  tourBack = () => { const i = this.state.tour; if (i > 0) this.tourGo(i - 1); };
+  tourSkip = () => this.setState({ tour: null });
   finishOnboarding = (r) => {
     const patch = {};
     if (r && r.digital && r.digital.length) patch.favD = r.digital.slice(0, 4).map((t) => ({ t: t, on: true }));
@@ -607,7 +662,7 @@ class Component extends DCLogic {
       prefs: Object.assign({}, prev.prefs, { kind: (r && r.kind) || prev.prefs.kind }),
       platforms: r && Array.isArray(r.platforms) ? r.platforms : prev.platforms,
       duoModality: (r && r.modality) || prev.duoModality,
-      screen: 'inicio', roomOpen: true, roomTop: true, roomWelcome: true
+      screen: 'inicio', tour: 0
     }));
   };
   openRoomVisit = (h) => this.setState({ roomOpen: true, roomVisit: h, roomAdmit: null, roomTop: true });
@@ -989,7 +1044,8 @@ class Component extends DCLogic {
       chatPreset: this.state.chatPreset || null,
       chatPresence: this.state.chatHandle ? this.presenceOf(this.state.chatHandle) : 'offline',
       enterRoomFromChat: (h) => this.openRoomVisit(h),
-      showOnboarding: !!this.state.onboarding, finishOnboarding: this.finishOnboarding, skipOnboarding: this.skipOnboarding,
+      showOnboarding: !!this.state.onboarding,
+      ...this.tourVals(), finishOnboarding: this.finishOnboarding, skipOnboarding: this.skipOnboarding,
       avatarCfg: this.state.avatarCfg,
       avatarUri: this.state.avatarUri,
       openAvatar: this.openAvatar,
