@@ -15,53 +15,53 @@
     .hit::after { content: ''; position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
-    body { margin: 0; background: #000000; color: #ECEDEE; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: var(--t-bg,#000000); color: var(--t-text,#ECEDEE); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     * { box-sizing: border-box; }
     button { font-family: inherit; }
     .jg-title { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; letter-spacing: -0.01em; }
-    .jg-sheet { position: absolute; inset: 0; background: #000000; z-index: 30; display: flex; flex-direction: column; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); }
+    .jg-sheet { position: absolute; inset: 0; background: var(--t-bg,#000000); z-index: 30; display: flex; flex-direction: column; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); }
     .jg-sheet.open { transform: translateY(0); }
-    .jg-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #8E8E99; margin: 0 0 10px; display: block; }
-    .jg-field { width: 100%; background: #18181B; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 14px; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14px; }
-    .jg-chip { font-family: 'Manrope', sans-serif; display: inline-flex; align-items: center; padding: 8px 13px; border-radius: 999px; background: #18181B; border: 1px solid rgba(255,255,255,0.08); color: #D4D4D8; font-size: 12.5px; font-weight: 600; cursor: pointer; }
-    .jg-chip.on { background: rgba(0,111,238,0.16); border-color: rgba(0,111,238,.45); color: #8FC7FF; }
+    .jg-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--t-muted2,#8E8E99); margin: 0 0 10px; display: block; }
+    .jg-field { width: 100%; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.1); border-radius: 12px; padding: 12px 14px; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14px; }
+    .jg-chip { font-family: 'Manrope', sans-serif; display: inline-flex; align-items: center; padding: 8px 13px; border-radius: 999px; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.08); color: var(--t-sec,#D4D4D8); font-size: 12.5px; font-weight: 600; cursor: pointer; }
+    .jg-chip.on { background: rgba(0,111,238,0.16); border-color: rgba(0,111,238,.45); color: var(--t-accsoft,#8FC7FF); }
     .jg-chip.off { opacity: .4; cursor: default; }
     .jg-scrim { position: absolute; inset: 0; background: rgba(0,0,0,0); opacity: 0; pointer-events: none; transition: opacity .22s ease, background .22s ease; z-index: 40; }
     .jg-scrim.open { opacity: 1; pointer-events: auto; background: rgba(0,0,0,.62); }
-    .jg-save { position: absolute; left: 0; right: 0; bottom: 0; max-height: 78%; background: #18181B; border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 41; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.16); }
+    .jg-save { position: absolute; left: 0; right: 0; bottom: 0; max-height: 78%; background: var(--t-card,#18181B); border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 41; display: flex; flex-direction: column; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.16); }
     .jg-save.open { transform: translateY(0); }
     .jg-clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   </style>
 </helmet>
-<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: #000000;">
+<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: var(--t-bg,#000000);">
 
-<div style="width: 390px; height: 776px; overflow-y: auto; background: #000000; padding-bottom: 32px;">
+<div style="width: 390px; height: 776px; overflow-y: auto; background: var(--t-bg,#000000); padding-bottom: 32px;">
 
   <!-- HERO -->
   <div style="position: relative; height: 150px; background-color: {{art.bg}}; background-image: {{art.img}}; background-size: cover; background-position: center;">
-    <div style="position: absolute; inset: 0; background-image: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, #000000 100%);"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, var(--t-bg,#000000) 100%);"></div>
     <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="position: absolute; left: 14px; top: 14px; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: rgba(0,0,0,0.55); color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
     </button>
   </div>
 
   <div style="display: flex; align-items: flex-end; gap: 14px; padding: 0 16px; margin-top: -64px; position: relative;">
-    <div style="width: 96px; height: 128px; flex-shrink: 0; border-radius: 12px; background-color: {{art.bg}}; background-image: {{art.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 3px #000000, 0 0 0 4px rgba(255,255,255,0.14), 0 12px 24px rgba(0,0,0,0.5);"></div>
+    <div style="width: 96px; height: 128px; flex-shrink: 0; border-radius: 12px; background-color: {{art.bg}}; background-image: {{art.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 3px var(--t-bg,#000000), 0 0 0 4px rgba(var(--t-ink,255,255,255),0.14), 0 12px 24px rgba(0,0,0,0.5);"></div>
     <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-bottom: 2px;">
       <div class="jg-title" style="font-size: 24px; font-weight: 700; line-height: 1.12; text-wrap: balance;">{{game.title}}</div>
-      <div style="font-size: 12.5px; color: #A1A1AA;">{{game.studio}} · {{game.year}}</div>
+      <div style="font-size: 12.5px; color: var(--t-muted,#A1A1AA);">{{game.studio}} · {{game.year}}</div>
     </div>
   </div>
 
   <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 0;">
-    <span style="height: 26px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; background: rgba(0,111,238,0.16); color: #8FC7FF;">{{game.kindLabel}}</span>
+    <span style="height: 26px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; background: rgba(0,111,238,0.16); color: var(--t-accsoft,#8FC7FF);">{{game.kindLabel}}</span>
     <sc-for list="{{game.genres}}" as="g" hint-placeholder-count="2">
-      <span style="height: 26px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; background: #27272A; color: #D4D4D8;">{{g.label}}</span>
+      <span style="height: 26px; padding: 0 10px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; background: var(--t-card3,#27272A); color: var(--t-sec,#D4D4D8);">{{g.label}}</span>
     </sc-for>
   </div>
 
   <!-- RESUMO DE NOTAS -->
-  <div style="margin: 16px 16px 0; background: #18181B; border-radius: 14px; padding: 16px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15); display: flex; gap: 18px; align-items: center;">
+  <div style="margin: 16px 16px 0; background: var(--t-card,#18181B); border-radius: 14px; padding: 16px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15); display: flex; gap: 18px; align-items: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 5px; width: 84px; flex-shrink: 0;">
       <div class="jg-title" style="font-size: 38px; font-weight: 700; letter-spacing: -0.03em; line-height: 1;">{{stats.avgLabel}}</div>
       <div style="display: flex; gap: 2px;">
@@ -69,23 +69,23 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="{{s.fill}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
         </sc-for>
       </div>
-      <div style="font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: #A1A1AA; text-align: center;">{{stats.countLabel}}</div>
+      <div style="font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--t-muted,#A1A1AA); text-align: center;">{{stats.countLabel}}</div>
     </div>
     <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
       <sc-for list="{{stats.dist}}" as="d" hint-placeholder-count="5">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="width: 10px; font-size: 11px; font-weight: 700; color: #A1A1AA; text-align: right;">{{d.label}}</span>
-          <div style="flex: 1; height: 6px; border-radius: 999px; background: #3F3F46; overflow: hidden;">
+          <span style="width: 10px; font-size: 11px; font-weight: 700; color: var(--t-muted,#A1A1AA); text-align: right;">{{d.label}}</span>
+          <div style="flex: 1; height: 6px; border-radius: 999px; background: var(--t-line,#3F3F46); overflow: hidden;">
             <div style="height: 6px; border-radius: 999px; width: {{d.pct}}%; background: {{d.color}};"></div>
           </div>
-          <span style="width: 30px; font-size: 11px; color: #8E8E99;">{{d.pct}}%</span>
+          <span style="width: 30px; font-size: 11px; color: var(--t-muted2,#8E8E99);">{{d.pct}}%</span>
         </div>
       </sc-for>
     </div>
   </div>
 
   <sc-if value="{{stats.hasFriends}}" hint-placeholder-val="{{false}}">
-    <div style="margin: 10px 16px 0; display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #8FC7FF; background: rgba(0,111,238,0.1); border: 1px solid rgba(0,111,238,0.28); border-radius: 12px; padding: 10px 12px;">
+    <div style="margin: 10px 16px 0; display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--t-accsoft,#8FC7FF); background: rgba(0,111,238,0.1); border: 1px solid rgba(0,111,238,0.28); border-radius: 12px; padding: 10px 12px;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
       <span>{{stats.friendsLabel}}</span>
     </div>
@@ -104,22 +104,22 @@
   <!-- SOBRE -->
   <div style="padding: 22px 16px 0; display: flex; flex-direction: column; gap: 10px;">
     <div class="jg-title" style="font-size: 16px; font-weight: 600;">Sobre o jogo</div>
-    <div style="font-size: 13.5px; line-height: 1.55; color: #D4D4D8; text-wrap: pretty;">{{game.desc}}</div>
-    <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #A1A1AA;">
+    <div style="font-size: 13.5px; line-height: 1.55; color: var(--t-sec,#D4D4D8); text-wrap: pretty;">{{game.desc}}</div>
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--t-muted,#A1A1AA);">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>{{game.meta}}
     </div>
-    <div style="font-size: 11px; color: #8E8E99;">{{game.credit}}</div>
+    <div style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{game.credit}}</div>
   </div>
 
   <!-- ABAS -->
   <div style="padding: 24px 16px 0;">
-    <div style="display: flex; gap: 22px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div style="display: flex; gap: 22px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.1);">
       <button type="button" onClick="{{pickReviews}}" style="padding: 0 0 10px; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: {{tabs.reviews.weight}}; color: {{tabs.reviews.color}};">Avaliações<span style="min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; background: #27272A; color: #A1A1AA;">{{reviewsTotal}}</span></span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: {{tabs.reviews.weight}}; color: {{tabs.reviews.color}};">Avaliações<span style="min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; background: var(--t-card3,#27272A); color: var(--t-muted,#A1A1AA);">{{reviewsTotal}}</span></span>
         <div style="height: 2px; width: 100%; border-radius: 2px; background: {{tabs.reviews.bar}};"></div>
       </button>
       <button type="button" onClick="{{pickTopics}}" style="padding: 0 0 10px; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: {{tabs.topics.weight}}; color: {{tabs.topics.color}};">Discussões<span style="min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; background: #27272A; color: #A1A1AA;">{{topicsTotal}}</span></span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: {{tabs.topics.weight}}; color: {{tabs.topics.color}};">Discussões<span style="min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; background: var(--t-card3,#27272A); color: var(--t-muted,#A1A1AA);">{{topicsTotal}}</span></span>
         <div style="height: 2px; width: 100%; border-radius: 2px; background: {{tabs.topics.bar}};"></div>
       </button>
     </div>
@@ -134,10 +134,10 @@
     </div>
     <div style="display: flex; flex-direction: column; padding: 4px 16px 0;">
       <sc-if value="{{noReviews}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">Nenhum amigo avaliou este jogo ainda.</div>
+        <div style="padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">Nenhum amigo avaliou este jogo ainda.</div>
       </sc-if>
       <sc-for list="{{reviews}}" as="r" hint-placeholder-count="4">
-        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px 0; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
           <div style="display: flex; align-items: center; gap: 8px;">
             <button type="button" onClick="{{r.openAuthor}}" aria-label="Ver perfil de {{r.name}}" style="display: flex; align-items: center; gap: 9px; flex: 1; min-width: 0; padding: 0; border: none; background: transparent; cursor: pointer; text-align: left; color: inherit; font-family: inherit;">
               <svg width="30" height="30" viewBox="0 0 24 24" shape-rendering="crispEdges" style="flex-shrink: 0; border-radius: 7px;">
@@ -151,12 +151,12 @@
                 <rect x="9" y="17" width="6" height="2" fill="{{r.avAccent}}"></rect>
               <image href="{{r.avUri}}" x="0" y="0" width="24" height="24"></image></svg>
               <div style="display: flex; flex-direction: column; min-width: 0;">
-                <div style="font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.name}}</span><sc-if value="{{r.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: #8FC7FF; flex-shrink: 0;">Amigo</span></sc-if></div>
-                <div style="font-size: 11px; color: #8E8E99;">{{r.when}}</div>
+                <div style="font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.name}}</span><sc-if value="{{r.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: var(--t-accsoft,#8FC7FF); flex-shrink: 0;">Amigo</span></sc-if></div>
+                <div style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{r.when}}</div>
               </div>
             </button>
             <sc-if value="{{r.isMine}}" hint-placeholder-val="{{false}}">
-              <span style="flex-shrink: 0; height: 20px; padding: 0 8px; border-radius: 999px; display: flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(23,201,100,0.14); color: #17C964;">Sua avaliação</span>
+              <span style="flex-shrink: 0; height: 20px; padding: 0 8px; border-radius: 999px; display: flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(23,201,100,0.14); color: var(--t-green,#17C964);">Sua avaliação</span>
             </sc-if>
           </div>
           <div style="display: flex; gap: 2px;">
@@ -165,29 +165,29 @@
             </sc-for>
           </div>
           <sc-if value="{{r.hasText}}" hint-placeholder-val="{{true}}">
-            <div style="font-size: 13.5px; line-height: 1.5; color: #D4D4D8; text-wrap: pretty; overflow-wrap: anywhere;">{{r.text}}</div>
+            <div style="font-size: 13.5px; line-height: 1.5; color: var(--t-sec,#D4D4D8); text-wrap: pretty; overflow-wrap: anywhere;">{{r.text}}</div>
           </sc-if>
           <sc-if value="{{r.hasPlayedMeta}}" hint-placeholder-val="{{false}}">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 11.5px; color: #8A8A94;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 11.5px; color: var(--t-muted2,#8A8A94);">
               <sc-if value="{{r.hasPlayedOn}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg>{{r.playedShort}}</span></sc-if>
-              <sc-if value="{{r.hasWith}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span style="display: inline-flex; padding-right: 5px;"><sc-for list="{{r.withAvs}}" as="w" hint-placeholder-count="2"><img src="{{w.uri}}" alt="" width="20" height="20" style="display: block; border-radius: 6px; image-rendering: pixelated; margin-right: -5px; box-shadow: 0 0 0 2px #000000;"></sc-for></span></span></sc-if>
+              <sc-if value="{{r.hasWith}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span style="display: inline-flex; padding-right: 5px;"><sc-for list="{{r.withAvs}}" as="w" hint-placeholder-count="2"><img src="{{w.uri}}" alt="" width="20" height="20" style="display: block; border-radius: 6px; image-rendering: pixelated; margin-right: -5px; box-shadow: 0 0 0 2px var(--t-bg,#000000);"></sc-for></span></span></sc-if>
             </div>
           </sc-if>
           <sc-if value="{{r.hasTags}}" hint-placeholder-val="{{false}}">
             <div style="display: flex; flex-wrap: wrap; gap: 5px;">
               <sc-for list="{{r.tagChips}}" as="t" hint-placeholder-count="2">
-                <span style="height: 22px; display: flex; align-items: center; padding: 0 8px; border-radius: 999px; background: #27272A; font-size: 11px; font-weight: 600; color: #D4D4D8;">{{t.label}}</span>
+                <span style="height: 22px; display: flex; align-items: center; padding: 0 8px; border-radius: 999px; background: var(--t-card3,#27272A); font-size: 11px; font-weight: 600; color: var(--t-sec,#D4D4D8);">{{t.label}}</span>
               </sc-for>
             </div>
           </sc-if>
           <div style="display: flex; align-items: center; gap: 16px;">
             <button type="button" onClick="{{r.toggleLike}}" style="display: flex; align-items: center; gap: 5px; border: none; background: transparent; cursor: pointer; padding: 0;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="{{r.likeFill}}" stroke="{{r.likeStroke}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"></path></svg>
-              <span style="font-size: 12px; font-weight: 600; color: #A1A1AA;">{{r.likeCount}}</span>
+              <span style="font-size: 12px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{r.likeCount}}</span>
             </button>
             <sc-if value="{{r.isMine}}" hint-placeholder-val="{{false}}">
-              <button type="button" onClick="{{r.onEdit}}" style="margin-left: auto; border: none; background: transparent; cursor: pointer; padding: 0; color: #8FC7FF; font-size: 12px; font-weight: 700;">Editar</button>
-              <button type="button" onClick="{{r.onDelete}}" style="border: none; background: transparent; cursor: pointer; padding: 0; color: #8E8E99; font-size: 12px; font-weight: 600;">Excluir</button>
+              <button type="button" onClick="{{r.onEdit}}" style="margin-left: auto; border: none; background: transparent; cursor: pointer; padding: 0; color: var(--t-accsoft,#8FC7FF); font-size: 12px; font-weight: 700;">Editar</button>
+              <button type="button" onClick="{{r.onDelete}}" style="border: none; background: transparent; cursor: pointer; padding: 0; color: var(--t-muted2,#8E8E99); font-size: 12px; font-weight: 600;">Excluir</button>
             </sc-if>
           </div>
         </div>
@@ -199,24 +199,24 @@
   <sc-if value="{{showTopics}}" hint-placeholder-val="{{false}}">
     <div style="display: flex; flex-direction: column; padding: 4px 16px 0;">
       <sc-if value="{{noTopics}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 36px 24px 14px; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">Ninguém abriu uma discussão sobre este jogo ainda.</div>
+        <div style="padding: 36px 24px 14px; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">Ninguém abriu uma discussão sobre este jogo ainda.</div>
       </sc-if>
       <sc-for list="{{topics}}" as="t" hint-placeholder-count="2">
-        <button type="button" onClick="{{t.open}}" style="width: 100%; padding: 16px 0; border: none; border-bottom: 1px solid rgba(255,255,255,0.08); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 7px;">
+        <button type="button" onClick="{{t.open}}" style="width: 100%; padding: 16px 0; border: none; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 7px;">
           <div style="display: flex; align-items: center; gap: 8px;">
             <span style="height: 19px; padding: 0 8px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: {{t.forumSoft}}; color: {{t.forumColor}};">{{t.forum}}</span>
-            <span style="font-size: 11px; color: #8E8E99;">{{t.when}}</span>
+            <span style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{t.when}}</span>
           </div>
           <div class="jg-title jg-clamp2" style="font-size: 15px; font-weight: 700; line-height: 1.3;">{{t.title}}</div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: #A1A1AA;">
-            <span style="font-weight: 600; color: #D4D4D8;">{{t.by}}</span>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--t-muted,#A1A1AA);">
+            <span style="font-weight: 600; color: var(--t-sec,#D4D4D8);">{{t.by}}</span>
             <span style="display: flex; align-items: center; gap: 4px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>{{t.count}} respostas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>{{t.count}} respostas
             </span>
           </div>
         </button>
       </sc-for>
-      <button type="button" onClick="{{goForums}}" style="margin-top: 14px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 13.5px; font-weight: 700; cursor: pointer;">{{forumsCta}}</button>
+      <button type="button" onClick="{{goForums}}" style="margin-top: 14px; height: 44px; border-radius: 12px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 13.5px; font-weight: 700; cursor: pointer;">{{forumsCta}}</button>
     </div>
   </sc-if>
 
@@ -224,13 +224,13 @@
 
 <!-- AVALIAR (folha) -->
 <div class="{{sheetClass}}" role="dialog" aria-label="Avaliar {{game.title}}" data-sheet="rate" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-  <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); flex: none;">
-    <button class="hit" type="button" onClick="{{closeSheet}}" aria-label="Fechar" style="position: relative; width: 38px; height: 38px; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+  <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08); flex: none;">
+    <button class="hit" type="button" onClick="{{closeSheet}}" aria-label="Fechar" style="position: relative; width: 38px; height: 38px; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
     </button>
     <div style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
       <div class="jg-title" style="font-size: 17px; font-weight: 700;">{{sheetTitle}}</div>
-      <div style="font-size: 12px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{game.title}}</div>
+      <div style="font-size: 12px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{game.title}}</div>
     </div>
   </div>
   <div style="flex: 1; overflow-y: auto; padding: 18px 16px 12px; display: flex; flex-direction: column; gap: 24px;">
@@ -250,42 +250,42 @@
     <div>
       <label for="jg-text" class="jg-label">O que achou? <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(opcional)</span></label>
       <textarea id="jg-text" class="jg-field" rows="5" placeholder="Conte como foi a experiência, sem spoilers." value="{{sText}}" onInput="{{onText}}" style="resize: none; line-height: 1.5;"></textarea>
-      <div style="text-align: right; font-size: 11.5px; color: #8E8E99; margin-top: 6px;">{{textCount}}/280</div>
+      <div style="text-align: right; font-size: 11.5px; color: var(--t-muted2,#8E8E99); margin-top: 6px;">{{textCount}}/280</div>
     </div>
     <div>
       <span class="jg-label">Quando você jogou? <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(opcional)</span></span>
       <div style="display: flex; gap: 8px;">
-        <button type="button" onClick="{{openDatePicker}}" aria-label="Escolher data" style="flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #18181B; color: #ECEDEE; font-family: inherit; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; text-align: left;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg>
+        <button type="button" onClick="{{openDatePicker}}" aria-label="Escolher data" style="flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(var(--t-ink,255,255,255),0.1); background: var(--t-card,#18181B); color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; text-align: left;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path></svg>
           <span style="flex: 1; min-width: 0; color: {{dateColor}};">{{dateLabel}}</span>
         </button>
         <sc-if value="{{hasDate}}" hint-placeholder-val="{{false}}">
-          <button type="button" onClick="{{clearDate}}" aria-label="Remover data" style="flex: none; width: 46px; height: 46px; padding: 0; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #18181B; color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+          <button type="button" onClick="{{clearDate}}" aria-label="Remover data" style="flex: none; width: 46px; height: 46px; padding: 0; border-radius: 12px; border: 1px solid rgba(var(--t-ink,255,255,255),0.1); background: var(--t-card,#18181B); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
         </sc-if>
       </div>
     </div>
 
     <div>
       <span class="jg-label">Jogou com alguém? <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(opcional)</span></span>
-      <button type="button" onClick="{{openFriendPicker}}" aria-label="Escolher amigos" style="flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #18181B; color: #ECEDEE; font-family: inherit; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; text-align: left;" >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <button type="button" onClick="{{openFriendPicker}}" aria-label="Escolher amigos" style="flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(var(--t-ink,255,255,255),0.1); background: var(--t-card,#18181B); color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; text-align: left;" >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
         <span style="flex: 1; min-width: 0; color: {{friendBtnColor}};">{{friendBtnLabel}}</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 18l6-6-6-6"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 18l6-6-6-6"></path></svg>
       </button>
       <sc-if value="{{hasWith}}" hint-placeholder-val="{{false}}">
         <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
           <sc-for list="{{withChips}}" as="w" hint-placeholder-count="2">
-            <span style="height: 32px; padding: 0 4px 0 5px; border-radius: 999px; display: inline-flex; align-items: center; gap: 7px; background: #18181B; border: 1px solid rgba(255,255,255,0.1); font-size: 13px; font-weight: 600; color: #ECEDEE;">
+            <span style="height: 32px; padding: 0 4px 0 5px; border-radius: 999px; display: inline-flex; align-items: center; gap: 7px; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.1); font-size: 13px; font-weight: 600; color: var(--t-text,#ECEDEE);">
               <img src="{{w.uri}}" alt="" width="22" height="22" style="display: block; border-radius: 7px; image-rendering: pixelated;">
               {{w.first}}
-              <button class="hit" type="button" onClick="{{w.onRemove}}" aria-label="Remover {{w.first}}" style="position: relative; width: 24px; height: 24px; padding: 0; border: none; border-radius: 999px; background: transparent; color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+              <button class="hit" type="button" onClick="{{w.onRemove}}" aria-label="Remover {{w.first}}" style="position: relative; width: 24px; height: 24px; padding: 0; border: none; border-radius: 999px; background: transparent; color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
             </span>
           </sc-for>
         </div>
       </sc-if>
     </div>
   </div>
-  <div style="flex: none; padding: 12px 16px 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="flex: none; padding: 12px 16px 16px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
     <button type="button" onClick="{{publish}}" style="{{publishStyle}}">{{publishLabel}}</button>
   </div>
 </div>
@@ -293,15 +293,15 @@
 <sc-if value="{{datePickerOpen}}" hint-placeholder-val="{{false}}">
   <div role="dialog" aria-label="Escolher data" style="position: absolute; inset: 0; z-index: 60; display: flex; flex-direction: column; justify-content: flex-end;">
     <div onClick="{{closePicker}}" style="position: absolute; inset: 0; background: rgba(0,0,0,0.62);"></div>
-    <div style="position: relative; background: #111113; border-radius: 22px 22px 0 0; padding: 10px 16px 18px; box-shadow: 0 -1px 0 rgba(255,255,255,0.08);">
-      <div style="display: flex; justify-content: center; padding-bottom: 8px;"><div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.16);"></div></div>
+    <div style="position: relative; background: var(--t-bg2,#111113); border-radius: 22px 22px 0 0; padding: 10px 16px 18px; box-shadow: 0 -1px 0 rgba(var(--t-ink,255,255,255),0.08);">
+      <div style="display: flex; justify-content: center; padding-bottom: 8px;"><div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(var(--t-ink,255,255,255),0.16);"></div></div>
       <div style="display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px;">
-        <button type="button" onClick="{{calPrev}}" aria-label="Mês anterior" style="width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+        <button type="button" onClick="{{calPrev}}" aria-label="Mês anterior" style="width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
         <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; text-transform: capitalize;">{{calMonthLabel}}</span>
         <button type="button" onClick="{{calNext}}" aria-label="Próximo mês" style="{{calNextStyle}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
       </div>
       <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; text-align: center; padding-bottom: 4px;">
-        <sc-for list="{{calWeek}}" as="d" hint-placeholder-count="7"><span style="font-size: 11px; font-weight: 700; color: #8E8E99; padding: 6px 0;">{{d.l}}</span></sc-for>
+        <sc-for list="{{calWeek}}" as="d" hint-placeholder-count="7"><span style="font-size: 11px; font-weight: 700; color: var(--t-muted2,#8E8E99); padding: 6px 0;">{{d.l}}</span></sc-for>
       </div>
       <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px;">
         <sc-for list="{{calCells}}" as="d" hint-placeholder-count="35">
@@ -309,8 +309,8 @@
         </sc-for>
       </div>
       <div style="display: flex; gap: 10px; padding-top: 14px;">
-        <button type="button" onClick="{{clearDateClose}}" style="flex: 1; height: 44px; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;">Limpar</button>
-        <button type="button" onClick="{{pickToday}}" style="flex: 1; height: 44px; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;">Hoje</button>
+        <button type="button" onClick="{{clearDateClose}}" style="flex: 1; height: 44px; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;">Limpar</button>
+        <button type="button" onClick="{{pickToday}}" style="flex: 1; height: 44px; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer;">Hoje</button>
       </div>
     </div>
   </div>
@@ -319,31 +319,31 @@
 <sc-if value="{{friendPickerOpen}}" hint-placeholder-val="{{false}}">
   <div role="dialog" aria-label="Jogou com quem?" style="position: absolute; inset: 0; z-index: 60; display: flex; flex-direction: column; justify-content: flex-end;">
     <div onClick="{{closePicker}}" style="position: absolute; inset: 0; background: rgba(0,0,0,0.62);"></div>
-    <div style="position: relative; height: 600px; max-height: 92%; background: #111113; border-radius: 22px 22px 0 0; display: flex; flex-direction: column; box-shadow: 0 -1px 0 rgba(255,255,255,0.08);">
-      <div style="flex: none; display: flex; justify-content: center; padding-top: 10px;"><div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.16);"></div></div>
+    <div style="position: relative; height: 600px; max-height: 92%; background: var(--t-bg2,#111113); border-radius: 22px 22px 0 0; display: flex; flex-direction: column; box-shadow: 0 -1px 0 rgba(var(--t-ink,255,255,255),0.08);">
+      <div style="flex: none; display: flex; justify-content: center; padding-top: 10px;"><div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(var(--t-ink,255,255,255),0.16);"></div></div>
       <div style="flex: none; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px;">
         <span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700;">Jogou com quem?</span>
-        <span style="font-size: 12.5px; color: #A1A1AA;">{{friendCountLabel}}</span>
+        <span style="font-size: 12.5px; color: var(--t-muted,#A1A1AA);">{{friendCountLabel}}</span>
       </div>
       <div style="flex: none; padding: 4px 16px 10px;">
-        <label style="height: 44px; border-radius: 12px; background: #18181B; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; padding: 0 12px; color: #A1A1AA;">
+        <label style="height: 44px; border-radius: 12px; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.1); display: flex; align-items: center; gap: 10px; padding: 0 12px; color: var(--t-muted,#A1A1AA);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-          <input type="search" value="{{fQuery}}" onInput="{{onFQuery}}" placeholder="Buscar amigo pelo nome" aria-label="Buscar amigo" style="flex: 1; min-width: 0; height: 100%; border: none; outline: none; background: transparent; color: #ECEDEE; font-family: inherit; font-size: 14px;">
+          <input type="search" value="{{fQuery}}" onInput="{{onFQuery}}" placeholder="Buscar amigo pelo nome" aria-label="Buscar amigo" style="flex: 1; min-width: 0; height: 100%; border: none; outline: none; background: transparent; color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px;">
         </label>
       </div>
       <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 0 16px;">
         <sc-for list="{{friendRows}}" as="f" hint-placeholder-count="5">
-          <button type="button" role="checkbox" aria-checked="{{f.on}}" onClick="{{f.onPick}}" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid rgba(255,255,255,0.06); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer;">
+          <button type="button" role="checkbox" aria-checked="{{f.on}}" onClick="{{f.onPick}}" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer;">
             <img src="{{f.uri}}" alt="" width="38" height="38" style="display: block; border-radius: 11px; image-rendering: pixelated; flex: none;">
-            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px;"><span style="font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{f.name}}</span><span style="font-size: 12px; color: #8E8E99;">{{f.handle}}</span></span>
-            <span style="{{f.boxStyle}}"><sc-if value="{{f.isOn}}" hint-placeholder-val="{{false}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></sc-if></span>
+            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px;"><span style="font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{f.name}}</span><span style="font-size: 12px; color: var(--t-muted2,#8E8E99);">{{f.handle}}</span></span>
+            <span style="{{f.boxStyle}}"><sc-if value="{{f.isOn}}" hint-placeholder-val="{{false}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-white,#FFFFFF)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></sc-if></span>
           </button>
         </sc-for>
         <sc-if value="{{noFriendResults}}" hint-placeholder-val="{{false}}">
-          <div style="padding: 36px 8px; text-align: center; font-size: 13.5px; line-height: 1.45; color: #8E8E99;">{{noFriendText}}</div>
+          <div style="padding: 36px 8px; text-align: center; font-size: 13.5px; line-height: 1.45; color: var(--t-muted2,#8E8E99);">{{noFriendText}}</div>
         </sc-if>
       </div>
-      <div style="flex: none; padding: 12px 16px 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div style="flex: none; padding: 12px 16px 16px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
         <button type="button" onClick="{{closePicker}}" style="width: 100%; height: 48px; border: none; border-radius: 14px; background: {{accent}}; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer;">{{friendDoneLabel}}</button>
       </div>
     </div>
@@ -352,13 +352,13 @@
 
 <div class="{{saveScrimClass}}" onClick="{{closeSave}}"></div>
 <div class="{{saveClass}}" role="dialog" aria-label="Salvar em uma lista" data-sheet="save" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px;"></div></div>
+  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(var(--t-ink,255,255,255),0.16); border-radius: 999px;"></div></div>
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 18px 6px; flex: none;">
     <div style="min-width: 0; display: flex; flex-direction: column; gap: 2px;">
       <div class="jg-title" style="font-size: 17px; font-weight: 700;">Salvar em lista</div>
-      <div style="font-size: 12px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{game.title}}</div>
+      <div style="font-size: 12px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{game.title}}</div>
     </div>
-    <button class="hit" type="button" onClick="{{closeSave}}" aria-label="Fechar" style="position: relative; width: 34px; height: 34px; padding: 0; flex-shrink: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <button class="hit" type="button" onClick="{{closeSave}}" aria-label="Fechar" style="position: relative; width: 34px; height: 34px; padding: 0; flex-shrink: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
     </button>
   </div>
@@ -366,28 +366,28 @@
   <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 4px 18px 8px; display: flex; flex-direction: column;">
     <sc-if value="{{noLists}}" hint-placeholder-val="{{false}}">
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 18px 12px 14px;">
-        <span style="width: 52px; height: 52px; border-radius: 16px; background: #212124; display: flex; align-items: center; justify-content: center;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+        <span style="width: 52px; height: 52px; border-radius: 16px; background: var(--t-card2,#212124); display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
         </span>
         <div style="font-size: 15px; font-weight: 700;">Você ainda não tem listas</div>
-        <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">Crie a primeira para guardar este jogo e achar de novo depois.</div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">Crie a primeira para guardar este jogo e achar de novo depois.</div>
       </div>
     </sc-if>
     <sc-for list="{{lists}}" as="l" hint-placeholder-count="3">
-      <button type="button" role="checkbox" aria-checked="{{l.checked}}" onClick="{{l.onToggle}}" style="width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid rgba(255,255,255,0.06); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
-        <div style="width: 38px; height: 50px; flex-shrink: 0; border-radius: 7px; background-color: {{l.bg}}; background-image: {{l.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></div>
+      <button type="button" role="checkbox" aria-checked="{{l.checked}}" onClick="{{l.onToggle}}" style="width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 38px; height: 50px; flex-shrink: 0; border-radius: 7px; background-color: {{l.bg}}; background-image: {{l.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></div>
         <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
           <div style="font-size: 14.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{l.title}}</div>
-          <div style="font-size: 12px; color: #A1A1AA;">{{l.countLabel}}</div>
+          <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{l.countLabel}}</div>
         </div>
         <span style="width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%; border: 2px solid {{l.checkBorder}}; background: {{l.checkBg}}; display: flex; align-items: center; justify-content: center;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: {{l.checkOpacity}};"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--t-white,#FFFFFF)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: {{l.checkOpacity}};"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
         </span>
       </button>
     </sc-for>
   </div>
 
-  <div style="flex: none; padding: 12px 18px 18px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 10px;">
+  <div style="flex: none; padding: 12px 18px 18px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08); display: flex; flex-direction: column; gap: 10px;">
     <sc-if value="{{showCreate}}" hint-placeholder-val="{{false}}">
       <div style="display: flex; gap: 8px;">
         <input class="jg-field" aria-label="Nome da nova lista" maxlength="40" placeholder="Nome da lista" value="{{newName}}" onInput="{{onNewName}}" onKeyDown="{{onNewKey}}" style="flex: 1; min-width: 0; padding: 0 14px; height: 46px;">
@@ -395,7 +395,7 @@
       </div>
     </sc-if>
     <sc-if value="{{showNewBtn}}" hint-placeholder-val="{{true}}">
-      <button type="button" onClick="{{startCreate}}" style="height: 46px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.24); background: transparent; color: #ECEDEE; font-size: 13.5px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <button type="button" onClick="{{startCreate}}" style="height: 46px; border-radius: 12px; border: 1px dashed rgba(var(--t-ink,255,255,255),0.24); background: transparent; color: var(--t-text,#ECEDEE); font-size: 13.5px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Criar nova lista
       </button>
     </sc-if>
@@ -407,12 +407,12 @@
 
 <sc-if value="{{cfOpen}}" hint-placeholder-val="{{false}}">
   <div onClick="{{cfNo}}" style="position: absolute; inset: 0; z-index: 90; background: rgba(0,0,0,0.66);"></div>
-  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: #18181B; border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #ECEDEE;">
+  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: var(--t-text,#ECEDEE);">
     <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 700;">{{cfTitle}}</div>
-    <div style="font-size: 13.5px; line-height: 1.55; color: #A1A1AA;">{{cfText}}</div>
+    <div style="font-size: 13.5px; line-height: 1.55; color: var(--t-muted,#A1A1AA);">{{cfText}}</div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
-      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: #27272A; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
-      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #F31260; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
+      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
+      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #DB0F57; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
     </div>
   </div>
 </sc-if>
@@ -450,7 +450,7 @@ class Component extends DCLogic {
       { bg: '#1C1A15', img: 'linear-gradient(90deg, #D8CFC0 0 22%, rgba(0,0,0,0) 22%)' },
       { bg: '#161B18', img: 'conic-gradient(from 90deg at 30% 40%, #4E8C7D 0 90deg, rgba(0,0,0,0) 90deg)' },
       { bg: '#1B1620', img: 'radial-gradient(circle at 26% 74%, #B07BAC 0 22%, rgba(0,0,0,0) 22%)' },
-      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, #E8C468 0 11%, rgba(0,0,0,0) 11%)' },
+      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, var(--t-amber,#E8C468) 0 11%, rgba(0,0,0,0) 11%)' },
       { bg: '#1A1518', img: 'repeating-linear-gradient(90deg, #8C4A5A 0 6px, rgba(0,0,0,0) 6px 18px)' },
       { bg: '#131A22', img: 'conic-gradient(from 20deg at 70% 20%, #5B7DB1 0 70deg, rgba(0,0,0,0) 70deg)' },
       { bg: '#1D1913', img: 'radial-gradient(circle at 30% 32%, #C4763A 0 18%, rgba(0,0,0,0) 18%), linear-gradient(200deg, #6B4A2A 0 26%, rgba(0,0,0,0) 26%)' }
@@ -603,10 +603,11 @@ class Component extends DCLogic {
   }
 
   forumMeta(id) {
-    return { f1: ['Metroidvanias', '#9B5DE5'], f2: ['Estratégia de mesa', '#F5A524'], f3: ['Coop e jogos para duas pessoas', '#17C964'], f4: ['Competitivo e ranked', '#F31260'], f5: ['Mesas de São Paulo', '#22D3EE'], f6: ['Indies e aventuras', '#338EF7'] }[id];
+    return { f1: ['Metroidvanias', '#9B5DE5'], f2: ['Estratégia de mesa', '#F5A524'], f3: ['Coop e jogos para duas pessoas', '#17C964'], f4: ['Competitivo e ranked', '#F31260'], f5: ['Mesas de São Paulo', 'var(--t-cyan,#22D3EE)'], f6: ['Indies e aventuras', '#338EF7'] }[id];
   }
 
   soft(hex, alpha) {
+    const vm = /^var\(--[\w-]+,\s*(#[0-9a-fA-F]{6})\)$/.exec(String(hex)); if (vm) hex = vm[1];
     const n = parseInt(hex.slice(1), 16);
     return 'rgba(' + ((n >> 16) & 255) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + alpha + ')';
   }
@@ -751,7 +752,7 @@ class Component extends DCLogic {
     const n = baseN + (mine ? 1 : 0);
     const avg = mine ? (baseAvg * baseN + mine.rating) / n : baseAvg;
     const rows = this.starRows(avg, n);
-    const barColors = { 5: accent, 4: accent, 3: '#71717A', 2: '#71717A', 1: '#71717A' };
+    const barColors = { 5: accent, 4: accent, 3: 'var(--t-faint,#71717A)', 2: 'var(--t-faint,#71717A)', 1: 'var(--t-faint,#71717A)' };
 
     const base = this.buildReviews(info, mine, friends);
     const rev = base.map((r) => {
@@ -779,9 +780,9 @@ class Component extends DCLogic {
       return Object.assign(metaOf(r.raw || Object.assign({}, r, this.seedPlayed(r.handle, info.title))), {
         name: r.name, avBg: r.avBg, avBody: r.avBody, avAccent: r.avAccent, when: r.when, avUri: (this.props.avatars || {})[r.handle] || '',
         isFriend: friends.indexOf(r.handle) >= 0, isMine: r.isMine,
-        stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < r.rating ? accent : '#3F3F46' })),
+        stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < r.rating ? accent : 'var(--t-line,#3F3F46)' })),
         hasText: !!r.text, text: r.text, hasTags: (r.tags || []).length > 0, tagChips: (r.tags || []).map((t) => ({ label: t })),
-        likeCount: r.likes + (liked[key] ? 1 : 0), likeFill: liked[key] ? accent : 'none', likeStroke: liked[key] ? accent : '#A1A1AA',
+        likeCount: r.likes + (liked[key] ? 1 : 0), likeFill: liked[key] ? accent : 'none', likeStroke: liked[key] ? accent : 'var(--t-muted,#A1A1AA)',
         toggleLike: () => this.setState({ liked: Object.assign({}, liked, { [key]: !liked[key] }) }),
         openAuthor: () => this.openAuthor(r.handle),
         onEdit: () => this.openSheet(r.raw),
@@ -799,12 +800,12 @@ class Component extends DCLogic {
     const listRows = myLists.map((l) => {
       const checked = l.titles.indexOf(info.title) >= 0;
       const first = l.titles[0];
-      const cover = first ? this.artFor(first, this.hash(first) % 14) : { bg: '#27272A', img: 'none' };
+      const cover = first ? this.artFor(first, this.hash(first) % 14) : { bg: 'var(--t-card3,#27272A)', img: 'none' };
       return {
         title: l.title, bg: cover.bg, img: cover.img,
         countLabel: l.titles.length + (l.titles.length === 1 ? ' jogo' : ' jogos'),
         checked: checked ? 'true' : 'false',
-        checkBg: checked ? accent : 'transparent', checkBorder: checked ? accent : '#52525B', checkOpacity: checked ? 1 : 0,
+        checkBg: checked ? accent : 'transparent', checkBorder: checked ? accent : 'var(--t-faint2,#52525B)', checkOpacity: checked ? 1 : 0,
         onToggle: () => {
           if (this.props.toggleInList) this.props.toggleInList(l.id, info.title);
           this.flash(checked ? 'Removido de “' + l.title + '”.' : 'Salvo em “' + l.title + '”.');
@@ -816,13 +817,13 @@ class Component extends DCLogic {
     const canCreate = newName.length >= 2;
     const chip = (id, label) => ({
       label: label,
-      style: 'flex-shrink: 0; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 1px solid ' + (s.rf === id ? accent : 'rgba(255,255,255,0.12)') + '; background: ' + (s.rf === id ? 'rgba(0,111,238,0.18)' : '#18181B') + '; color: ' + (s.rf === id ? '#8FC7FF' : '#D4D4D8') + ';',
+      style: 'flex-shrink: 0; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 1px solid ' + (s.rf === id ? accent : 'rgba(var(--t-ink,255,255,255),0.12)') + '; background: ' + (s.rf === id ? 'rgba(0,111,238,0.18)' : 'var(--t-card,#18181B)') + '; color: ' + (s.rf === id ? 'var(--t-accsoft,#8FC7FF)' : 'var(--t-sec,#D4D4D8)') + ';',
       onClick: () => this.setState({ rf: id })
     });
 
     // folha de avaliação
     const labels = ['Toque para dar sua nota', 'Fraco', 'Regular', 'Bom', 'Ótimo', 'Obra-prima'];
-    const starPicks = [1, 2, 3, 4, 5].map((k) => ({ label: k + (k === 1 ? ' estrela' : ' estrelas'), fill: k <= s.sRating ? accent : 'none', stroke: k <= s.sRating ? accent : '#52525B', onPick: () => this.setState({ sRating: k }) }));
+    const starPicks = [1, 2, 3, 4, 5].map((k) => ({ label: k + (k === 1 ? ' estrela' : ' estrelas'), fill: k <= s.sRating ? accent : 'none', stroke: k <= s.sRating ? accent : 'var(--t-faint2,#52525B)', onPick: () => this.setState({ sRating: k }) }));
     const tagPicks = this.tagOptions(info.mode).map((label) => {
       const picked = s.sTags.indexOf(label) >= 0;
       const full = !picked && s.sTags.length >= 3;
@@ -850,7 +851,7 @@ class Component extends DCLogic {
       const sel = iso === curDate;
       const isToday = iso === todayIso;
       calCells.push({ label: String(d), aria: d + ' de ' + new Date(baseY, baseM, 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }),
-        style: 'height: 42px; padding: 0; border: none; border-radius: 12px; font-family: inherit; font-size: 14px; font-weight: ' + (sel || isToday ? '800' : '600') + '; cursor: ' + (future ? 'default' : 'pointer') + '; background: ' + (sel ? accent : 'transparent') + '; color: ' + (sel ? '#FFFFFF' : (future ? '#3F3F46' : '#ECEDEE')) + '; box-shadow: ' + (isToday && !sel ? 'inset 0 0 0 1px rgba(255,255,255,0.28)' : 'none') + ';',
+        style: 'height: 42px; padding: 0; border: none; border-radius: 12px; font-family: inherit; font-size: 14px; font-weight: ' + (sel || isToday ? '800' : '600') + '; cursor: ' + (future ? 'default' : 'pointer') + '; background: ' + (sel ? accent : 'transparent') + '; color: ' + (sel ? '#FFFFFF' : (future ? 'var(--t-line,#3F3F46)' : 'var(--t-text,#ECEDEE)')) + '; box-shadow: ' + (isToday && !sel ? 'inset 0 0 0 1px rgba(255,255,255,0.28)' : 'none') + ';',
         onPick: () => { if (!future) this.setState({ sDate: iso, pk: null, calY: null, calM: null }); } });
     }
     const friendList = this.props.friendList || [];
@@ -860,7 +861,7 @@ class Component extends DCLogic {
     const friendRows = friendList.filter((f) => !fq || norm2(f.name).indexOf(fq) >= 0 || norm2(f.handle).indexOf(fq) >= 0).map((f) => {
       const on = withSel.indexOf(f.handle) >= 0;
       return { name: f.name, handle: f.handle, uri: (this.props.avatars || {})[f.handle] || '', on: on ? 'true' : 'false', isOn: on,
-        boxStyle: 'flex: none; width: 24px; height: 24px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: ' + (on ? accent : 'transparent') + '; box-shadow: inset 0 0 0 2px ' + (on ? accent : '#52525B') + ';',
+        boxStyle: 'flex: none; width: 24px; height: 24px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: ' + (on ? accent : 'transparent') + '; box-shadow: inset 0 0 0 2px ' + (on ? accent : 'var(--t-faint2,#52525B)') + ';',
         onPick: () => this.setState({ sWith: on ? withSel.filter((h) => h !== f.handle) : withSel.concat([f.handle]) }) };
     });
     const withChips = withSel.map((h) => { const f = friendList.filter((x) => x.handle === h)[0]; return { first: f ? String(f.name).split(' ')[0] : h, uri: (this.props.avatars || {})[h] || '', onRemove: () => this.setState({ sWith: withSel.filter((x) => x !== h) }) }; });
@@ -873,7 +874,7 @@ class Component extends DCLogic {
       goBack: () => { if (this.props.back) this.props.back(); },
       stats: {
         avgLabel: avg.toFixed(1).replace('.', ','),
-        stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < Math.round(avg) ? accent : '#3F3F46' })),
+        stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < Math.round(avg) ? accent : 'var(--t-line,#3F3F46)' })),
         countLabel: n.toLocaleString('pt-BR') + ' avaliações',
         dist: rows.map((r) => ({ label: String(r.star), pct: r.pct, color: barColors[r.star] })),
         hasFriends: friendRevs.length > 0,
@@ -884,8 +885,8 @@ class Component extends DCLogic {
       saveAria: savedAny ? 'Salvo em uma lista. Alterar listas' : 'Salvar em uma lista',
       saveFill: savedAny ? 'currentColor' : 'none',
       saveBg: savedAny ? 'rgba(0,111,238,0.16)' : 'transparent',
-      saveBorder: savedAny ? 'rgba(0,111,238,0.5)' : 'rgba(255,255,255,0.16)',
-      saveColor: savedAny ? '#8FC7FF' : '#ECEDEE',
+      saveBorder: savedAny ? 'rgba(0,111,238,0.5)' : 'rgba(var(--t-ink,255,255,255),0.16)',
+      saveColor: savedAny ? 'var(--t-accsoft,#8FC7FF)' : 'var(--t-text,#ECEDEE)',
       openSave: () => this.setState({ saveOpen: true, creating: false, newName: '' }),
       closeSave: () => this.setState({ saveOpen: false, creating: false, newName: '' }),
       saveScrimClass: 'jg-scrim' + (s.saveOpen ? ' open' : ''),
@@ -900,8 +901,8 @@ class Component extends DCLogic {
       onNewName: (e) => this.setState({ newName: e.target.value }),
       onNewKey: (e) => { if (e.key === 'Enter') this.doCreate(info.title); },
       createList: () => this.doCreate(info.title),
-      createStyle: 'flex-shrink: 0; height: 46px; padding: 0 14px; border: none; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: ' + (canCreate ? 'pointer' : 'default') + '; background: ' + (canCreate ? accent : '#27272A') + '; color: ' + (canCreate ? '#FFFFFF' : '#71717A') + ';',
-      tabs: { reviews: s.tab === 'reviews' ? { color: '#ECEDEE', weight: 700, bar: accent } : { color: '#A1A1AA', weight: 500, bar: 'transparent' }, topics: s.tab === 'topics' ? { color: '#ECEDEE', weight: 700, bar: accent } : { color: '#A1A1AA', weight: 500, bar: 'transparent' } },
+      createStyle: 'flex-shrink: 0; height: 46px; padding: 0 14px; border: none; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: ' + (canCreate ? 'pointer' : 'default') + '; background: ' + (canCreate ? accent : 'var(--t-card3,#27272A)') + '; color: ' + (canCreate ? '#FFFFFF' : 'var(--t-faint,#71717A)') + ';',
+      tabs: { reviews: s.tab === 'reviews' ? { color: 'var(--t-text,#ECEDEE)', weight: 700, bar: accent } : { color: 'var(--t-muted,#A1A1AA)', weight: 500, bar: 'transparent' }, topics: s.tab === 'topics' ? { color: 'var(--t-text,#ECEDEE)', weight: 700, bar: accent } : { color: 'var(--t-muted,#A1A1AA)', weight: 500, bar: 'transparent' } },
       pickReviews: () => this.setState({ tab: 'reviews' }),
       pickTopics: () => this.setState({ tab: 'topics' }),
       reviewsTotal: n.toLocaleString('pt-BR'),
@@ -924,7 +925,7 @@ class Component extends DCLogic {
       closeSheet: this.closeSheet,
       starPicks: starPicks,
       ratingLabel: labels[s.sRating],
-      ratingColor: s.sRating > 0 ? '#ECEDEE' : '#71717A',
+      ratingColor: s.sRating > 0 ? 'var(--t-text,#ECEDEE)' : 'var(--t-faint,#71717A)',
       sText: s.sText,
       onText: (e) => this.setState({ sText: e.target.value.slice(0, 280) }),
       textCount: (s.sText || '').length,
@@ -937,14 +938,14 @@ class Component extends DCLogic {
       closePicker: () => this.setState({ pk: null, calY: null, calM: null }),
       hasDate: !!curDate,
       dateLabel: curDate ? fmtIso(curDate) : 'Escolher data',
-      dateColor: curDate ? '#ECEDEE' : '#71717A',
+      dateColor: curDate ? 'var(--t-text,#ECEDEE)' : 'var(--t-faint,#71717A)',
       clearDate: () => this.setState({ sDate: '' }),
       clearDateClose: () => this.setState({ sDate: '', pk: null, calY: null, calM: null }),
       pickToday: () => this.setState({ sDate: todayIso, pk: null, calY: null, calM: null }),
       calMonthLabel: new Date(baseY, baseM, 1).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' }),
       calPrev: () => this.setState({ calY: baseM === 0 ? baseY - 1 : baseY, calM: (baseM + 11) % 12 }),
       calNext: () => { if (!atMax) this.setState({ calY: baseM === 11 ? baseY + 1 : baseY, calM: (baseM + 1) % 12 }); },
-      calNextStyle: 'width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; display: flex; align-items: center; justify-content: center; cursor: ' + (atMax ? 'default' : 'pointer') + '; opacity: ' + (atMax ? '0.35' : '1') + ';',
+      calNextStyle: 'width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); display: flex; align-items: center; justify-content: center; cursor: ' + (atMax ? 'default' : 'pointer') + '; opacity: ' + (atMax ? '0.35' : '1') + ';',
       calWeek: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((l) => ({ l: l })),
       calCells: calCells,
       fQuery: s.fQuery || '',
@@ -957,9 +958,9 @@ class Component extends DCLogic {
       hasWith: withSel.length > 0,
       withChips: withChips,
       friendBtnLabel: withSel.length === 0 ? 'Marcar amigos' : (withSel.length === 1 ? '1 amigo marcado' : withSel.length + ' amigos marcados'),
-      friendBtnColor: withSel.length === 0 ? '#71717A' : '#ECEDEE',
+      friendBtnColor: withSel.length === 0 ? 'var(--t-faint,#71717A)' : 'var(--t-text,#ECEDEE)',
       publishLabel: valid ? (mine ? 'Salvar avaliação' : 'Publicar avaliação') : 'Dê uma nota',
-      publishStyle: 'width: 100%; height: 50px; border: none; border-radius: 14px; font-size: 15px; font-weight: 800; cursor: ' + (valid ? 'pointer' : 'default') + '; background: ' + (valid ? accent : '#27272A') + '; color: ' + (valid ? '#FFFFFF' : '#71717A') + ';',
+      publishStyle: 'width: 100%; height: 50px; border: none; border-radius: 14px; font-size: 15px; font-weight: 800; cursor: ' + (valid ? 'pointer' : 'default') + '; background: ' + (valid ? accent : 'var(--t-card3,#27272A)') + '; color: ' + (valid ? '#FFFFFF' : 'var(--t-faint,#71717A)') + ';',
       publish: () => {
         if (!valid) return;
         if (mine && this.props.deleteReview) this.props.deleteReview(mine.id);
@@ -968,7 +969,7 @@ class Component extends DCLogic {
         this.setState({ sheetOpen: false, tab: 'reviews', rf: 'todas' });
         this.flash('Avaliação publicada.');
       },
-      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-160%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: #28282C; border: 1px solid rgba(255,255,255,0.16); color: #ECEDEE; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
+      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-160%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: var(--t-card3,#28282C); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); color: var(--t-text,#ECEDEE); font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
       toastText: s.toast,
       cfOpen: !!s.confirm,
       cfTitle: s.confirm ? s.confirm.title : '',

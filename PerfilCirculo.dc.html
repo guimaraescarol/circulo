@@ -15,17 +15,17 @@
     .hit::after { content: ''; position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
-    body { margin: 0; background: #000000; color: #ECEDEE; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: var(--t-bg,#000000); color: var(--t-text,#ECEDEE); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     * { box-sizing: border-box; }
-    a { color: #338EF7; text-decoration: none; }
-    a:hover { color: #66AAF9; }
+    a { color: var(--t-blue,#338EF7); text-decoration: none; }
+    a:hover { color: var(--t-accsoft,#66AAF9); }
     button { font-family: inherit; }
     .ed-scrim { position: absolute; inset: 0; background: rgba(0,0,0,0); opacity: 0; pointer-events: none; transition: opacity .22s ease, background .22s ease; z-index: 30; }
     .ed-scrim.open { opacity: 1; pointer-events: auto; background: rgba(0,0,0,.62); }
-    .ed-sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 40px; background: #18181B; border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 31; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.16); }
+    .ed-sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 40px; background: var(--t-card,#18181B); border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 31; display: flex; flex-direction: column; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.16); }
     .ed-sheet.open { transform: translateY(0); }
-    .ed-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #8E8E99; margin: 0 0 10px; }
-    .ed-field { width: 100%; background: #212124; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14px; }
+    .ed-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--t-muted2,#8E8E99); margin: 0 0 10px; }
+    .ed-field { width: 100%; background: var(--t-card2,#212124); border: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-radius: 12px; padding: 12px 14px; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14px; }
     .ed-scrim.s2 { z-index: 32; }
     .ed-sheet.s2 { z-index: 33; }
     .ed-scrim.s3 { z-index: 36; }
@@ -34,23 +34,23 @@
     .sec-title { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
   </style>
 </helmet>
-<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: #000000;">
+<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: var(--t-bg,#000000);">
 
-<div data-psc="" style="width: 390px; height: 776px; overflow-y: auto; background: #000000; padding-bottom: {{bottomPad}};">
+<div data-psc="" style="width: 390px; height: 776px; overflow-y: auto; background: var(--t-bg,#000000); padding-bottom: {{bottomPad}};">
 
   <div style="position: relative; padding: 14px 16px 0;">
     <sc-if value="{{isOther}}" hint-placeholder-val="{{false}}">
-      <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; left: 16px; top: 14px; z-index: 2;">
+      <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; left: 16px; top: 14px; z-index: 2;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
       </button>
     </sc-if>
     <sc-if value="{{showOwnBack}}" hint-placeholder-val="{{false}}">
-      <button class="hit" type="button" onClick="{{goOwnBack}}" aria-label="Voltar" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; left: 16px; top: 14px; z-index: 2;">
+      <button class="hit" type="button" onClick="{{goOwnBack}}" aria-label="Voltar" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; left: 16px; top: 14px; z-index: 2;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
       </button>
     </sc-if>
     <sc-if value="{{canOpenSettings}}" hint-placeholder-val="{{true}}">
-      <button class="hit" type="button" onClick="{{openSettings}}" aria-label="Configurações da conta" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; right: 16px; top: 14px; z-index: 2;">
+      <button class="hit" type="button" onClick="{{openSettings}}" aria-label="Configurações da conta" style="width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center; position: absolute; right: 16px; top: 14px; z-index: 2;">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
       </button>
     </sc-if>
@@ -96,11 +96,11 @@
       </div>
       <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-top: 14px;">{{data.name}}</div>
       <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 3px;">
-        <span style="font-size: 13.5px; color: #A1A1AA;">{{data.handle}}</span>
+        <span style="font-size: 13.5px; color: var(--t-muted,#A1A1AA);">{{data.handle}}</span>
         <sc-if value="{{hasPlats}}" hint-placeholder-val="{{true}}">
           <span role="img" aria-label="{{platsLabel}}" style="display: inline-flex; align-items: center; gap: 4px;">
             <sc-for list="{{platIcons}}" as="pi" hint-placeholder-count="2">
-              <span title="{{pi.label}}" style="width: 22px; height: 22px; border-radius: 7px; background: #18181B; color: #A1A1AA; display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);">
+              <span title="{{pi.label}}" style="width: 22px; height: 22px; border-radius: 7px; background: var(--t-card,#18181B); color: var(--t-muted,#A1A1AA); display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 1px rgba(var(--t-ink,255,255,255),0.08);">
                 <sc-if value="{{pi.isIcon}}" hint-placeholder-val="{{true}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{pi.icon}}"></path></svg></sc-if>
                 <sc-if value="{{pi.isText}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="font-size: 9.5px; font-weight: 800; letter-spacing: .02em;">{{pi.text}}</span></sc-if>
               </span>
@@ -116,12 +116,12 @@
           </sc-for>
         </div>
       </sc-if>
-      <div style="font-size: 13.5px; line-height: 1.5; color: #D4D4D8; text-wrap: pretty; margin-top: 8px;">{{data.bio}}</div>
+      <div style="font-size: 13.5px; line-height: 1.5; color: var(--t-sec,#D4D4D8); text-wrap: pretty; margin-top: 8px;">{{data.bio}}</div>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 10px;">
       <sc-for list="{{infoChips}}" as="c" hint-placeholder-count="3">
         <div style="height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 10px; border-radius: 999px; background: {{c.bg}}; font-size: 12px; font-weight: 600; color: {{c.color}};">
           <sc-if value="{{c.hasDot}}" hint-placeholder-val="{{false}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{c.color}};"></span></sc-if>
-          <sc-if value="{{c.hasPin}}" hint-placeholder-val="{{false}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></sc-if>
+          <sc-if value="{{c.hasPin}}" hint-placeholder-val="{{false}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></sc-if>
           {{c.label}}
         </div>
       </sc-for>
@@ -129,43 +129,43 @@
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 16px 16px 0; padding: 10px 0; border-radius: 14px; background: #18181B;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px;"><span style="font-size: 17px; font-weight: 800;">{{data.stats.jogos}}</span><span style="font-size: 12px; color: #A1A1AA;">jogos</span></div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px; border-left: 1px solid rgba(255,255,255,0.08); border-right: 1px solid rgba(255,255,255,0.08);"><span style="font-size: 17px; font-weight: 800;">{{data.stats.seguindo}}</span><span style="font-size: 12px; color: #A1A1AA;">seguindo</span></div>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px;"><span style="font-size: 17px; font-weight: 800;">{{data.stats.seguidores}}</span><span style="font-size: 12px; color: #A1A1AA;">seguidores</span></div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 16px 16px 0; padding: 10px 0; border-radius: 14px; background: var(--t-card,#18181B);">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px;"><span style="font-size: 17px; font-weight: 800;">{{data.stats.jogos}}</span><span style="font-size: 12px; color: var(--t-muted,#A1A1AA);">jogos</span></div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px; border-left: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-right: 1px solid rgba(var(--t-ink,255,255,255),0.08);"><span style="font-size: 17px; font-weight: 800;">{{data.stats.seguindo}}</span><span style="font-size: 12px; color: var(--t-muted,#A1A1AA);">seguindo</span></div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1px;"><span style="font-size: 17px; font-weight: 800;">{{data.stats.seguidores}}</span><span style="font-size: 12px; color: var(--t-muted,#A1A1AA);">seguidores</span></div>
   </div>
 
   <div class="pf-actions" style="display: flex; gap: 8px; padding: 10px 16px 0;">
       <sc-if value="{{isOwn}}" hint-placeholder-val="{{true}}">
-        <button type="button" onClick="{{openEdit}}" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 2px solid #3F3F46; background: transparent; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>Editar perfil</button>
+        <button type="button" onClick="{{openEdit}}" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 2px solid var(--t-line,#3F3F46); background: transparent; color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>Editar perfil</button>
       </sc-if>
       <sc-if value="{{isOther}}" hint-placeholder-val="{{false}}">
         <button type="button" onClick="{{toggleFollow}}" style="{{followStyle}}">{{followLabel}}</button>
         <sc-if value="{{canMessage}}" hint-placeholder-val="{{false}}">
-          <button type="button" onClick="{{goMessage}}" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 2px solid #3F3F46; background: transparent; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer;">Mensagem</button>
+          <button type="button" onClick="{{goMessage}}" style="height: 44px; padding: 0 16px; border-radius: 12px; border: 2px solid var(--t-line,#3F3F46); background: transparent; color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer;">Mensagem</button>
         </sc-if>
       </sc-if>
   </div>
 
   <sc-if value="{{showRoomCard}}" hint-placeholder-val="{{true}}">
-  <button type="button" onClick="{{roomAct}}" aria-label="{{roomAria}}" style="width: calc(100% - 32px); margin: 10px 16px 0; padding: 8px 12px 8px 8px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); background: #18181B; color: #ECEDEE; display: flex; align-items: center; gap: 12px; cursor: pointer; text-align: left; font-family: inherit;">
-    <span style="width: 92px; height: 72px; border-radius: 11px; background: #0E0E12; overflow: hidden; flex: none; display: flex; align-items: center; justify-content: center;"><img src="{{roomImg}}" alt="" width="87" height="76" style="width: 87px; height: 76px; image-rendering: pixelated; display: block;"></span>
+  <button type="button" onClick="{{roomAct}}" aria-label="{{roomAria}}" style="width: calc(100% - 32px); margin: 10px 16px 0; padding: 8px 12px 8px 8px; border-radius: 16px; border: 1px solid rgba(var(--t-ink,255,255,255),0.1); background: var(--t-card,#18181B); color: var(--t-text,#ECEDEE); display: flex; align-items: center; gap: 12px; cursor: pointer; text-align: left; font-family: inherit;">
+    <span style="width: 92px; height: 72px; border-radius: 11px; background: var(--t-bg2,#0E0E12); overflow: hidden; flex: none; display: flex; align-items: center; justify-content: center;"><img src="{{roomImg}}" alt="" width="87" height="76" style="width: 87px; height: 76px; image-rendering: pixelated; display: block;"></span>
     <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 3px;">
       <span style="max-width: 100%; font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{roomTitle}}</span>
-      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #A1A1AA; white-space: nowrap;">
+      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--t-muted,#A1A1AA); white-space: nowrap;">
         <sc-if value="{{roomPrivate}}" hint-placeholder-val="{{false}}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></sc-if>
         <sc-if value="{{roomOpenFlag}}" hint-placeholder-val="{{true}}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></sc-if>
         {{roomPrivacy}}
       </span>
-      <span style="max-width: 100%; font-size: 12px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{roomMeta}}</span>
+      <span style="max-width: 100%; font-size: 12px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{roomMeta}}</span>
     </span>
-    <span style="width: 36px; height: 36px; border-radius: 10px; background: {{roomCtaBg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex: none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></span>
+    <span style="width: 36px; height: 36px; border-radius: 10px; background: {{roomCtaBg}}; color: var(--t-white,#FFFFFF); display: flex; align-items: center; justify-content: center; flex: none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg></span>
   </button>
   </sc-if>
 
   <sc-if value="{{showRepStrip}}" hint-placeholder-val="{{true}}">
   <button type="button" onClick="{{openRep}}" aria-label="Ver o resumo da reputação" style="width: calc(100% - 32px); margin: 14px 16px 0; padding: 0; border: none; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 8px;">
-    <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8E8E99;">Reputação</span>
+    <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-muted2,#8E8E99);">Reputação</span>
     <span style="display: flex; gap: 6px; width: 100%;">
       <sc-for list="{{repRows}}" as="r" hint-placeholder-count="4">
         <span style="flex: 1; min-width: 0; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 13px; font-weight: 700; background: {{r.soft}}; color: {{r.fg}};"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{r.icon}}"></path></svg>{{r.pct}}%</span>
@@ -176,10 +176,10 @@
 
   <sc-if value="{{hasCommon}}" hint-placeholder-val="{{false}}">
     <div style="margin: 16px 16px 0; background: rgba(224,68,123,0.1); border: 1px solid rgba(224,68,123,0.3); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
-      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #F38CB0;">Jogos em comum com você</div>
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-pink,#F38CB0);">Jogos em comum com você</div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px;">
         <sc-for list="{{commonChips}}" as="g" hint-placeholder-count="3">
-          <span style="height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 999px; background: rgba(0,111,238,0.16); border: 1px solid rgba(0,111,238,0.35); font-size: 12px; font-weight: 600; color: #8FC7FF;">{{g.label}}</span>
+          <span style="height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 999px; background: rgba(0,111,238,0.16); border: 1px solid rgba(0,111,238,0.35); font-size: 12px; font-weight: 600; color: var(--t-accsoft,#8FC7FF);">{{g.label}}</span>
         </sc-for>
       </div>
     </div>
@@ -187,8 +187,8 @@
 
   <!-- NAVEGAÇÃO DE SEÇÕES (fixa ao rolar) -->
   <div data-sec-anchor="" style="height: 0;"></div>
-  <div style="position: sticky; top: 0; z-index: 6; background: #000000; padding: 12px 16px 0;">
-    <div role="tablist" aria-label="Seções do perfil" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <div style="position: sticky; top: 0; z-index: 6; background: var(--t-bg,#000000); padding: 12px 16px 0;">
+    <div role="tablist" aria-label="Seções do perfil" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.1);">
       <sc-for list="{{sections}}" as="s" hint-placeholder-count="4">
         <button type="button" role="tab" aria-selected="{{s.selected}}" onClick="{{s.onClick}}" style="position: relative; height: 44px; padding: 0; border: none; background: transparent; cursor: pointer; font-size: 14px; text-align: center; font-weight: {{s.weight}}; color: {{s.textColor}};">
           {{s.label}}
@@ -203,7 +203,7 @@
   <div style="display: flex; flex-direction: column; gap: 26px; padding: 18px 16px 0;">
 
     <sc-if value="{{canCustomize}}" hint-placeholder-val="{{true}}">
-    <button type="button" onClick="{{openCustom}}" style="height: 40px; padding: 0 14px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.22); background: transparent; color: #D4D4D8; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: -6px; order: -1;">
+    <button type="button" onClick="{{openCustom}}" style="height: 40px; padding: 0 14px; border-radius: 12px; border: 1px dashed rgba(var(--t-ink,255,255,255),0.22); background: transparent; color: var(--t-sec,#D4D4D8); font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: -6px; order: -1;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"></path></svg>
       Personalizar perfil
     </button>
@@ -216,13 +216,13 @@
         <button type="button" onClick="{{favAction}}" style="padding: 0; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 700; color: {{accentText}};">{{favActionLabel}}</button>
       </div>
       <sc-if value="{{homeFavsEmpty}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 13px; line-height: 1.5; color: #8E8E99;">Nenhum favorito aparecendo no perfil. Toque em Editar para escolher até 4 jogos digitais e 4 de mesa.</div>
+        <div style="font-size: 13px; line-height: 1.5; color: var(--t-muted2,#8E8E99);">Nenhum favorito aparecendo no perfil. Toque em Editar para escolher até 4 jogos digitais e 4 de mesa.</div>
       </sc-if>
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; align-items: start;">
         <sc-for list="{{homeFavs}}" as="g" hint-placeholder-count="4">
           <button type="button" onClick="{{g.open}}" aria-label="Abrir página de {{g.title}}" style="min-width: 0; padding: 0; border: none; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 6px;">
             <div style="{{g.thumb}}"></div>
-            <div style="font-size: 11px; font-weight: 500; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
+            <div style="font-size: 11px; font-weight: 500; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
           </button>
         </sc-for>
       </div>
@@ -238,22 +238,22 @@
         </sc-if>
       </div>
       <sc-if value="{{homePlayingEmpty}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 13px; line-height: 1.5; color: #8E8E99;">Nada em andamento. Toque em Editar para adicionar o jogo digital que você está jogando.</div>
+        <div style="font-size: 13px; line-height: 1.5; color: var(--t-muted2,#8E8E99);">Nada em andamento. Toque em Editar para adicionar o jogo digital que você está jogando.</div>
       </sc-if>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <sc-for list="{{playingList}}" as="g" hint-placeholder-count="2">
-          <div style="display: flex; gap: 12px; align-items: center; background: #18181B; border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+          <div style="display: flex; gap: 12px; align-items: center; background: var(--t-card,#18181B); border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
             <div style="width: 48px; height: 64px; flex-shrink: 0; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 7px; min-width: 0;">
               <div style="display: flex; flex-direction: column; gap: 2px;">
                 <div style="font-size: 14.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
-                <div style="font-size: 12px; color: #A1A1AA;">{{g.meta}}</div>
+                <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{g.meta}}</div>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="flex-grow: 1; height: 6px; border-radius: 999px; background: #3F3F46; overflow: hidden;">
+                <div style="flex-grow: 1; height: 6px; border-radius: 999px; background: var(--t-line,#3F3F46); overflow: hidden;">
                   <div style="height: 6px; border-radius: 999px; width: {{g.pct}}; background: {{accent}};"></div>
                 </div>
-                <div style="font-size: 11.5px; font-weight: 600; color: #A1A1AA;">{{g.pct}}</div>
+                <div style="font-size: 11.5px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.pct}}</div>
               </div>
             </div>
           </div>
@@ -275,7 +275,7 @@
             <div style="font-size: 11px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
             <div style="display: flex; align-items: center; gap: 3px;">
               <svg width="9" height="9" viewBox="0 0 24 24" fill="{{accent}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
-              <span style="font-size: 11px; font-weight: 600; color: #A1A1AA;">{{g.rating}}</span>
+              <span style="font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.rating}}</span>
             </div>
           </button>
         </sc-for>
@@ -296,7 +296,7 @@
             <div style="font-size: 11px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
             <div style="display: flex; align-items: center; gap: 3px;">
               <svg width="9" height="9" viewBox="0 0 24 24" fill="{{accent}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
-              <span style="font-size: 11px; font-weight: 600; color: #A1A1AA;">{{g.rating}}</span>
+              <span style="font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.rating}}</span>
             </div>
           </button>
         </sc-for>
@@ -312,17 +312,17 @@
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <sc-for list="{{homeLists}}" as="l" hint-placeholder-count="3">
-          <button type="button" onClick="{{goListas}}" style="width: 100%; padding: 12px; border: none; border-radius: 14px; background: #18181B; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15); color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 14px;">
+          <button type="button" onClick="{{goListas}}" style="width: 100%; padding: 12px; border: none; border-radius: 14px; background: var(--t-card,#18181B); box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15); color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 14px;">
             <div style="display: flex; flex-shrink: 0; padding-left: 14px;">
               <sc-for list="{{l.covers}}" as="c" hint-placeholder-count="3">
-                <div style="width: 34px; height: 46px; margin-left: -14px; border-radius: 7px; background-color: {{c.bg}}; background-image: {{c.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 2px #18181B, inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></div>
+                <div style="width: 34px; height: 46px; margin-left: -14px; border-radius: 7px; background-color: {{c.bg}}; background-image: {{c.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 2px var(--t-card,#18181B), inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></div>
               </sc-for>
             </div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
               <div style="font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{l.title}}</div>
-              <div style="font-size: 11.5px; font-weight: 600; color: #8E8E99;">{{l.countLabel}}</div>
+              <div style="font-size: 11.5px; font-weight: 600; color: var(--t-muted2,#8E8E99);">{{l.countLabel}}</div>
             </div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
           </button>
         </sc-for>
       </div>
@@ -333,13 +333,13 @@
     <div style="order: {{ord.dep}}; display: flex; flex-direction: column; gap: 12px;">
       <div style="display: flex; align-items: baseline; gap: 10px;">
         <div class="sec-title">Depoimentos</div>
-        <div style="font-size: 12px; color: #8E8E99;">{{testimonialsCount}}</div>
+        <div style="font-size: 12px; color: var(--t-muted2,#8E8E99);">{{testimonialsCount}}</div>
       </div>
       <sc-if value="{{noTestimonials}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 13px; color: #8E8E99;">Ainda sem depoimentos.</div>
+        <div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Ainda sem depoimentos.</div>
       </sc-if>
       <sc-for list="{{testimonials}}" as="t" hint-placeholder-count="2">
-        <div style="display: flex; gap: 12px; background: #18181B; border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+        <div style="display: flex; gap: 12px; background: var(--t-card,#18181B); border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
           <svg width="32" height="32" viewBox="0 0 24 24" shape-rendering="crispEdges" style="flex-shrink: 0; border-radius: 8px;">
             <rect x="0" y="0" width="24" height="24" fill="{{t.avBg}}"></rect>
             <rect x="4" y="2" width="16" height="8" fill="{{t.avBody}}"></rect>
@@ -351,20 +351,20 @@
             <rect x="9" y="17" width="6" height="2" fill="{{t.avAccent}}"></rect>
           <image href="{{t.avUri}}" x="0" y="0" width="24" height="24"></image></svg>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
-            <div style="font-size: 12.5px; font-weight: 700;">{{t.from}} <span style="font-weight: 500; color: #8E8E99;">{{t.handle}}</span></div>
-            <div style="font-size: 13px; line-height: 1.45; color: #D4D4D8;">{{t.text}}</div>
+            <div style="font-size: 12.5px; font-weight: 700;">{{t.from}} <span style="font-weight: 500; color: var(--t-muted2,#8E8E99);">{{t.handle}}</span></div>
+            <div style="font-size: 13px; line-height: 1.45; color: var(--t-sec,#D4D4D8);">{{t.text}}</div>
             <sc-if value="{{t.asking}}" hint-placeholder-val="{{false}}">
               <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 8px;">
-                <div style="font-size: 12.5px; color: #A1A1AA;">Excluir este depoimento do seu perfil?</div>
+                <div style="font-size: 12.5px; color: var(--t-muted,#A1A1AA);">Excluir este depoimento do seu perfil?</div>
                 <div style="display: flex; gap: 8px;">
-                  <button class="hit" type="button" onClick="{{t.cancel}}" style="position: relative; height: 36px; padding: 0 14px; border-radius: 10px; border: 1px solid #3A3A40; background: transparent; color: #ECEDEE; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit;">Cancelar</button>
-                  <button class="hit" type="button" onClick="{{t.confirm}}" style="position: relative; height: 36px; padding: 0 14px; border-radius: 10px; border: none; background: #F31260; color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit;">Excluir</button>
+                  <button class="hit" type="button" onClick="{{t.cancel}}" style="position: relative; height: 36px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t-line,#3A3A40); background: transparent; color: var(--t-text,#ECEDEE); font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit;">Cancelar</button>
+                  <button class="hit" type="button" onClick="{{t.confirm}}" style="position: relative; height: 36px; padding: 0 14px; border-radius: 10px; border: none; background: #DB0F57; color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit;">Excluir</button>
                 </div>
               </div>
             </sc-if>
           </div>
           <sc-if value="{{t.canDelete}}" hint-placeholder-val="{{false}}">
-            <button class="hit" type="button" onClick="{{t.ask}}" aria-label="Excluir depoimento de {{t.from}}" style="position: relative; flex: none; align-self: flex-start; width: 36px; height: 36px; margin: -6px -6px 0 0; padding: 0; border: none; border-radius: 10px; background: transparent; color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <button class="hit" type="button" onClick="{{t.ask}}" aria-label="Excluir depoimento de {{t.from}}" style="position: relative; flex: none; align-self: flex-start; width: 36px; height: 36px; margin: -6px -6px 0 0; padding: 0; border: none; border-radius: 10px; background: transparent; color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"></path></svg>
             </button>
           </sc-if>
@@ -379,7 +379,7 @@
   <!-- DIGITAL / ANALÓGICO (seções Jogos e Avaliações) -->
   <sc-if value="{{showModeTabs}}" hint-placeholder-val="{{false}}">
   <div style="padding: 16px 16px 0;">
-    <div role="tablist" aria-label="Tipo de jogo" style="display: inline-flex; background: #18181B; border-radius: 999px; padding: 3px;">
+    <div role="tablist" aria-label="Tipo de jogo" style="display: inline-flex; background: var(--t-card,#18181B); border-radius: 999px; padding: 3px;">
       <button class="hit" type="button" role="tab" onClick="{{pickDigital}}" style="position: relative; height: 30px; padding: 0 14px; border: none; border-radius: 999px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: {{tabs.digital.segW}}; background: {{tabs.digital.segBg}}; color: {{tabs.digital.segFg}};">Digital <span style="font-size: 11px; font-weight: 600; opacity: 0.8;">{{data.digital.total}}</span></button>
       <button class="hit" type="button" role="tab" onClick="{{pickAnalog}}" style="position: relative; height: 30px; padding: 0 14px; border: none; border-radius: 999px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: {{tabs.analog.segW}}; background: {{tabs.analog.segBg}}; color: {{tabs.analog.segFg}};">Analógico <span style="font-size: 11px; font-weight: 600; opacity: 0.8;">{{data.analog.total}}</span></button>
     </div>
@@ -389,7 +389,7 @@
   <!-- SEÇÃO: JOGOS — DIGITAL -->
   <sc-if value="{{secJogosDigital}}" hint-placeholder-val="{{false}}">
   <sc-if value="{{data.digital.empty}}" hint-placeholder-val="{{false}}">
-    <div style="padding: 36px 32px 0; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">Nenhum jogo digital por aqui ainda.</div>
+    <div style="padding: 36px 32px 0; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">Nenhum jogo digital por aqui ainda.</div>
   </sc-if>
   <sc-if value="{{data.digital.hasContent}}" hint-placeholder-val="{{true}}">
   <div style="display: flex; flex-direction: column; gap: 26px; padding: 22px 16px 0;">
@@ -399,12 +399,12 @@
         <div class="sec-title">Favoritos</div>
         <sc-if value="{{canEditGames}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{openFavs}}" style="padding: 0; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 700; color: {{accentText}};">Editar</button></sc-if>
       </div>
-      <sc-if value="{{favDEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: #8E8E99;">Nenhum favorito digital escolhido.</div></sc-if>
+      <sc-if value="{{favDEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhum favorito digital escolhido.</div></sc-if>
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
         <sc-for list="{{data.digital.favorites}}" as="g" hint-placeholder-count="4">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <div style="aspect-ratio: 3 / 4; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></div>
-            <div style="font-size: 11px; font-weight: 500; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
+            <div style="aspect-ratio: 3 / 4; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></div>
+            <div style="font-size: 11px; font-weight: 500; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
           </div>
         </sc-for>
       </div>
@@ -415,21 +415,21 @@
         <div class="sec-title">Jogando agora</div>
         <sc-if value="{{canEditGames}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{openPlaying}}" style="padding: 0; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 700; color: {{accentText}};">Editar</button></sc-if>
       </div>
-      <sc-if value="{{playEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: #8E8E99;">Nada em andamento por enquanto.</div></sc-if>
+      <sc-if value="{{playEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nada em andamento por enquanto.</div></sc-if>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <sc-for list="{{data.digital.playing}}" as="g" hint-placeholder-count="2">
-          <div style="display: flex; gap: 12px; align-items: center; background: #18181B; border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+          <div style="display: flex; gap: 12px; align-items: center; background: var(--t-card,#18181B); border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
             <div style="width: 48px; height: 64px; flex-shrink: 0; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 7px; min-width: 0;">
               <div style="display: flex; flex-direction: column; gap: 2px;">
                 <div style="font-size: 14.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
-                <div style="font-size: 12px; color: #A1A1AA;">{{g.meta}}</div>
+                <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{g.meta}}</div>
               </div>
               <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="flex-grow: 1; height: 6px; border-radius: 999px; background: #3F3F46; overflow: hidden;">
+                <div style="flex-grow: 1; height: 6px; border-radius: 999px; background: var(--t-line,#3F3F46); overflow: hidden;">
                   <div style="height: 6px; border-radius: 999px; width: {{g.pct}}; background: {{accent}};"></div>
                 </div>
-                <div style="font-size: 11.5px; font-weight: 600; color: #A1A1AA;">{{g.pct}}</div>
+                <div style="font-size: 11.5px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.pct}}</div>
               </div>
             </div>
           </div>
@@ -442,11 +442,11 @@
       <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
         <sc-for list="{{data.digital.shelf}}" as="g" hint-placeholder-count="6">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <div style="aspect-ratio: 3 / 4; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></div>
+            <div style="aspect-ratio: 3 / 4; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></div>
             <div style="font-size: 11.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
             <div style="display: flex; align-items: center; gap: 4px;">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="{{accent}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
-              <span style="font-size: 11px; font-weight: 600; color: #A1A1AA;">{{g.rating}}</span>
+              <span style="font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.rating}}</span>
             </div>
           </div>
         </sc-for>
@@ -460,7 +460,7 @@
   <!-- SEÇÃO: JOGOS — ANALÓGICO -->
   <sc-if value="{{secJogosAnalog}}" hint-placeholder-val="{{false}}">
   <sc-if value="{{data.analog.empty}}" hint-placeholder-val="{{false}}">
-    <div style="padding: 36px 32px 0; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">Nenhum jogo de mesa por aqui ainda.</div>
+    <div style="padding: 36px 32px 0; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">Nenhum jogo de mesa por aqui ainda.</div>
   </sc-if>
   <sc-if value="{{data.analog.hasContent}}" hint-placeholder-val="{{false}}">
   <div style="display: flex; flex-direction: column; gap: 26px; padding: 22px 16px 0;">
@@ -470,12 +470,12 @@
         <div class="sec-title">Favoritos</div>
         <sc-if value="{{canEditGames}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{openFavs}}" style="padding: 0; border: none; background: transparent; cursor: pointer; font-size: 12px; font-weight: 700; color: {{accentText}};">Editar</button></sc-if>
       </div>
-      <sc-if value="{{favAEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: #8E8E99;">Nenhum favorito de mesa escolhido.</div></sc-if>
+      <sc-if value="{{favAEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhum favorito de mesa escolhido.</div></sc-if>
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
         <sc-for list="{{data.analog.favorites}}" as="g" hint-placeholder-count="4">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <div style="aspect-ratio: 1 / 1; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(255,255,255,0.09);"></div>
-            <div style="font-size: 11px; font-weight: 500; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
+            <div style="aspect-ratio: 1 / 1; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(var(--t-ink,255,255,255),0.09);"></div>
+            <div style="font-size: 11px; font-weight: 500; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
           </div>
         </sc-for>
       </div>
@@ -486,11 +486,11 @@
       <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
         <sc-for list="{{data.analog.shelf}}" as="g" hint-placeholder-count="6">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <div style="aspect-ratio: 1 / 1; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(255,255,255,0.09);"></div>
+            <div style="aspect-ratio: 1 / 1; border-radius: 8px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(var(--t-ink,255,255,255),0.09);"></div>
             <div style="font-size: 11.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</div>
             <div style="display: flex; align-items: center; gap: 4px;">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="{{accent}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
-              <span style="font-size: 11px; font-weight: 600; color: #A1A1AA;">{{g.rating}}</span>
+              <span style="font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{g.rating}}</span>
             </div>
           </div>
         </sc-for>
@@ -501,27 +501,27 @@
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
         <div class="sec-title">Diário</div>
         <sc-if value="{{canEditGames}}" hint-placeholder-val="{{true}}">
-          <button class="hit" type="button" onClick="{{openDiaryNew}}" style="position: relative; height: 32px; padding: 0 12px 0 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+          <button class="hit" type="button" onClick="{{openDiaryNew}}" style="position: relative; height: 32px; padding: 0 12px 0 10px; border-radius: 10px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Registrar partida
           </button>
         </sc-if>
       </div>
-      <sc-if value="{{diaryEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: #8E8E99;">Nenhuma partida registrada ainda.</div></sc-if>
+      <sc-if value="{{diaryEmpty}}" hint-placeholder-val="{{false}}"><div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhuma partida registrada ainda.</div></sc-if>
       <div style="display: flex; flex-direction: column;">
         <sc-for list="{{data.analog.diary}}" as="d" hint-placeholder-count="3">
-          <div style="display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <div style="display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
             <div style="width: 44px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 1px;">
               <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.02em; line-height: 1;">{{d.day}}</div>
-              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E99;">{{d.month}}</div>
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t-muted2,#8E8E99);">{{d.month}}</div>
             </div>
             <div style="width: 44px; height: 58px; flex-shrink: 0; border-radius: 8px; background-color: {{d.bg}}; background-image: {{d.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0;">
               <div style="font-size: 14.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{d.title}}</div>
-              <div style="font-size: 12px; color: #A1A1AA;">{{d.action}}</div>
-              <sc-if value="{{d.hasNote}}" hint-placeholder-val="{{false}}"><div style="font-size: 12px; line-height: 1.4; color: #8E8E99; text-wrap: pretty;">{{d.note}}</div></sc-if>
+              <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{d.action}}</div>
+              <sc-if value="{{d.hasNote}}" hint-placeholder-val="{{false}}"><div style="font-size: 12px; line-height: 1.4; color: var(--t-muted2,#8E8E99); text-wrap: pretty;">{{d.note}}</div></sc-if>
             </div>
             <sc-if value="{{d.canEdit}}" hint-placeholder-val="{{true}}">
-              <button class="hit" type="button" aria-label="Editar registro" onClick="{{d.edit}}" style="position: relative; align-self: center; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.06); color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <button class="hit" type="button" aria-label="Editar registro" onClick="{{d.edit}}" style="position: relative; align-self: center; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.06); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
               </button>
             </sc-if>
@@ -538,7 +538,7 @@
   <sc-if value="{{secAvaliacoes}}" hint-placeholder-val="{{false}}">
   <div style="display: flex; flex-direction: column; gap: 22px; padding: 22px 16px 0;">
 
-    <div style="display: flex; gap: 16px; align-items: center; background: #18181B; border-radius: 14px; padding: 16px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+    <div style="display: flex; gap: 16px; align-items: center; background: var(--t-card,#18181B); border-radius: 14px; padding: 16px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; width: 74px; flex-shrink: 0;">
         <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.03em; line-height: 1;">{{cur.avg}}</div>
         <div style="display: flex; gap: 2px;">
@@ -546,7 +546,7 @@
             <svg width="11" height="11" viewBox="0 0 24 24" fill="{{s.fill}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
           </sc-for>
         </div>
-        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #A1A1AA;">{{cur.notas}} NOTAS</div>
+        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--t-muted,#A1A1AA);">{{cur.notas}} NOTAS</div>
       </div>
       <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; align-items: flex-end; gap: 4px; height: 64px;">
@@ -554,7 +554,7 @@
             <div style="flex-grow: 1; height: {{b.h}}; border-radius: 3px 3px 0 0; background: {{b.color}};"></div>
           </sc-for>
         </div>
-        <div style="display: flex; justify-content: space-between; font-size: 11px; color: #8E8E99;"><span>0,5</span><span>5,0</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--t-muted2,#8E8E99);"><span>0,5</span><span>5,0</span></div>
       </div>
     </div>
 
@@ -568,19 +568,19 @@
         </sc-if>
       </div>
       <sc-if value="{{noReviews}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 13px; color: #8E8E99;">Nenhuma avaliação escrita por aqui ainda.</div>
+        <div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhuma avaliação escrita por aqui ainda.</div>
       </sc-if>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <sc-for list="{{cur.reviews}}" as="rv" hint-placeholder-count="3">
-          <div style="display: flex; gap: 12px; background: #18181B; border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
-            <button type="button" onClick="{{rv.openGame}}" aria-label="Abrir página de {{rv.title}}" style="width: 48px; height: 64px; padding: 0; border: none; cursor: pointer; flex-shrink: 0; border-radius: 8px; background-color: {{rv.bg}}; background-image: {{rv.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></button>
+          <div style="display: flex; gap: 12px; background: var(--t-card,#18181B); border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
+            <button type="button" onClick="{{rv.openGame}}" aria-label="Abrir página de {{rv.title}}" style="width: 48px; height: 64px; padding: 0; border: none; cursor: pointer; flex-shrink: 0; border-radius: 8px; background-color: {{rv.bg}}; background-image: {{rv.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></button>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px;">
               <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px;">
-                <button type="button" onClick="{{rv.openGame}}" style="min-width: 0; padding: 0; border: none; background: transparent; cursor: pointer; color: #ECEDEE; font-family: inherit; font-size: 14px; font-weight: 700; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{rv.title}}</button>
+                <button type="button" onClick="{{rv.openGame}}" style="min-width: 0; padding: 0; border: none; background: transparent; cursor: pointer; color: var(--t-text,#ECEDEE); font-family: inherit; font-size: 14px; font-weight: 700; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{rv.title}}</button>
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                  <div style="font-size: 11px; color: #8E8E99;">{{rv.when}}</div>
+                  <div style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{rv.when}}</div>
                   <sc-if value="{{rv.canEdit}}" hint-placeholder-val="{{true}}">
-                    <button class="hit" type="button" aria-label="Editar avaliação de {{rv.title}}" onClick="{{rv.edit}}" style="position: relative; width: 28px; height: 28px; padding: 0; border: none; border-radius: 9px; background: rgba(255,255,255,0.06); color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <button class="hit" type="button" aria-label="Editar avaliação de {{rv.title}}" onClick="{{rv.edit}}" style="position: relative; width: 28px; height: 28px; padding: 0; border: none; border-radius: 9px; background: rgba(var(--t-ink,255,255,255),0.06); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
                     </button>
                   </sc-if>
@@ -592,7 +592,7 @@
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="{{s.fill}}"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"></path></svg>
                 </sc-for>
               </div>
-              <div style="font-size: 12.5px; line-height: 1.45; color: #D4D4D8;">{{rv.text}}</div>
+              <div style="font-size: 12.5px; line-height: 1.45; color: var(--t-sec,#D4D4D8);">{{rv.text}}</div>
               </div>
             </div>
           </div>
@@ -609,46 +609,46 @@
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
       <div style="display: flex; align-items: baseline; gap: 10px;">
         <div class="sec-title">Listas</div>
-        <div style="font-size: 12px; color: #8E8E99;">{{listCountLabel}}</div>
+        <div style="font-size: 12px; color: var(--t-muted2,#8E8E99);">{{listCountLabel}}</div>
       </div>
       <sc-if value="{{canManageLists}}" hint-placeholder-val="{{false}}">
-        <button class="hit" type="button" onClick="{{toggleNewList}}" style="position: relative; height: 32px; padding: 0 12px 0 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+        <button class="hit" type="button" onClick="{{toggleNewList}}" style="position: relative; height: 32px; padding: 0 12px 0 10px; border-radius: 10px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Nova lista
         </button>
       </sc-if>
     </div>
     <sc-if value="{{noLists}}" hint-placeholder-val="{{false}}">
-      <div style="font-size: 13px; color: #8E8E99;">Nenhuma lista por aqui ainda.</div>
+      <div style="font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhuma lista por aqui ainda.</div>
     </sc-if>
     <sc-for list="{{lists}}" as="l" hint-placeholder-count="3">
-      <div style="background: #18181B; border-radius: 14px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15); overflow: hidden;">
+      <div style="background: var(--t-card,#18181B); border-radius: 14px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15); overflow: hidden;">
         <button type="button" onClick="{{l.onToggle}}" aria-expanded="{{l.expanded}}" style="width: 100%; padding: 12px; border: none; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 14px;">
           <div style="display: flex; flex-shrink: 0; padding-left: 14px;">
             <sc-for list="{{l.covers}}" as="c" hint-placeholder-count="3">
-              <div style="width: 40px; height: 54px; margin-left: -14px; border-radius: 7px; background-color: {{c.bg}}; background-image: {{c.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 2px #18181B, inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></div>
+              <div style="width: 40px; height: 54px; margin-left: -14px; border-radius: 7px; background-color: {{c.bg}}; background-image: {{c.img}}; background-size: cover; background-position: center; box-shadow: 0 0 0 2px var(--t-card,#18181B), inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></div>
             </sc-for>
           </div>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
             <div style="font-size: 14.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{l.title}}</div>
-            <div style="font-size: 12px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{l.desc}}</div>
-            <div style="font-size: 11px; font-weight: 600; color: #8E8E99;">{{l.countLabel}}</div>
+            <div style="font-size: 12px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{l.desc}}</div>
+            <div style="font-size: 11px; font-weight: 600; color: var(--t-muted2,#8E8E99);">{{l.countLabel}}</div>
           </div>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="{{l.chevronStyle}}"><path d="M6 9l6 6 6-6"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="{{l.chevronStyle}}"><path d="M6 9l6 6 6-6"></path></svg>
         </button>
         <sc-if value="{{l.open}}" hint-placeholder-val="{{false}}">
-          <div style="display: flex; flex-direction: column; padding: 0 12px 6px; border-top: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; flex-direction: column; padding: 0 12px 6px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.06);">
             <sc-for list="{{l.items}}" as="it" hint-placeholder-count="4">
-              <button type="button" onClick="{{it.open}}" style="width: 100%; padding: 9px 0; border: none; border-bottom: 1px solid rgba(255,255,255,0.05); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
+              <button type="button" onClick="{{it.open}}" style="width: 100%; padding: 9px 0; border: none; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.05); background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
                 <div style="width: 30px; height: 40px; flex-shrink: 0; border-radius: 6px; background-color: {{it.bg}}; background-image: {{it.img}}; background-size: cover; background-position: center;"></div>
                 <div style="flex: 1; min-width: 0; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{it.title}}</div>
-                <span style="height: 20px; padding: 0 8px; border-radius: 999px; background: #27272A; display: flex; align-items: center; font-size: 11px; font-weight: 600; color: #A1A1AA;">{{it.kind}}</span>
+                <span style="height: 20px; padding: 0 8px; border-radius: 999px; background: var(--t-card3,#27272A); display: flex; align-items: center; font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{it.kind}}</span>
               </button>
             </sc-for>
             <sc-if value="{{l.isEmpty}}" hint-placeholder-val="{{false}}">
-              <div style="padding: 12px 0; font-size: 12.5px; color: #8E8E99;">Nenhum jogo nesta lista ainda. Salve jogos pela página de cada jogo.</div>
+              <div style="padding: 12px 0; font-size: 12.5px; color: var(--t-muted2,#8E8E99);">Nenhum jogo nesta lista ainda. Salve jogos pela página de cada jogo.</div>
             </sc-if>
             <sc-if value="{{l.canDelete}}" hint-placeholder-val="{{false}}">
-              <button type="button" onClick="{{l.onDelete}}" style="align-self: flex-start; margin: 8px 0 6px; padding: 0; border: none; background: transparent; cursor: pointer; color: #F31260; font-size: 12px; font-weight: 700;">Excluir lista</button>
+              <button type="button" onClick="{{l.onDelete}}" style="align-self: flex-start; margin: 8px 0 6px; padding: 0; border: none; background: transparent; cursor: pointer; color: var(--t-red,#F31260); font-size: 12px; font-weight: 700;">Excluir lista</button>
             </sc-if>
           </div>
         </sc-if>
@@ -662,7 +662,7 @@
 <!-- AÇÕES (perfil visto pelo Match) -->
 <sc-if value="{{showActions}}" hint-placeholder-val="{{false}}">
   <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 16px 16px; background: linear-gradient(180deg, rgba(0,0,0,0), #000000 40%); display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px; z-index: 20;">
-    <button type="button" onClick="{{doPass}}" style="height: 50px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.16); background: #212124; color: #ECEDEE; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button type="button" onClick="{{doPass}}" style="height: 50px; border-radius: 14px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>Passar
     </button>
     <button type="button" onClick="{{doLike}}" style="height: 50px; border-radius: 14px; border: none; background: #E0447B; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
@@ -674,10 +674,10 @@
 <!-- EDITAR PERFIL (só no perfil do próprio usuário) -->
 <div class="{{scrimClass}}" onClick="{{closeEdit}}"></div>
 <div class="{{sheetClass}}" data-sheet="edit" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px;"></div></div>
+  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(var(--t-ink,255,255,255),0.16); border-radius: 999px;"></div></div>
   <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 18px 4px; flex: none;">
     <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 17px; font-weight: 700;">Editar perfil</div>
-    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeEdit}}" style="position: relative; width: 34px; height: 34px; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeEdit}}" style="position: relative; width: 34px; height: 34px; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
     </button>
   </div>
@@ -701,7 +701,7 @@
     <div>
       <label for="ed-local" class="ed-label" style="display: block;">Localização</label>
       <div style="position: relative;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
         <input id="ed-local" class="ed-field" maxlength="40" placeholder="Cidade, Estado ou País" value="{{draftLocal}}" onInput="{{onDraftLocal}}" style="padding-left: 40px;">
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
@@ -709,14 +709,14 @@
           <button type="button" onClick="{{c.onPick}}" style="{{c.style}}">{{c.label}}</button>
         </sc-for>
       </div>
-      <div style="margin-top: 10px; font-size: 12px; line-height: 1.5; color: #8E8E99;">Ajuda a encontrar quem joga perto de você. Não precisa ser o endereço, só a cidade.</div>
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 12px 14px; background: #212124; border-radius: 12px;">
+      <div style="margin-top: 10px; font-size: 12px; line-height: 1.5; color: var(--t-muted2,#8E8E99);">Ajuda a encontrar quem joga perto de você. Não precisa ser o endereço, só a cidade.</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 12px 14px; background: var(--t-card2,#212124); border-radius: 12px;">
         <div style="font-size: 13.5px; font-weight: 600;">Mostrar no meu perfil</div>
         <button type="button" role="switch" aria-checked="{{showLocalChecked}}" aria-label="Mostrar localização no perfil" onClick="{{toggleShowLocal}}" style="{{showLocalTrack}}"><span style="{{showLocalKnob}}"></span></button>
       </div>
     </div>
   </div>
-  <div style="padding: 14px 18px 20px; border-top: 1px solid rgba(255,255,255,0.08); flex: none;">
+  <div style="padding: 14px 18px 20px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08); flex: none;">
     <button type="button" onClick="{{saveEdit}}" style="width: 100%; height: 48px; border: none; border-radius: 14px; background: {{accent}}; color: #FFFFFF; font-size: 14.5px; font-weight: 700; cursor: pointer;">Salvar alterações</button>
   </div>
 </div>
@@ -724,13 +724,13 @@
 <!-- POP-UP: RESUMO DA REPUTAÇÃO -->
 <div class="{{repScrim}}" onClick="{{closeRep}}"></div>
 <div class="{{repSheet}}" role="dialog" aria-label="Reputação" data-sheet="rep" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px;"></div></div>
+  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(var(--t-ink,255,255,255),0.16); border-radius: 999px;"></div></div>
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 18px 4px; flex: none;">
     <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
       <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 17px; font-weight: 700;">Reputação</div>
-      <div style="font-size: 12px; color: #A1A1AA;">{{repCountLabel}}</div>
+      <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{repCountLabel}}</div>
     </div>
-    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeRep}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeRep}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
     </button>
   </div>
@@ -739,11 +739,11 @@
       <button class="hit" type="button" onClick="{{goRate}}" style="position: relative; align-self: flex-start; margin: 6px 0 4px; height: 34px; padding: 0 14px; border-radius: 10px; border: 1px solid {{rateBtnBorder}}; background: {{rateBtnBg}}; color: {{rateBtnColor}}; font-size: 12.5px; font-weight: 700; cursor: pointer;">{{rateBtnLabel}}</button>
     </sc-if>
     <sc-if value="{{showRateHint}}" hint-placeholder-val="{{false}}">
-      <div style="margin: 6px 0 4px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); font-size: 12px; line-height: 1.5; color: #A1A1AA;">{{rateHint}}</div>
+      <div style="margin: 6px 0 4px; padding: 10px 12px; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.04); font-size: 12px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">{{rateHint}}</div>
     </sc-if>
     <div style="display: flex; flex-direction: column;">
       <sc-for list="{{repRows}}" as="r" hint-placeholder-count="4">
-        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.06);">
           <span style="width: 40px; height: 40px; border-radius: 12px; background: {{r.soft}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{r.color}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{r.icon}}"></path></svg>
           </span>
@@ -752,7 +752,7 @@
               <span style="font-size: 13.5px; font-weight: 700;">{{r.label}}</span>
               <span style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 14px; font-weight: 700; color: {{r.color}};">{{r.pct}}%</span>
             </div>
-            <div style="height: 6px; border-radius: 999px; background: #3F3F46; overflow: hidden;">
+            <div style="height: 6px; border-radius: 999px; background: var(--t-line,#3F3F46); overflow: hidden;">
               <div style="height: 6px; border-radius: 999px; width: {{r.pct}}%; background: {{r.color}};"></div>
             </div>
           </div>
@@ -770,17 +770,17 @@
 <!-- PERSONALIZAR PERFIL / FAVORITOS / JOGANDO AGORA / DIÁRIO (só no próprio perfil) -->
 <div class="{{shScrim}}" onClick="{{closeSheet}}"></div>
 <div class="{{shSheet}}" data-sheet="sh" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px;"></div></div>
+  <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(var(--t-ink,255,255,255),0.16); border-radius: 999px;"></div></div>
   <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 18px 4px; flex: none;">
     <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
       <sc-if value="{{shCanBack}}" hint-placeholder-val="{{false}}">
-        <button class="hit" type="button" aria-label="Voltar" onClick="{{shBack}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <button class="hit" type="button" aria-label="Voltar" onClick="{{shBack}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
         </button>
       </sc-if>
       <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 17px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{shTitle}}</div>
     </div>
-    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeSheet}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <button class="hit" type="button" aria-label="Fechar" onClick="{{closeSheet}}" style="position: relative; width: 34px; height: 34px; flex-shrink: 0; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
     </button>
   </div>
@@ -789,18 +789,18 @@
 
     <!-- categorias exibidas no perfil -->
     <sc-if value="{{shCustom}}" hint-placeholder-val="{{false}}">
-      <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">Escolha o que aparece na aba Perfil e em que ordem. Segure o ícone de pontos e arraste para mudar a posição. O que ficar desligado continua nas outras abas.</div>
+      <div style="font-size: 12.5px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">Escolha o que aparece na aba Perfil e em que ordem. Segure o ícone de pontos e arraste para mudar a posição. O que ficar desligado continua nas outras abas.</div>
       <div>
         <div class="ed-label">Seções da aba Perfil</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
           <sc-for list="{{orderRows}}" as="r" hint-placeholder-count="6">
             <div data-drow="" style="{{r.style}}">
               <button type="button" aria-label="Arrastar {{r.label}} para mudar a ordem" onPointerDown="{{r.down}}" onPointerMove="{{moveRow}}" onPointerUp="{{endRow}}" onPointerCancel="{{endRow}}" style="width: 40px; height: 48px; flex-shrink: 0; padding: 0; border: none; background: transparent; cursor: grab; touch-action: none; display: flex; align-items: center; justify-content: center;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#71717A"><circle cx="9" cy="6" r="1.7"></circle><circle cx="15" cy="6" r="1.7"></circle><circle cx="9" cy="12" r="1.7"></circle><circle cx="15" cy="12" r="1.7"></circle><circle cx="9" cy="18" r="1.7"></circle><circle cx="15" cy="18" r="1.7"></circle></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--t-faint,#71717A)"><circle cx="9" cy="6" r="1.7"></circle><circle cx="15" cy="6" r="1.7"></circle><circle cx="9" cy="12" r="1.7"></circle><circle cx="15" cy="12" r="1.7"></circle><circle cx="9" cy="18" r="1.7"></circle><circle cx="15" cy="18" r="1.7"></circle></svg>
               </button>
               <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
                 <div style="font-size: 13.5px; font-weight: 600;">{{r.label}}</div>
-                <div style="font-size: 11.5px; color: #8E8E99; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.desc}}</div>
+                <div style="font-size: 11.5px; color: var(--t-muted2,#8E8E99); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.desc}}</div>
               </div>
               <button type="button" role="switch" aria-checked="{{r.checked}}" aria-label="Mostrar {{r.label}}" onClick="{{r.toggle}}" style="{{r.track}}"><span style="{{r.knob}}"></span></button>
             </div>
@@ -811,29 +811,29 @@
 
     <!-- editar favoritos -->
     <sc-if value="{{shFavs}}" hint-placeholder-val="{{false}}">
-      <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">Até 4 jogos digitais e 4 de mesa. Use a chave para escolher quais aparecem na tela inicial do perfil.</div>
+      <div style="font-size: 12.5px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">Até 4 jogos digitais e 4 de mesa. Use a chave para escolher quais aparecem na tela inicial do perfil.</div>
       <div style="align-self: flex-start; height: 26px; padding: 0 11px; border-radius: 999px; display: flex; align-items: center; background: {{accentSoft}}; color: {{accentText}}; font-size: 12px; font-weight: 700;">{{favShownLabel}}</div>
 
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <div style="display: flex; align-items: baseline; justify-content: space-between;">
           <div class="ed-label" style="margin: 0;">Digitais</div>
-          <div style="font-size: 12px; font-weight: 600; color: #8E8E99;">{{favDCount}}</div>
+          <div style="font-size: 12px; font-weight: 600; color: var(--t-muted2,#8E8E99);">{{favDCount}}</div>
         </div>
         <sc-for list="{{favDRows}}" as="r" hint-placeholder-count="4">
-          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #212124; border-radius: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--t-card2,#212124); border-radius: 12px;">
             <div style="width: 34px; height: 46px; flex-shrink: 0; border-radius: 6px; background-color: {{r.bg}}; background-image: {{r.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
               <div style="font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.title}}</div>
-              <div style="font-size: 11px; color: #8E8E99;">{{r.stateLabel}}</div>
+              <div style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{r.stateLabel}}</div>
             </div>
             <button type="button" role="switch" aria-checked="{{r.checked}}" aria-label="Mostrar {{r.title}} no perfil" onClick="{{r.toggle}}" style="{{r.track}}"><span style="{{r.knob}}"></span></button>
-            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.06); color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.06); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
             </button>
           </div>
         </sc-for>
         <sc-if value="{{favDCanAdd}}" hint-placeholder-val="{{true}}">
-          <button type="button" onClick="{{addFavD}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.22); background: transparent; color: #D4D4D8; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
+          <button type="button" onClick="{{addFavD}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(var(--t-ink,255,255,255),0.22); background: transparent; color: var(--t-sec,#D4D4D8); font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Adicionar jogo digital
           </button>
         </sc-if>
@@ -842,23 +842,23 @@
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <div style="display: flex; align-items: baseline; justify-content: space-between;">
           <div class="ed-label" style="margin: 0;">De mesa</div>
-          <div style="font-size: 12px; font-weight: 600; color: #8E8E99;">{{favACount}}</div>
+          <div style="font-size: 12px; font-weight: 600; color: var(--t-muted2,#8E8E99);">{{favACount}}</div>
         </div>
         <sc-for list="{{favARows}}" as="r" hint-placeholder-count="4">
-          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #212124; border-radius: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--t-card2,#212124); border-radius: 12px;">
             <div style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 6px; background-color: {{r.bg}}; background-image: {{r.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
               <div style="font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.title}}</div>
-              <div style="font-size: 11px; color: #8E8E99;">{{r.stateLabel}}</div>
+              <div style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{r.stateLabel}}</div>
             </div>
             <button type="button" role="switch" aria-checked="{{r.checked}}" aria-label="Mostrar {{r.title}} no perfil" onClick="{{r.toggle}}" style="{{r.track}}"><span style="{{r.knob}}"></span></button>
-            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.06); color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.06); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
             </button>
           </div>
         </sc-for>
         <sc-if value="{{favACanAdd}}" hint-placeholder-val="{{true}}">
-          <button type="button" onClick="{{addFavA}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.22); background: transparent; color: #D4D4D8; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
+          <button type="button" onClick="{{addFavA}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(var(--t-ink,255,255,255),0.22); background: transparent; color: var(--t-sec,#D4D4D8); font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Adicionar jogo de mesa
           </button>
         </sc-if>
@@ -867,38 +867,38 @@
 
     <!-- editar jogando agora (digital) -->
     <sc-if value="{{shPlaying}}" hint-placeholder-val="{{false}}">
-      <div style="font-size: 12.5px; line-height: 1.5; color: #A1A1AA;">Até 3 jogos digitais. Atualize o progresso e as horas sempre que quiser.</div>
+      <div style="font-size: 12.5px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">Até 3 jogos digitais. Atualize o progresso e as horas sempre que quiser.</div>
       <sc-if value="{{playEmpty}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 18px 12px; text-align: center; font-size: 13px; color: #8E8E99; background: #212124; border-radius: 12px;">Nada em andamento por enquanto.</div>
+        <div style="padding: 18px 12px; text-align: center; font-size: 13px; color: var(--t-muted2,#8E8E99); background: var(--t-card2,#212124); border-radius: 12px;">Nada em andamento por enquanto.</div>
       </sc-if>
       <sc-for list="{{playRows}}" as="r" hint-placeholder-count="2">
-        <div style="display: flex; flex-direction: column; gap: 12px; padding: 12px; background: #212124; border-radius: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 12px; background: var(--t-card2,#212124); border-radius: 12px;">
           <div style="display: flex; align-items: center; gap: 12px;">
             <div style="width: 40px; height: 54px; flex-shrink: 0; border-radius: 6px; background-color: {{r.bg}}; background-image: {{r.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.title}}</div>
-            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.06); color: #A1A1AA; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <button class="hit" type="button" aria-label="Remover {{r.title}}" onClick="{{r.remove}}" style="position: relative; width: 32px; height: 32px; flex-shrink: 0; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.06); color: var(--t-muted,#A1A1AA); cursor: pointer; display: flex; align-items: center; justify-content: center;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
             </button>
           </div>
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <div style="display: flex; align-items: baseline; justify-content: space-between;">
-              <span style="font-size: 11.5px; font-weight: 600; color: #A1A1AA;">Progresso</span>
+              <span style="font-size: 11.5px; font-weight: 600; color: var(--t-muted,#A1A1AA);">Progresso</span>
               <span style="font-size: 12px; font-weight: 700; color: {{accentText}};">{{r.pctLabel}}</span>
             </div>
             <input type="range" min="0" max="100" step="5" value="{{r.pct}}" aria-label="Progresso em {{r.title}}" onInput="{{r.onPct}}" style="width: 100%; margin: 0; accent-color: {{accent}};">
           </div>
           <div style="display: flex; align-items: center; justify-content: space-between;">
-            <span style="font-size: 11.5px; font-weight: 600; color: #A1A1AA;">Horas jogadas</span>
+            <span style="font-size: 11.5px; font-weight: 600; color: var(--t-muted,#A1A1AA);">Horas jogadas</span>
             <div style="display: flex; align-items: center; gap: 10px;">
-              <button class="hit" type="button" aria-label="Menos uma hora" onClick="{{r.dec}}" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">−</button>
+              <button class="hit" type="button" aria-label="Menos uma hora" onClick="{{r.dec}}" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">−</button>
               <span style="min-width: 44px; text-align: center; font-size: 14px; font-weight: 700;">{{r.hoursLabel}}</span>
-              <button class="hit" type="button" aria-label="Mais uma hora" onClick="{{r.inc}}" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">+</button>
+              <button class="hit" type="button" aria-label="Mais uma hora" onClick="{{r.inc}}" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">+</button>
             </div>
           </div>
         </div>
       </sc-for>
       <sc-if value="{{playCanAdd}}" hint-placeholder-val="{{true}}">
-        <button type="button" onClick="{{addPlaying}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(255,255,255,0.22); background: transparent; color: #D4D4D8; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
+        <button type="button" onClick="{{addPlaying}}" style="height: 44px; border-radius: 12px; border: 1px dashed rgba(var(--t-ink,255,255,255),0.22); background: transparent; color: var(--t-sec,#D4D4D8); font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Adicionar jogo digital
         </button>
       </sc-if>
@@ -908,7 +908,7 @@
     <sc-if value="{{shDiary}}" hint-placeholder-val="{{false}}">
       <div>
         <div class="ed-label">Jogo</div>
-        <button type="button" onClick="{{pickDiaryGame}}" style="width: 100%; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; background: #212124; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
+        <button type="button" onClick="{{pickDiaryGame}}" style="width: 100%; padding: 10px 12px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-radius: 12px; background: var(--t-card2,#212124); color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
           <sc-if value="{{dd.hasGame}}" hint-placeholder-val="{{false}}">
             <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 6px; background-color: {{dd.bg}}; background-image: {{dd.img}}; background-size: cover; background-position: center;"></div>
           </sc-if>
@@ -919,10 +919,10 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <div>
           <div class="ed-label">Jogadores</div>
-          <div style="display: flex; align-items: center; justify-content: space-between; height: 46px; padding: 0 6px; background: #212124; border-radius: 12px;">
-            <button class="hit" type="button" aria-label="Menos um jogador" onClick="{{dd.decPlayers}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">−</button>
+          <div style="display: flex; align-items: center; justify-content: space-between; height: 46px; padding: 0 6px; background: var(--t-card2,#212124); border-radius: 12px;">
+            <button class="hit" type="button" aria-label="Menos um jogador" onClick="{{dd.decPlayers}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">−</button>
             <span style="font-size: 15px; font-weight: 700;">{{dd.players}}</span>
-            <button class="hit" type="button" aria-label="Mais um jogador" onClick="{{dd.incPlayers}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">+</button>
+            <button class="hit" type="button" aria-label="Mais um jogador" onClick="{{dd.incPlayers}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">+</button>
           </div>
         </div>
         <div>
@@ -943,7 +943,7 @@
         <textarea id="ed-nota" class="ed-field" rows="3" maxlength="140" placeholder="Como foi a partida?" value="{{dd.note}}" onInput="{{dd.onNote}}" style="resize: none; line-height: 1.5;"></textarea>
       </div>
       <sc-if value="{{dd.canDelete}}" hint-placeholder-val="{{false}}">
-        <button type="button" onClick="{{dd.remove}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; cursor: pointer; color: #F31260; font-size: 13px; font-weight: 700;">Excluir registro</button>
+        <button type="button" onClick="{{dd.remove}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; cursor: pointer; color: var(--t-red,#F31260); font-size: 13px; font-weight: 700;">Excluir registro</button>
       </sc-if>
     </sc-if>
 
@@ -952,29 +952,29 @@
       <div>
         <div class="ed-label">Jogo</div>
         <sc-if value="{{rv.hasGame}}" hint-placeholder-val="{{false}}">
-          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #212124; border-radius: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--t-card2,#212124); border-radius: 12px;">
             <div style="width: 40px; height: 54px; flex-shrink: 0; border-radius: 6px; background-color: {{rv.bg}}; background-image: {{rv.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
               <div style="font-size: 14.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{rv.title}}</div>
-              <div style="font-size: 12px; color: #A1A1AA;">{{rv.kindLabel}}</div>
+              <div style="font-size: 12px; color: var(--t-muted,#A1A1AA);">{{rv.kindLabel}}</div>
             </div>
             <sc-if value="{{rv.canChange}}" hint-placeholder-val="{{true}}">
-              <button class="hit" type="button" onClick="{{rv.clearGame}}" style="position: relative; height: 32px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 12.5px; font-weight: 600; cursor: pointer;">Trocar</button>
+              <button class="hit" type="button" onClick="{{rv.clearGame}}" style="position: relative; height: 32px; padding: 0 12px; border-radius: 10px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 12.5px; font-weight: 600; cursor: pointer;">Trocar</button>
             </sc-if>
           </div>
           <sc-if value="{{rv.hasExisting}}" hint-placeholder-val="{{false}}">
-            <div style="margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); font-size: 12px; line-height: 1.5; color: #A1A1AA;">Você já avaliou este jogo. Ao salvar, a avaliação anterior é substituída.</div>
+            <div style="margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.04); font-size: 12px; line-height: 1.5; color: var(--t-muted,#A1A1AA);">Você já avaliou este jogo. Ao salvar, a avaliação anterior é substituída.</div>
           </sc-if>
         </sc-if>
         <sc-if value="{{rv.noGame}}" hint-placeholder-val="{{true}}">
           <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="display: flex; gap: 4px; background: #212124; border-radius: 12px; padding: 4px;">
+            <div style="display: flex; gap: 4px; background: var(--t-card2,#212124); border-radius: 12px; padding: 4px;">
               <sc-for list="{{rv.modeTabs}}" as="m" hint-placeholder-count="2">
                 <button type="button" onClick="{{m.pick}}" style="{{m.style}}">{{m.label}}</button>
               </sc-for>
             </div>
             <div style="position: relative;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
               <input class="ed-field" aria-label="Buscar jogo" placeholder="Buscar jogo" value="{{rv.q}}" onInput="{{rv.onQ}}" style="padding-left: 40px;">
             </div>
             <div style="display: flex; flex-direction: column; gap: 4px;">
@@ -982,11 +982,11 @@
                 <button type="button" onClick="{{r.pick}}" style="width: 100%; padding: 8px 6px; border: none; border-radius: 10px; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
                   <div style="width: 36px; height: 48px; flex-shrink: 0; border-radius: 6px; background-color: {{r.bg}}; background-image: {{r.img}}; background-size: cover; background-position: center;"></div>
                   <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.title}}</div>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
                 </button>
               </sc-for>
               <sc-if value="{{rv.noResults}}" hint-placeholder-val="{{false}}">
-                <div style="padding: 14px 6px; font-size: 13px; color: #8E8E99;">Nenhum jogo encontrado nesta categoria.</div>
+                <div style="padding: 14px 6px; font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhum jogo encontrado nesta categoria.</div>
               </sc-if>
             </div>
           </div>
@@ -1008,7 +1008,7 @@
       <div>
         <label for="ed-rv-text" class="ed-label" style="display: block;">O que achou? <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(opcional)</span></label>
         <textarea id="ed-rv-text" class="ed-field" rows="4" placeholder="Conte como foi a experiência, sem spoilers." value="{{rv.text}}" onInput="{{rv.onText}}" style="resize: none; line-height: 1.5;"></textarea>
-        <div style="text-align: right; font-size: 11.5px; color: #8E8E99; margin-top: 6px;">{{rv.textCount}}/280</div>
+        <div style="text-align: right; font-size: 11.5px; color: var(--t-muted2,#8E8E99); margin-top: 6px;">{{rv.textCount}}/280</div>
       </div>
       <div>
         <div class="ed-label">Destaques <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(até 3)</span></div>
@@ -1019,25 +1019,25 @@
         </div>
       </div>
       <sc-if value="{{rv.canDelete}}" hint-placeholder-val="{{false}}">
-        <button type="button" onClick="{{rv.remove}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; cursor: pointer; color: #F31260; font-size: 13px; font-weight: 700;">Excluir avaliação</button>
+        <button type="button" onClick="{{rv.remove}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; cursor: pointer; color: var(--t-red,#F31260); font-size: 13px; font-weight: 700;">Excluir avaliação</button>
       </sc-if>
     </sc-if>
 
     <!-- escolher jogo -->
     <sc-if value="{{shPick}}" hint-placeholder-val="{{false}}">
       <div style="position: relative;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 14px;"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         <input class="ed-field" aria-label="Buscar jogo" placeholder="Buscar jogo" value="{{pickQ}}" onInput="{{onPickQ}}" style="padding-left: 40px;">
       </div>
       <sc-if value="{{pickEmpty}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 18px 12px; text-align: center; font-size: 13px; color: #8E8E99;">Nenhum jogo encontrado.</div>
+        <div style="padding: 18px 12px; text-align: center; font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhum jogo encontrado.</div>
       </sc-if>
       <div style="display: flex; flex-direction: column; gap: 4px;">
         <sc-for list="{{pickRows}}" as="r" hint-placeholder-count="6">
           <button type="button" onClick="{{r.pick}}" style="width: 100%; padding: 8px 6px; border: none; border-radius: 10px; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
             <div style="width: 36px; height: 48px; flex-shrink: 0; border-radius: 6px; background-color: {{r.bg}}; background-image: {{r.img}}; background-size: cover; background-position: center;"></div>
             <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.title}}</div>
-            <span style="height: 20px; padding: 0 8px; border-radius: 999px; background: #27272A; display: flex; align-items: center; font-size: 11px; font-weight: 600; color: #A1A1AA;">{{r.kind}}</span>
+            <span style="height: 20px; padding: 0 8px; border-radius: 999px; background: var(--t-card3,#27272A); display: flex; align-items: center; font-size: 11px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{r.kind}}</span>
           </button>
         </sc-for>
       </div>
@@ -1046,7 +1046,7 @@
   </div>
 
   <sc-if value="{{shFooter}}" hint-placeholder-val="{{true}}">
-  <div style="padding: 14px 18px 20px; border-top: 1px solid rgba(255,255,255,0.08); flex: none;">
+  <div style="padding: 14px 18px 20px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08); flex: none;">
     <button type="button" onClick="{{shDone}}" style="{{shDoneStyle}}">{{shDoneLabel}}</button>
   </div>
   </sc-if>
@@ -1054,46 +1054,46 @@
 
 <sc-if value="{{showNewList}}" hint-placeholder-val="{{false}}">
   <div onClick="{{toggleNewList}}" style="position: absolute; inset: 0; z-index: 88; background: rgba(0,0,0,0.66);"></div>
-  <div role="dialog" aria-modal="true" aria-label="Nova lista" style="position: absolute; left: 16px; right: 16px; top: 50%; transform: translateY(-50%); max-height: 680px; z-index: 89; background: #18181B; border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; display: flex; flex-direction: column; box-shadow: 0 24px 60px rgba(0,0,0,0.6); overflow: hidden; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #ECEDEE;">
+  <div role="dialog" aria-modal="true" aria-label="Nova lista" style="position: absolute; left: 16px; right: 16px; top: 50%; transform: translateY(-50%); max-height: 680px; z-index: 89; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); border-radius: 20px; display: flex; flex-direction: column; box-shadow: 0 24px 60px rgba(0,0,0,0.6); overflow: hidden; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: var(--t-text,#ECEDEE);">
     <div style="flex: none; display: flex; align-items: center; justify-content: space-between; padding: 16px 12px 8px 18px;">
       <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 700;">Nova lista</div>
-      <button class="hit" type="button" onClick="{{toggleNewList}}" aria-label="Fechar" style="position: relative; width: 36px; height: 36px; padding: 0; border: none; border-radius: 10px; background: transparent; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+      <button class="hit" type="button" onClick="{{toggleNewList}}" aria-label="Fechar" style="position: relative; width: 36px; height: 36px; padding: 0; border: none; border-radius: 10px; background: transparent; color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
     </div>
     <div style="flex: none; display: flex; flex-direction: column; gap: 10px; padding: 4px 18px 10px;">
       <input class="ed-field" aria-label="Nome da lista" maxlength="40" placeholder="Nome da lista" value="{{newListName}}" onInput="{{onNewListName}}" style="height: 44px; padding: 0 14px;">
       <input class="ed-field" aria-label="Descrição da lista" maxlength="80" placeholder="Descrição breve (opcional)" value="{{newListDesc}}" onInput="{{onNewListDesc}}" style="height: 44px; padding: 0 14px;">
     </div>
     <div style="flex: none; display: flex; align-items: baseline; justify-content: space-between; padding: 6px 18px 6px;">
-      <div style="font-size: 12.5px; font-weight: 700; color: #A1A1AA;">Jogos da lista (opcional)</div>
-      <div style="font-size: 12px; color: #8E8E99;">{{nlCountLabel}}</div>
+      <div style="font-size: 12.5px; font-weight: 700; color: var(--t-muted,#A1A1AA);">Jogos da lista (opcional)</div>
+      <div style="font-size: 12px; color: var(--t-muted2,#8E8E99);">{{nlCountLabel}}</div>
     </div>
     <div style="flex: none; padding: 0 18px 8px;">
       <input class="ed-field" aria-label="Buscar jogo" placeholder="Buscar jogo pelo nome" value="{{newListQ}}" onInput="{{onNewListQ}}" style="height: 40px; padding: 0 14px; font-size: 13.5px;">
     </div>
     <div style="flex: 1; min-height: 120px; max-height: 270px; overflow-y: auto; padding: 0 10px 8px;">
-      <sc-if value="{{nlEmpty}}" hint-placeholder-val="{{false}}"><div style="padding: 20px 8px; text-align: center; font-size: 13px; color: #8E8E99;">Nenhum jogo encontrado.</div></sc-if>
+      <sc-if value="{{nlEmpty}}" hint-placeholder-val="{{false}}"><div style="padding: 20px 8px; text-align: center; font-size: 13px; color: var(--t-muted2,#8E8E99);">Nenhum jogo encontrado.</div></sc-if>
       <sc-for list="{{nlRows}}" as="g" hint-placeholder-count="4">
         <button type="button" onClick="{{g.toggle}}" aria-pressed="{{g.pressed}}" style="{{g.rowStyle}}">
-          <span style="flex: none; width: 34px; height: 45px; border-radius: 6px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);"></span>
-          <span style="flex: 1; min-width: 0; text-align: left;"><span style="display: block; font-size: 13.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</span><span style="display: block; font-size: 11.5px; color: #A1A1AA;">{{g.kind}}</span></span>
-          <span style="{{g.checkStyle}}"><sc-if value="{{g.on}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if></span>
+          <span style="flex: none; width: 34px; height: 45px; border-radius: 6px; background-color: {{g.bg}}; background-image: {{g.img}}; background-size: cover; background-position: center; box-shadow: inset 0 0 0 1px rgba(var(--t-ink,255,255,255),0.08);"></span>
+          <span style="flex: 1; min-width: 0; text-align: left;"><span style="display: block; font-size: 13.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{g.title}}</span><span style="display: block; font-size: 11.5px; color: var(--t-muted,#A1A1AA);">{{g.kind}}</span></span>
+          <span style="{{g.checkStyle}}"><sc-if value="{{g.on}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--t-white,#FFFFFF)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if></span>
         </button>
       </sc-for>
     </div>
-    <div style="flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 18px 18px; border-top: 1px solid rgba(255,255,255,0.08);">
-      <button type="button" onClick="{{toggleNewList}}" style="height: 46px; border: none; border-radius: 12px; background: #27272A; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;">Cancelar</button>
+    <div style="flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 18px 18px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
+      <button type="button" onClick="{{toggleNewList}}" style="height: 46px; border: none; border-radius: 12px; background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;">Cancelar</button>
       <button type="button" onClick="{{createNewList}}" style="{{newListBtnStyle}}">Criar lista</button>
     </div>
   </div>
 </sc-if>
 <sc-if value="{{cfOpen}}" hint-placeholder-val="{{false}}">
   <div onClick="{{cfNo}}" style="position: absolute; inset: 0; z-index: 90; background: rgba(0,0,0,0.66);"></div>
-  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: #18181B; border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #ECEDEE;">
+  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: var(--t-text,#ECEDEE);">
     <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 700;">{{cfTitle}}</div>
-    <div style="font-size: 13.5px; line-height: 1.55; color: #A1A1AA;">{{cfText}}</div>
+    <div style="font-size: 13.5px; line-height: 1.55; color: var(--t-muted,#A1A1AA);">{{cfText}}</div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
-      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: #27272A; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
-      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #F31260; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
+      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
+      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #DB0F57; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
     </div>
   </div>
 </sc-if>
@@ -1286,7 +1286,7 @@ class Component extends DCLogic {
     const asked = !!(this.state.roomAsked || {})[person.handle];
     return { roomMeta: priv ? (asked ? 'pedido enviado' : 'toque pra pedir entrada') : (r.occ === 1 ? '1 pessoa agora' : r.occ + ' pessoas agora'), roomImg: r.img, roomTitle: r.name, roomSub: (r.name.indexOf('Quarto de') === 0 ? '' : 'Quarto de ' + first + ' · ') + (r.occ === 1 ? '1 pessoa agora' : r.occ + ' pessoas agora'),
       roomShowOcc: true, roomOcc: r.occ + '/6', roomPrivate: priv, roomOpenFlag: !priv, roomPrivacy: priv ? 'Privado' : 'Aberto',
-      roomCta: priv ? (asked ? 'Pedido enviado' : 'Pedir pra entrar') : 'Visitar', roomCtaBg: priv && asked ? '#3F3F46' : accent,
+      roomCta: priv ? (asked ? 'Pedido enviado' : 'Pedir pra entrar') : 'Visitar', roomCtaBg: priv && asked ? 'var(--t-line,#3F3F46)' : accent,
       roomAria: priv ? 'Pedir pra entrar no quarto de ' + first : 'Visitar o quarto de ' + first };
   }
   roomAction(person) {
@@ -1466,6 +1466,8 @@ class Component extends DCLogic {
   };
 
   mix(hex, amount) {
+    const vm = /^var\((--[\w-]+),\s*(#[0-9a-fA-F]{6})\)$/.exec(String(hex));
+    if (vm) return 'var(' + vm[1] + ',' + this.mix(vm[2], amount) + ')';
     const n = parseInt(hex.slice(1), 16);
     const r = Math.round(((n >> 16) & 255) + (255 - ((n >> 16) & 255)) * amount);
     const g = Math.round(((n >> 8) & 255) + (255 - ((n >> 8) & 255)) * amount);
@@ -1474,6 +1476,7 @@ class Component extends DCLogic {
   }
 
   soft(hex, alpha) {
+    const vm = /^var\(--[\w-]+,\s*(#[0-9a-fA-F]{6})\)$/.exec(String(hex)); if (vm) hex = vm[1];
     const n = parseInt(hex.slice(1), 16);
     return 'rgba(' + ((n >> 16) & 255) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + alpha + ')';
   }
@@ -1501,7 +1504,7 @@ class Component extends DCLogic {
       { bg: '#1C1A15', img: 'linear-gradient(90deg, #D8CFC0 0 22%, rgba(0,0,0,0) 22%)' },
       { bg: '#161B18', img: 'conic-gradient(from 90deg at 30% 40%, #4E8C7D 0 90deg, rgba(0,0,0,0) 90deg)' },
       { bg: '#1B1620', img: 'radial-gradient(circle at 26% 74%, #B07BAC 0 22%, rgba(0,0,0,0) 22%)' },
-      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, #E8C468 0 11%, rgba(0,0,0,0) 11%)' },
+      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, var(--t-amber,#E8C468) 0 11%, rgba(0,0,0,0) 11%)' },
       { bg: '#1A1518', img: 'repeating-linear-gradient(90deg, #8C4A5A 0 6px, rgba(0,0,0,0) 6px 18px)' },
       { bg: '#131A22', img: 'conic-gradient(from 20deg at 70% 20%, #5B7DB1 0 70deg, rgba(0,0,0,0) 70deg)' },
       { bg: '#1D1913', img: 'radial-gradient(circle at 30% 32%, #C4763A 0 18%, rgba(0,0,0,0) 18%), linear-gradient(200deg, #6B4A2A 0 26%, rgba(0,0,0,0) 26%)' }
@@ -1543,7 +1546,7 @@ class Component extends DCLogic {
 
   avgStars(avg, accent) {
     const full = Math.round(avg);
-    return [0, 1, 2, 3, 4].map((i) => ({ fill: i < full ? accent : '#3F3F46' }));
+    return [0, 1, 2, 3, 4].map((i) => ({ fill: i < full ? accent : 'var(--t-line,#3F3F46)' }));
   }
 
   analogSet() {
@@ -1557,7 +1560,7 @@ class Component extends DCLogic {
   reviewItem(title, rating, text, when, accent, artIdx, meta) {
     const idx = artIdx !== undefined ? artIdx : this.hash(title) % 14;
     const m = meta || null;
-    return Object.assign({ title: title, text: text, when: when, canEdit: !!m, canOpen: !!m, openReview: () => { if (m && this.props.openReview) this.props.openReview({ mineId: m.id, handle: this.props.handle, game: title, mode: m.mode, from: 'perfil' }); }, edit: () => { if (m) this.openReviewEdit(title, rating, m); }, stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < rating ? accent : '#3F3F46' })), openGame: () => { if (this.props.openGame) this.props.openGame(title, idx); } }, this.artFor(title, idx));
+    return Object.assign({ title: title, text: text, when: when, canEdit: !!m, canOpen: !!m, openReview: () => { if (m && this.props.openReview) this.props.openReview({ mineId: m.id, handle: this.props.handle, game: title, mode: m.mode, from: 'perfil' }); }, edit: () => { if (m) this.openReviewEdit(title, rating, m); }, stars: [0, 1, 2, 3, 4].map((i) => ({ fill: i < rating ? accent : 'var(--t-line,#3F3F46)' })), openGame: () => { if (this.props.openGame) this.props.openGame(title, idx); } }, this.artFor(title, idx));
   }
 
   ownReviews(mode, accent) {
@@ -1681,7 +1684,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const accent = this.props.accent ?? '#006FEE';
-    const accentText = this.mix(accent, 0.42);
+    const accentText = 'var(--t-acctext,' + this.mix(accent, 0.42) + ')';
     const accentSoft = this.soft(accent, 0.18);
     const tab = this.state.tab;
     const person = this.props.person || null;
@@ -1709,20 +1712,20 @@ class Component extends DCLogic {
     }
     const kbadge = (label, fg, bg, icon) => ({ label: label, icon: icon, style: 'height: 24px; padding: 0 9px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; color: ' + fg + '; background: ' + bg + ';' });
     const kindBadges = [];
-    if (playsD) kindBadges.push(kbadge('Digital', '#8FC7FF', 'rgba(143,199,255,0.14)', 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 8A3 3 0 0 0 5.1 20c.8 0 1.5-.4 2-1l1.4-1.8c.4-.5 1-.8 1.6-.8h3.8c.6 0 1.2.3 1.6.8l1.4 1.8c.5.6 1.2 1 2 1a3 3 0 0 0 2.9-3.8l-1.6-8A4 4 0 0 0 17.3 5Z'));
-    if (playsA) kindBadges.push(kbadge('Analógico', '#F5C451', 'rgba(245,196,81,0.14)', 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01'));
+    if (playsD) kindBadges.push(kbadge('Digital', 'var(--t-accsoft,#8FC7FF)', 'rgba(143,199,255,0.14)', 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 8A3 3 0 0 0 5.1 20c.8 0 1.5-.4 2-1l1.4-1.8c.4-.5 1-.8 1.6-.8h3.8c.6 0 1.2.3 1.6.8l1.4 1.8c.5.6 1.2 1 2 1a3 3 0 0 0 2.9-3.8l-1.6-8A4 4 0 0 0 17.3 5Z'));
+    if (playsA) kindBadges.push(kbadge('Analógico', 'var(--t-amber,#F5C451)', 'rgba(245,196,81,0.14)', 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01'));
 
-    const on = { weight: 700, color: '#ECEDEE', bar: accent, badgeBg: accentSoft, badgeFg: accentText, segW: 700, segBg: accentSoft, segFg: accentText };
-    const off = { weight: 500, color: '#A1A1AA', bar: 'transparent', badgeBg: '#27272A', badgeFg: '#A1A1AA', segW: 500, segBg: 'transparent', segFg: '#A1A1AA' };
+    const on = { weight: 700, color: 'var(--t-text,#ECEDEE)', bar: accent, badgeBg: accentSoft, badgeFg: accentText, segW: 700, segBg: accentSoft, segFg: accentText };
+    const off = { weight: 500, color: 'var(--t-muted,#A1A1AA)', bar: 'transparent', badgeBg: 'var(--t-card3,#27272A)', badgeFg: 'var(--t-muted,#A1A1AA)', segW: 500, segBg: 'transparent', segFg: 'var(--t-muted,#A1A1AA)' };
 
     const following = this.props.following !== undefined ? !!this.props.following : this.state.following;
     const data = isOther ? this.otherData(person, accent) : this.ownData(accent);
 
     const repDefs = [
-      { key: 'carry', label: 'Carry', color: '#F5A524', icon: "M8 21l8 0 M12 17l0 4 M7 4l10 0 M17 4v8a5 5 0 0 1 -10 0v-8 M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" },
-      { key: 'chill', label: 'Chill', color: '#22D3EE', icon: "M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1 M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2 M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2 M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z M16.746 16.726a3 3 0 1 0 .252 -5.555" },
-      { key: 'rage', label: 'Rage quit', color: '#FF3B30', icon: "M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a6 6 0 1 0 12 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -4 2z" },
-      { key: 'again', label: 'Jogaria de novo', color: '#E0447B', icon: "M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" }
+      { key: 'carry', label: 'Carry', color: 'var(--t-amber2,#F5A524)', icon: "M8 21l8 0 M12 17l0 4 M7 4l10 0 M17 4v8a5 5 0 0 1 -10 0v-8 M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" },
+      { key: 'chill', label: 'Chill', color: 'var(--t-cyan,#22D3EE)', icon: "M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1 M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2 M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2 M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z M16.746 16.726a3 3 0 1 0 .252 -5.555" },
+      { key: 'rage', label: 'Rage quit', color: 'var(--t-red2,#FF3B30)', icon: "M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a6 6 0 1 0 12 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -4 2z" },
+      { key: 'again', label: 'Jogaria de novo', color: 'var(--t-rose,#E0447B)', icon: "M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" }
     ];
     const repRows = repDefs.map((d) => {
       const level = data.rep[d.key];
@@ -1730,7 +1733,7 @@ class Component extends DCLogic {
       return {
         label: d.label, color: d.color, fg: this.mix(d.color, 0.22), soft: this.soft(d.color, 0.16), icon: d.icon,
         pct: Math.round((level / 3) * 100),
-        pips: [0, 1, 2].map((i) => ({ fill: i < filled ? d.color : '#3F3F46', icon: d.icon }))
+        pips: [0, 1, 2].map((i) => ({ fill: i < filled ? d.color : 'var(--t-line,#3F3F46)', icon: d.icon }))
       };
     });
 
@@ -1747,22 +1750,22 @@ class Component extends DCLogic {
     });
 
     let banner = { bg: '#14181F', img: 'linear-gradient(118deg, #22303F 0 44%, rgba(0,0,0,0) 44%), radial-gradient(circle at 78% 26%, #C8622F 0 9%, rgba(0,0,0,0) 9%)' };
-    let avatar = { bg: '#000', body: '#000', light: '#000' };
+    let avatar = { bg: 'var(--t-bg,#000)', body: 'var(--t-bg,#000)', light: 'var(--t-bg,#000)' };
     const infoChips = [];
     let relTag = null;
     let commonChips = [];
     if (isOther) {
       banner = { bg: person.bg, img: 'linear-gradient(118deg, rgba(255,255,255,0.07) 0 44%, rgba(0,0,0,0) 44%), radial-gradient(circle at 78% 26%, ' + person.body + ' 0 9%, rgba(0,0,0,0) 9%)' };
       avatar = { bg: person.bg, body: person.body, light: person.light };
-      if (person.friend) relTag = { label: 'Amigos', bg: 'rgba(0,111,238,0.16)', color: '#8FC7FF' };
-      else if (person.followsYou && !following) relTag = { label: 'Segue você', bg: '#27272A', color: '#D4D4D8' };
-      if (person.pct !== undefined) infoChips.push({ label: person.pct + '% de afinidade', bg: 'rgba(224,68,123,0.16)', color: '#F38CB0', hasDot: false, hasPin: false });
-      infoChips.push({ label: person.city, bg: '#27272A', color: '#D4D4D8', hasDot: false, hasPin: true });
-      infoChips.push({ label: person.since, bg: '#27272A', color: '#D4D4D8', hasDot: false, hasPin: false });
+      if (person.friend) relTag = { label: 'Amigos', bg: 'rgba(0,111,238,0.16)', color: 'var(--t-accsoft,#8FC7FF)' };
+      else if (person.followsYou && !following) relTag = { label: 'Segue você', bg: 'var(--t-card3,#27272A)', color: 'var(--t-sec,#D4D4D8)' };
+      if (person.pct !== undefined) infoChips.push({ label: person.pct + '% de afinidade', bg: 'rgba(224,68,123,0.16)', color: 'var(--t-pink,#F38CB0)', hasDot: false, hasPin: false });
+      infoChips.push({ label: person.city, bg: 'var(--t-card3,#27272A)', color: 'var(--t-sec,#D4D4D8)', hasDot: false, hasPin: true });
+      infoChips.push({ label: person.since, bg: 'var(--t-card3,#27272A)', color: 'var(--t-sec,#D4D4D8)', hasDot: false, hasPin: false });
       commonChips = (person.common || []).map((g) => ({ label: g }));
     } else {
-      if (this.props.showLocation !== false && data.city) infoChips.push({ label: data.city, bg: '#27272A', color: '#D4D4D8', hasDot: false, hasPin: true });
-      infoChips.push({ label: data.since, bg: '#27272A', color: '#D4D4D8', hasDot: false, hasPin: false });
+      if (this.props.showLocation !== false && data.city) infoChips.push({ label: data.city, bg: 'var(--t-card3,#27272A)', color: 'var(--t-sec,#D4D4D8)', hasDot: false, hasPin: true });
+      infoChips.push({ label: data.since, bg: 'var(--t-card3,#27272A)', color: 'var(--t-sec,#D4D4D8)', hasDot: false, hasPin: false });
     }
 
     const draft = this.state.draft || { nome: '', bio: '' };
@@ -1789,7 +1792,7 @@ class Component extends DCLogic {
     ];
     const sections = secDefs.map((d) => {
       const on = sec === d.id;
-      return { label: d.label, icon: d.icon, color: on ? accent : '#A1A1AA', textColor: on ? accent : '#D4D4D8', weight: on ? 700 : 500, bar: on ? accent : 'transparent', selected: on ? 'true' : 'false', onClick: (e) => this.goSection(d.id, e) };
+      return { label: d.label, icon: d.icon, color: on ? 'var(--t-blue,' + accent + ')' : 'var(--t-muted,#A1A1AA)', textColor: on ? 'var(--t-blue,' + accent + ')' : 'var(--t-sec,#D4D4D8)', weight: on ? 700 : 500, bar: on ? accent : 'transparent', selected: on ? 'true' : 'false', onClick: (e) => this.goSection(d.id, e) };
     });
     const lists = (data.lists || []).map((l, i) => {
       const open = this.state.openList === i;
@@ -1812,11 +1815,11 @@ class Component extends DCLogic {
       const on = this.state.newListSel.indexOf(t) >= 0;
       return { title: t, bg: g.bg, img: g.img, kind: this.kindOf(t) === 'Mesa' ? 'Jogo analógico' : 'Jogo digital', on: on, pressed: on ? 'true' : 'false',
         toggle: () => this.setState((p) => ({ newListSel: p.newListSel.indexOf(t) >= 0 ? p.newListSel.filter((x) => x !== t) : p.newListSel.concat([t]) })),
-        rowStyle: 'width: 100%; display: flex; align-items: center; gap: 12px; padding: 8px; border: none; border-radius: 12px; cursor: pointer; color: #ECEDEE; font-family: inherit; background: ' + (on ? 'rgba(0,111,238,0.14)' : 'transparent') + ';',
-        checkStyle: 'flex: none; width: 22px; height: 22px; border-radius: 7px; display: flex; align-items: center; justify-content: center; background: ' + (on ? accent : 'transparent') + '; border: 2px solid ' + (on ? accent : '#52525B') + ';' };
+        rowStyle: 'width: 100%; display: flex; align-items: center; gap: 12px; padding: 8px; border: none; border-radius: 12px; cursor: pointer; color: var(--t-text,#ECEDEE); font-family: inherit; background: ' + (on ? 'rgba(0,111,238,0.14)' : 'transparent') + ';',
+        checkStyle: 'flex: none; width: 22px; height: 22px; border-radius: 7px; display: flex; align-items: center; justify-content: center; background: ' + (on ? accent : 'transparent') + '; border: 2px solid ' + (on ? accent : 'var(--t-faint2,#52525B)') + ';' };
     });
     const show = isOther ? { fav: true, playing: true, shelfD: true, shelfA: true, listas: false, rep: true, dep: true } : cfg.show;
-    const thumb = (g, analog) => 'aspect-ratio: ' + (analog ? '1 / 1' : '3 / 4') + '; border-radius: 8px; background-color: ' + g.bg + '; background-image: ' + g.img + '; background-size: cover; background-position: center; box-shadow: ' + (analog ? 'inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(255,255,255,0.09)' : 'inset 0px 0px 0px 1px rgba(255,255,255,0.08)') + ';';
+    const thumb = (g, analog) => 'aspect-ratio: ' + (analog ? '1 / 1' : '3 / 4') + '; border-radius: 8px; background-color: ' + g.bg + '; background-image: ' + g.img + '; background-size: cover; background-position: center; box-shadow: ' + (analog ? 'inset 0px 0px 0px 5px rgba(0,0,0,0.28), inset 0px 0px 0px 6px rgba(var(--t-ink,255,255,255),0.09)' : 'inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08)') + ';';
     const withThumb = (list, analog) => (list || []).map((g) => Object.assign({}, g, { thumb: thumb(g, analog) }));
     const homeFavs = withThumb((data.digital.favorites || []).filter((g) => g.on !== false), false).concat(withThumb((data.analog.favorites || []).filter((g) => g.on !== false), false));
     const playingList = (data.digital.playing || []).slice(0, 3);
@@ -1826,7 +1829,7 @@ class Component extends DCLogic {
 
     // ---- editores (só no próprio perfil) ----
     const sw = (on) => ({
-      track: 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (on ? accent : '#3F3F46') + ';',
+      track: 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (on ? accent : 'var(--t-line,#3F3F46)') + ';',
       knob: 'position: absolute; top: 3px; left: ' + (on ? '21px' : '3px') + '; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; transition: left .15s ease;'
     });
     const secInfo = {
@@ -1853,7 +1856,7 @@ class Component extends DCLogic {
         label: secInfo[key][0], desc: secInfo[key][1], checked: on ? 'true' : 'false', track: sx.track, knob: sx.knob,
         toggle: () => this.updateCfg((c) => { c.show[key] = !c.show[key]; return c; }),
         down: (e) => this.dragStart(key, i, e),
-        style: 'height: 60px; display: flex; align-items: center; gap: 6px; padding: 0 14px 0 4px; border-radius: 12px; position: relative; user-select: none; background: ' + (dragging ? '#2B2B30' : '#212124') + '; z-index: ' + (dragging ? 3 : 1) + '; transform: translateY(' + tx + 'px)' + (dragging ? ' scale(1.02)' : '') + '; transition: ' + (dragging ? 'none' : 'transform .18s ease') + '; box-shadow: ' + (dragging ? '0 8px 24px rgba(0,0,0,0.55)' : 'none') + ';'
+        style: 'height: 60px; display: flex; align-items: center; gap: 6px; padding: 0 14px 0 4px; border-radius: 12px; position: relative; user-select: none; background: ' + (dragging ? 'var(--t-card3,#2B2B30)' : 'var(--t-card2,#212124)') + '; z-index: ' + (dragging ? 3 : 1) + '; transform: translateY(' + tx + 'px)' + (dragging ? ' scale(1.02)' : '') + '; transition: ' + (dragging ? 'none' : 'transform .18s ease') + '; box-shadow: ' + (dragging ? '0 8px 24px rgba(0,0,0,0.55)' : 'none') + ';'
       };
     });
     const repSw = sw(!!cfg.show.rep);
@@ -1901,8 +1904,8 @@ class Component extends DCLogic {
     const dr = this.state.diaryDraft || { id: null, t: '', date: '', players: 3, result: 'vitória', note: '' };
     const dg = dr.t ? this.game(dr.t, this.hash(dr.t) % 14) : null;
     const dd = {
-      hasGame: !!dr.t, bg: dg ? dg.bg : '#000000', img: dg ? dg.img : 'none',
-      titleLabel: dr.t || 'Escolher jogo', titleColor: dr.t ? '#ECEDEE' : '#71717A', changeLabel: dr.t ? 'Trocar' : 'Escolher',
+      hasGame: !!dr.t, bg: dg ? dg.bg : 'var(--t-bg,#000000)', img: dg ? dg.img : 'none',
+      titleLabel: dr.t || 'Escolher jogo', titleColor: dr.t ? 'var(--t-text,#ECEDEE)' : 'var(--t-faint,#71717A)', changeLabel: dr.t ? 'Trocar' : 'Escolher',
       players: dr.players,
       decPlayers: () => this.setDiary({ players: Math.max(1, dr.players - 1) }),
       incPlayers: () => this.setDiary({ players: Math.min(12, dr.players + 1) }),
@@ -1911,7 +1914,7 @@ class Component extends DCLogic {
       canDelete: !!dr.id, remove: this.removeDiary,
       results: [['vitória', 'Vitória'], ['derrota', 'Derrota'], ['empate', 'Empate']].map((o) => ({
         label: o[1], pick: () => this.setDiary({ result: o[0] }),
-        style: 'height: 42px; border-radius: 12px; cursor: pointer; font-size: 13px; font-weight: 600; border: 1px solid ' + (dr.result === o[0] ? accent : 'rgba(255,255,255,0.12)') + '; background: ' + (dr.result === o[0] ? accentSoft : 'transparent') + '; color: ' + (dr.result === o[0] ? accentText : '#D4D4D8') + ';'
+        style: 'height: 42px; border-radius: 12px; cursor: pointer; font-size: 13px; font-weight: 600; border: 1px solid ' + (dr.result === o[0] ? accent : 'rgba(var(--t-ink,255,255,255),0.12)') + '; background: ' + (dr.result === o[0] ? accentSoft : 'transparent') + '; color: ' + (dr.result === o[0] ? accentText : 'var(--t-sec,#D4D4D8)') + ';'
       }))
     };
     const rd = this.state.rvDraft || { mode: 'digital', q: '', game: null, rating: 0, text: '', tags: [], existingId: null };
@@ -1921,7 +1924,7 @@ class Component extends DCLogic {
     const ratingLabels = ['Toque para dar sua nota', 'Fraco', 'Regular', 'Bom', 'Ótimo', 'Obra-prima'];
     const rv = {
       hasGame: !!rd.game, noGame: !rd.game,
-      bg: rvg ? rvg.bg : '#000000', img: rvg ? rvg.img : 'none', title: rd.game || '',
+      bg: rvg ? rvg.bg : 'var(--t-bg,#000000)', img: rvg ? rvg.img : 'none', title: rd.game || '',
       kindLabel: rd.mode === 'analog' ? 'Jogo de mesa' : 'Jogo digital',
       hasExisting: !!rd.existingId && !rd.editing,
       canChange: !rd.editing,
@@ -1930,13 +1933,13 @@ class Component extends DCLogic {
       clearGame: () => this.setRv({ game: null, existingId: null, rating: 0, text: '', tags: [] }),
       modeTabs: [['digital', 'Digital'], ['analog', 'Analógico']].map((o) => ({
         label: o[1], pick: () => this.setRv({ mode: o[0], q: '' }),
-        style: 'flex-grow: 1; height: 34px; border: none; border-radius: 9px; cursor: pointer; font-size: 13px; font-weight: ' + (rd.mode === o[0] ? 700 : 500) + '; background: ' + (rd.mode === o[0] ? accentSoft : 'transparent') + '; color: ' + (rd.mode === o[0] ? accentText : '#A1A1AA') + ';'
+        style: 'flex-grow: 1; height: 34px; border: none; border-radius: 9px; cursor: pointer; font-size: 13px; font-weight: ' + (rd.mode === o[0] ? 700 : 500) + '; background: ' + (rd.mode === o[0] ? accentSoft : 'transparent') + '; color: ' + (rd.mode === o[0] ? accentText : 'var(--t-muted,#A1A1AA)') + ';'
       })),
       q: rd.q, onQ: (e) => this.setRv({ q: e.target.value }),
       results: rvPool.slice(0, 8).map((t) => { const g = this.game(t, this.hash(t) % 14); return { title: t, bg: g.bg, img: g.img, pick: () => this.pickReviewGame(t) }; }),
       noResults: rvPool.length === 0,
-      stars: [1, 2, 3, 4, 5].map((n) => ({ label: n + (n === 1 ? ' estrela' : ' estrelas'), fill: n <= rd.rating ? accent : 'none', stroke: n <= rd.rating ? accent : '#52525B', pick: () => this.setRv({ rating: n }) })),
-      ratingLabel: ratingLabels[rd.rating], ratingColor: rd.rating > 0 ? '#ECEDEE' : '#71717A',
+      stars: [1, 2, 3, 4, 5].map((n) => ({ label: n + (n === 1 ? ' estrela' : ' estrelas'), fill: n <= rd.rating ? accent : 'none', stroke: n <= rd.rating ? accent : 'var(--t-faint2,#52525B)', pick: () => this.setRv({ rating: n }) })),
+      ratingLabel: ratingLabels[rd.rating], ratingColor: rd.rating > 0 ? 'var(--t-text,#ECEDEE)' : 'var(--t-faint,#71717A)',
       text: rd.text, onText: (e) => this.setRv({ text: e.target.value.slice(0, 280) }), textCount: (rd.text || '').length,
       tags: this.tagOptions(rd.mode).map((label) => {
         const picked = rd.tags.indexOf(label) >= 0;
@@ -1944,7 +1947,7 @@ class Component extends DCLogic {
         return {
           label: label,
           pick: () => { if (picked) this.setRv({ tags: rd.tags.filter((x) => x !== label) }); else if (!full) this.setRv({ tags: rd.tags.concat([label]) }); },
-          style: 'height: 32px; padding: 0 13px; border-radius: 999px; cursor: ' + (full ? 'default' : 'pointer') + '; font-size: 12.5px; font-weight: 600; opacity: ' + (full ? 0.4 : 1) + '; border: 1px solid ' + (picked ? accent : 'rgba(255,255,255,0.12)') + '; background: ' + (picked ? accentSoft : 'transparent') + '; color: ' + (picked ? accentText : '#D4D4D8') + ';'
+          style: 'height: 32px; padding: 0 13px; border-radius: 999px; cursor: ' + (full ? 'default' : 'pointer') + '; font-size: 12.5px; font-weight: 600; opacity: ' + (full ? 0.4 : 1) + '; border: 1px solid ' + (picked ? accent : 'rgba(var(--t-ink,255,255,255),0.12)') + '; background: ' + (picked ? accentSoft : 'transparent') + '; color: ' + (picked ? accentText : 'var(--t-sec,#D4D4D8)') + ';'
         };
       })
     };
@@ -1992,7 +1995,7 @@ class Component extends DCLogic {
       openFavs: () => this.openSheet('favs'),
       openPlaying: () => this.openSheet('playing'),
       openDiaryNew: () => this.openDiary(null),
-      relTag: relTag || { label: '', bg: 'transparent', color: '#fff' },
+      relTag: relTag || { label: '', bg: 'transparent', color: 'var(--t-white,#fff)' },
       hasRelTag: !!relTag,
       homeFavs: homeFavs,
       homeFavsVisible: !!show.fav && (homeFavs.length > 0 || !isOther),
@@ -2037,7 +2040,7 @@ class Component extends DCLogic {
       openReviewNew: this.openReviewNew,
       shDone: view === 'diary' ? this.saveDiary : (view === 'review' ? this.publishRv : this.closeSheet),
       shDoneLabel: view === 'diary' ? (dr.id ? 'Salvar alterações' : 'Salvar partida') : (view === 'review' ? (!rd.game ? 'Escolha um jogo' : (rd.rating < 1 ? 'Dê uma nota' : ((rd.existingId || rd.seed) ? 'Salvar avaliação' : 'Publicar avaliação'))) : 'Concluído'),
-      shDoneStyle: 'width: 100%; height: 48px; border: none; border-radius: 14px; font-size: 14.5px; font-weight: 700; cursor: pointer; background: ' + ((diaryBlocked || rvBlocked) ? '#27272A' : accent) + '; color: ' + ((diaryBlocked || rvBlocked) ? '#71717A' : '#FFFFFF') + ';',
+      shDoneStyle: 'width: 100%; height: 48px; border: none; border-radius: 14px; font-size: 14.5px; font-weight: 700; cursor: pointer; background: ' + ((diaryBlocked || rvBlocked) ? 'var(--t-card3,#27272A)' : accent) + '; color: ' + ((diaryBlocked || rvBlocked) ? 'var(--t-faint,#71717A)' : '#FFFFFF') + ';',
       orderRows: orderRows,
       repSwitch: repSwitch,
       ord: orderIdx,
@@ -2079,7 +2082,7 @@ class Component extends DCLogic {
       onNewListName: (e) => this.setState({ newListName: e.target.value }),
 
       createNewList: () => this.createNewList(),
-      newListBtnStyle: 'height: 46px; border: none; border-radius: 12px; font-size: 14px; font-family: inherit; font-weight: 700; cursor: pointer; background: ' + (this.state.newListName.trim().length >= 2 ? accent : '#27272A') + '; color: ' + (this.state.newListName.trim().length >= 2 ? '#FFFFFF' : '#71717A') + ';',
+      newListBtnStyle: 'height: 46px; border: none; border-radius: 12px; font-size: 14px; font-family: inherit; font-weight: 700; cursor: pointer; background: ' + (this.state.newListName.trim().length >= 2 ? accent : 'var(--t-card3,#27272A)') + '; color: ' + (this.state.newListName.trim().length >= 2 ? '#FFFFFF' : 'var(--t-faint,#71717A)') + ';',
       listCountLabel: lists.length + (lists.length === 1 ? ' lista' : ' listas'),
       canMessage: canMessage,
       isOwn: !isOther,
@@ -2103,7 +2106,7 @@ class Component extends DCLogic {
       kindBadges: kindBadges, hasKindBadges: kindBadges.length > 0,
       edPlats: Object.keys(this.platDefs()).map((k) => { const d = this.state.draft || {}; const sel = Array.isArray(d.plats) ? d.plats : []; const on = sel.indexOf(k) >= 0; return { label: this.platDefs()[k].label, pressed: on ? 'true' : 'false',
         toggle: () => this.setState((p) => { const cur = Array.isArray((p.draft || {}).plats) ? p.draft.plats : []; return { draft: Object.assign({}, p.draft, { plats: cur.indexOf(k) >= 0 ? cur.filter((x) => x !== k) : cur.concat([k]) }) }; }),
-        style: 'height: 38px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; color: ' + (on ? '#FFFFFF' : '#D4D4D8') + '; background: ' + (on ? 'rgba(0,111,238,0.18)' : '#212124') + '; border: 1.5px solid ' + (on ? accent : 'rgba(255,255,255,0.08)') + ';' }; }),
+        style: 'height: 38px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; color: ' + (on ? 'var(--t-text,#FFFFFF)' : 'var(--t-sec,#D4D4D8)') + '; background: ' + (on ? 'rgba(0,111,238,0.18)' : 'var(--t-card2,#212124)') + '; border: 1.5px solid ' + (on ? accent : 'rgba(var(--t-ink,255,255,255),0.08)') + ';' }; }),
       platIcons: platIcons, hasPlats: platIcons.length > 0, platsLabel: 'Plataformas: ' + platIcons.map((x) => x.label).join(', '),
       hasCommon: isOther && commonChips.length > 0,
       commonChips: commonChips,
@@ -2113,7 +2116,7 @@ class Component extends DCLogic {
       rateBtnLabel: rated ? 'Editar avaliação' : 'Avaliar parceiro',
       rateBtnBg: rated ? 'transparent' : accent,
       rateBtnBorder: rated ? 'rgba(255,255,255,0.16)' : accent,
-      rateBtnColor: rated ? '#ECEDEE' : '#FFFFFF',
+      rateBtnColor: rated ? 'var(--t-text,#ECEDEE)' : 'var(--t-white,#FFFFFF)',
       goRate: () => { this.setState({ repOpen: false }); if (this.props.rate) this.props.rate(); },
       testimonials: testimonials,
       noTestimonials: testimonials.length === 0,
@@ -2130,7 +2133,7 @@ class Component extends DCLogic {
       showRateHint: !!rateHint,
       rateHint: rateHint,
       followLabel: following ? 'Seguindo' : 'Seguir',
-      followStyle: 'height: 44px; padding: 0 20px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; border: ' + (following ? '2px solid #3F3F46' : 'none') + '; background: ' + (following ? 'transparent' : accent) + '; color: ' + (following ? '#ECEDEE' : '#FFFFFF') + ';',
+      followStyle: 'height: 44px; padding: 0 20px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; border: ' + (following ? '2px solid var(--t-line,#3F3F46)' : 'none') + '; background: ' + (following ? 'transparent' : accent) + '; color: ' + (following ? 'var(--t-text,#ECEDEE)' : '#FFFFFF') + ';',
       openEdit: this.openEdit,
       closeEdit: this.closeEdit,
       saveEdit: this.saveEdit,
@@ -2142,17 +2145,17 @@ class Component extends DCLogic {
       onDraftLocal: (e) => this.setDraft({ local: e.target.value }),
       cityChips: ['Rio de Janeiro, RJ', 'São Paulo, SP', 'Campinas, SP', 'Belo Horizonte, MG', 'Curitiba, PR', 'Porto Alegre, RS'].map((label) => ({
         label: label, onPick: () => this.setDraft({ local: label }),
-        style: 'height: 28px; padding: 0 11px; border-radius: 999px; cursor: pointer; font-size: 12px; font-weight: 600; border: 1px solid ' + ((draft.local || '') === label ? accent : 'rgba(255,255,255,0.12)') + '; background: ' + ((draft.local || '') === label ? 'rgba(0,111,238,0.18)' : 'transparent') + '; color: ' + ((draft.local || '') === label ? '#8FC7FF' : '#D4D4D8') + ';'
+        style: 'height: 28px; padding: 0 11px; border-radius: 999px; cursor: pointer; font-size: 12px; font-weight: 600; border: 1px solid ' + ((draft.local || '') === label ? accent : 'rgba(var(--t-ink,255,255,255),0.12)') + '; background: ' + ((draft.local || '') === label ? 'rgba(0,111,238,0.18)' : 'transparent') + '; color: ' + ((draft.local || '') === label ? 'var(--t-accsoft,#8FC7FF)' : 'var(--t-sec,#D4D4D8)') + ';'
       })),
       showLocalChecked: draft.showLocal ? 'true' : 'false',
       toggleShowLocal: () => this.setDraft({ showLocal: !draft.showLocal }),
-      showLocalTrack: 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (draft.showLocal ? accent : '#3F3F46') + ';',
+      showLocalTrack: 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (draft.showLocal ? accent : 'var(--t-line,#3F3F46)') + ';',
       showLocalKnob: 'position: absolute; top: 3px; left: ' + (draft.showLocal ? '21px' : '3px') + '; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; transition: left .15s ease;',
       draftNome: draft.nome,
       draftBio: draft.bio,
       onDraftNome: (e) => this.setDraft({ nome: e.target.value }),
       onDraftBio: (e) => this.setDraft({ bio: e.target.value }),
-      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (this.state.toast ? '0' : '-140%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (this.state.toast ? '1' : '0') + '; background: #28282C; border: 1px solid rgba(255,255,255,0.16); color: #ECEDEE; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 40; white-space: nowrap;',
+      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (this.state.toast ? '0' : '-140%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (this.state.toast ? '1' : '0') + '; background: var(--t-card3,#28282C); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); color: var(--t-text,#ECEDEE); font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 40; white-space: nowrap;',
       toastText: this.state.toast,
       cfOpen: !!this.state.confirm,
       cfTitle: this.state.confirm ? this.state.confirm.title : '',

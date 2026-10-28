@@ -15,17 +15,17 @@
     .hit::after { content: ''; position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
-    body { margin: 0; background: #000000; color: #ECEDEE; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: var(--t-bg,#000000); color: var(--t-text,#ECEDEE); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     * { box-sizing: border-box; }
     button { font-family: inherit; }
-    .fr-field { width: 100%; background: #212124; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14px; outline: none; }
+    .fr-field { width: 100%; background: var(--t-card2,#212124); border: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-radius: 12px; padding: 12px 14px; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14px; outline: none; }
     .fr-field:focus { border-color: rgba(51,142,247,0.6); }
-    .fr-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #8E8E99; margin: 0 0 10px; }
+    .fr-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--t-muted2,#8E8E99); margin: 0 0 10px; }
     .fr-clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .fr-title { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; letter-spacing: -0.01em; }
   </style>
 </helmet>
-<div data-froot="" style="position: relative; width: 390px; height: 776px; overflow: hidden; background: #000000;">
+<div data-froot="" style="position: relative; width: 390px; height: 776px; overflow: hidden; background: var(--t-bg,#000000);">
 
   <!-- ============ INÍCIO DOS FÓRUNS ============ -->
   <sc-if value="{{showHome}}" hint-placeholder-val="{{true}}">
@@ -39,11 +39,11 @@
     </div>
 
     <div style="padding: 14px 16px 0;">
-      <label style="display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px; background: #212124; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <input value="{{query}}" onInput="{{onQuery}}" placeholder="Buscar tópicos, jogos ou comunidades" aria-label="Buscar nos fóruns" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14px;">
+      <label style="display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 14px; background: var(--t-card2,#212124); border: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-radius: 12px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input value="{{query}}" onInput="{{onQuery}}" placeholder="Buscar tópicos, jogos ou comunidades" aria-label="Buscar nos fóruns" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14px;">
         <sc-if value="{{hasQuery}}" hint-placeholder-val="{{false}}">
-          <button class="hit" type="button" onClick="{{clearQuery}}" aria-label="Limpar busca" style="position: relative; width: 24px; height: 24px; padding: 0; border: none; border-radius: 50%; background: #3F3F46; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <button class="hit" type="button" onClick="{{clearQuery}}" aria-label="Limpar busca" style="position: relative; width: 24px; height: 24px; padding: 0; border: none; border-radius: 50%; background: var(--t-line,#3F3F46); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
           </button>
         </sc-if>
@@ -51,7 +51,7 @@
     </div>
 
     <div style="padding: 12px 16px 0;">
-      <div style="display: flex; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <div style="display: flex; gap: 20px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.1);">
         <button type="button" onClick="{{pickTopicos}}" style="flex-grow: 1; padding: 0 0 10px; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
           <span style="font-size: 14px; font-weight: {{tabs.topicos.weight}}; color: {{tabs.topicos.color}};">Tópicos</span>
           <div style="height: 2px; width: 100%; border-radius: 2px; background: {{tabs.topicos.bar}};"></div>
@@ -72,18 +72,18 @@
 
     <!-- cabeçalho da comunidade selecionada -->
     <sc-if value="{{hasForumSel}}" hint-placeholder-val="{{false}}">
-      <div style="margin: 14px 16px 0; background: #18181B; border-radius: 14px; padding: 14px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15); display: flex; flex-direction: column; gap: 10px;">
+      <div style="margin: 14px 16px 0; background: var(--t-card,#18181B); border-radius: 14px; padding: 14px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15); display: flex; flex-direction: column; gap: 10px;">
         <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 12px; background-color: {{forumSel.bg}}; background-image: {{forumSel.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);"></div>
+          <div style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 12px; background-color: {{forumSel.bg}}; background-image: {{forumSel.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.1);"></div>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
             <div class="fr-title" style="font-size: 16px; font-weight: 700;">{{forumSel.name}}</div>
-            <div style="font-size: 11.5px; color: #A1A1AA;">{{forumSel.meta}}</div>
+            <div style="font-size: 11.5px; color: var(--t-muted,#A1A1AA);">{{forumSel.meta}}</div>
           </div>
-          <button class="hit" type="button" onClick="{{clearForum}}" aria-label="Voltar para todas as comunidades" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: #27272A; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+          <button class="hit" type="button" onClick="{{clearForum}}" aria-label="Voltar para todas as comunidades" style="position: relative; width: 32px; height: 32px; padding: 0; border: none; border-radius: 10px; background: var(--t-card3,#27272A); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
           </button>
         </div>
-        <div style="font-size: 12.5px; line-height: 1.5; color: #D4D4D8;">{{forumSel.desc}}</div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: var(--t-sec,#D4D4D8);">{{forumSel.desc}}</div>
         <button type="button" onClick="{{forumSel.onJoin}}" style="{{forumSel.joinStyle}}">{{forumSel.joinLabel}}</button>
       </div>
     </sc-if>
@@ -92,22 +92,22 @@
     <sc-if value="{{showTopicos}}" hint-placeholder-val="{{true}}">
     <div style="display: flex; flex-direction: column; padding: 4px 16px 0;">
       <sc-if value="{{noTopics}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 40px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">{{emptyTopicsText}}</div>
+        <div style="padding: 40px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">{{emptyTopicsText}}</div>
       </sc-if>
       <sc-for list="{{topicList}}" as="t" hint-placeholder-count="5">
-        <div style="display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
-          <button type="button" onClick="{{t.openGame}}" aria-label="Abrir página do jogo {{t.game}}" style="width: 52px; height: 70px; padding: 0; border: none; flex-shrink: 0; cursor: {{t.coverCursor}}; border-radius: 8px; background-color: {{t.bg}}; background-image: {{t.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.08);"></button>
+        <div style="display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
+          <button type="button" onClick="{{t.openGame}}" aria-label="Abrir página do jogo {{t.game}}" style="width: 52px; height: 70px; padding: 0; border: none; flex-shrink: 0; cursor: {{t.coverCursor}}; border-radius: 8px; background-color: {{t.bg}}; background-image: {{t.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.08);"></button>
           <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="height: 19px; padding: 0 8px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: {{t.forumSoft}}; color: {{t.forumColor}};">{{t.forumName}}</span>
-              <span style="font-size: 11px; color: #8E8E99;">{{t.when}}</span>
+              <span style="font-size: 11px; color: var(--t-muted2,#8E8E99);">{{t.when}}</span>
             </div>
             <sc-if value="{{t.hasGame}}" hint-placeholder-val="{{true}}">
-              <button type="button" onClick="{{t.openGame}}" style="align-self: flex-start; max-width: 100%; padding: 0; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 4px; color: #8FC7FF; font-size: 12px; font-weight: 700;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{t.game}}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg></button>
+              <button type="button" onClick="{{t.openGame}}" style="align-self: flex-start; max-width: 100%; padding: 0; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 4px; color: var(--t-accsoft,#8FC7FF); font-size: 12px; font-weight: 700;"><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{t.game}}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg></button>
             </sc-if>
             <button type="button" onClick="{{t.open}}" style="padding: 0; border: none; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 6px;">
             <div class="fr-title fr-clamp2" style="font-size: 15px; font-weight: 700; line-height: 1.3;">{{t.title}}</div>
-            <div class="fr-clamp2" style="font-size: 12.5px; line-height: 1.4; color: #A1A1AA;">{{t.body}}</div>
+            <div class="fr-clamp2" style="font-size: 12.5px; line-height: 1.4; color: var(--t-muted,#A1A1AA);">{{t.body}}</div>
             <div style="display: flex; align-items: center; gap: 8px; padding-top: 2px;">
               <svg width="20" height="20" viewBox="0 0 24 24" shape-rendering="crispEdges" style="flex-shrink: 0; border-radius: 5px;">
                 <rect x="0" y="0" width="24" height="24" fill="{{t.avBg}}"></rect>
@@ -119,14 +119,14 @@
                 <rect x="13" y="12" width="3" height="3" fill="{{t.avAccent}}"></rect>
                 <rect x="9" y="17" width="6" height="2" fill="{{t.avAccent}}"></rect>
               <image href="{{t.avUri}}" x="0" y="0" width="24" height="24"></image></svg>
-              <span style="font-size: 12px; font-weight: 600; color: #D4D4D8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">{{t.authorName}}</span>
-              <sc-if value="{{t.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: #8FC7FF; flex-shrink: 0;">Amigo</span></sc-if>
+              <span style="font-size: 12px; font-weight: 600; color: var(--t-sec,#D4D4D8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;">{{t.authorName}}</span>
+              <sc-if value="{{t.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: var(--t-accsoft,#8FC7FF); flex-shrink: 0;">Amigo</span></sc-if>
               <span style="flex: 1;"></span>
-              <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #A1A1AA; flex-shrink: 0;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"></path></svg>{{t.likeCount}}
+              <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--t-muted,#A1A1AA); flex-shrink: 0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"></path></svg>{{t.likeCount}}
               </span>
-              <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #A1A1AA; flex-shrink: 0;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>{{t.replyCount}}
+              <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--t-muted,#A1A1AA); flex-shrink: 0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>{{t.replyCount}}
               </span>
             </div>
             </button>
@@ -140,16 +140,16 @@
     <sc-if value="{{showComunidades}}" hint-placeholder-val="{{false}}">
     <div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 0;">
       <sc-if value="{{noForums}}" hint-placeholder-val="{{false}}">
-        <div style="padding: 40px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: #8E8E99;">Nenhuma comunidade encontrada.</div>
+        <div style="padding: 40px 24px; text-align: center; font-size: 13px; line-height: 1.55; color: var(--t-muted2,#8E8E99);">Nenhuma comunidade encontrada.</div>
       </sc-if>
       <sc-for list="{{forumList}}" as="f" hint-placeholder-count="4">
-        <div style="display: flex; align-items: center; gap: 12px; background: #18181B; border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+        <div style="display: flex; align-items: center; gap: 12px; background: var(--t-card,#18181B); border-radius: 14px; padding: 12px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
           <button type="button" onClick="{{f.open}}" style="flex: 1; min-width: 0; padding: 0; border: none; background: transparent; color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; gap: 12px; align-items: center;">
-            <div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 12px; background-color: {{f.bg}}; background-image: {{f.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.1);"></div>
+            <div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 12px; background-color: {{f.bg}}; background-image: {{f.img}}; background-size: cover; background-position: center; box-shadow: inset 0px 0px 0px 1px rgba(var(--t-ink,255,255,255),0.1);"></div>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
               <div style="font-size: 14.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{f.name}}</div>
-              <div class="fr-clamp2" style="font-size: 12px; line-height: 1.4; color: #A1A1AA;">{{f.desc}}</div>
-              <div style="font-size: 11px; font-weight: 600; color: #8E8E99;">{{f.meta}}</div>
+              <div class="fr-clamp2" style="font-size: 12px; line-height: 1.4; color: var(--t-muted,#A1A1AA);">{{f.desc}}</div>
+              <div style="font-size: 11px; font-weight: 600; color: var(--t-muted2,#8E8E99);">{{f.meta}}</div>
             </div>
           </button>
           <button type="button" onClick="{{f.onJoin}}" style="{{f.joinStyle}}">{{f.joinLabel}}</button>
@@ -163,14 +163,14 @@
 
   <!-- ============ TÓPICO (DISCUSSÃO) ============ -->
   <sc-if value="{{showThread}}" hint-placeholder-val="{{false}}">
-  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; background: #000000;">
+  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--t-bg,#000000);">
 
-    <div style="flex: none; display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+    <div style="flex: none; display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
+      <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
       </button>
       <div style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
-        <div style="font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #8E8E99;">{{backLabel}}</div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--t-muted2,#8E8E99);">{{backLabel}}</div>
         <button type="button" onClick="{{th.openForum}}" style="padding: 0; border: none; background: transparent; cursor: pointer; text-align: left; font-size: 14px; font-weight: 700; color: {{th.forumColor}}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{th.forumName}}</button>
       </div>
     </div>
@@ -191,42 +191,42 @@
           <rect x="9" y="17" width="6" height="2" fill="{{th.avAccent}}"></rect>
         <image href="{{th.avUri}}" x="0" y="0" width="24" height="24"></image></svg>
         <div style="display: flex; flex-direction: column; min-width: 0;">
-          <div style="font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 6px;">{{th.authorName}}<sc-if value="{{th.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: #8FC7FF;">Amigo</span></sc-if></div>
-          <div style="font-size: 11.5px; color: #8E8E99;">iniciou esta discussão · {{th.when}}</div>
+          <div style="font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 6px;">{{th.authorName}}<sc-if value="{{th.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: var(--t-accsoft,#8FC7FF);">Amigo</span></sc-if></div>
+          <div style="font-size: 11.5px; color: var(--t-muted2,#8E8E99);">iniciou esta discussão · {{th.when}}</div>
         </div>
       </button>
 
-      <div style="font-size: 14.5px; line-height: 1.6; color: #E4E4E7; text-wrap: pretty;">{{th.body}}</div>
+      <div style="font-size: 14.5px; line-height: 1.6; color: var(--t-text,#E4E4E7); text-wrap: pretty;">{{th.body}}</div>
 
       <sc-if value="{{th.hasGame}}" hint-placeholder-val="{{true}}">
-      <button type="button" onClick="{{th.openGame}}" aria-label="Abrir página do jogo {{th.game}}" style="width: 100%; display: flex; align-items: center; gap: 10px; background: #18181B; border: none; border-radius: 12px; padding: 8px 12px 8px 8px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15); color: inherit; font-family: inherit; text-align: left; cursor: pointer;">
+      <button type="button" onClick="{{th.openGame}}" aria-label="Abrir página do jogo {{th.game}}" style="width: 100%; display: flex; align-items: center; gap: 10px; background: var(--t-card,#18181B); border: none; border-radius: 12px; padding: 8px 12px 8px 8px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15); color: inherit; font-family: inherit; text-align: left; cursor: pointer;">
         <div style="width: 34px; height: 46px; flex-shrink: 0; border-radius: 6px; background-color: {{th.bg}}; background-image: {{th.img}}; background-size: cover; background-position: center;"></div>
         <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
           <div style="font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{th.game}}</div>
-          <div style="font-size: 11.5px; color: #A1A1AA;">{{th.modeLabel}} · ver página do jogo</div>
+          <div style="font-size: 11.5px; color: var(--t-muted,#A1A1AA);">{{th.modeLabel}} · ver página do jogo</div>
         </div>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
       </button>
       </sc-if>
 
-      <div style="display: flex; align-items: center; gap: 18px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
+      <div style="display: flex; align-items: center; gap: 18px; padding: 10px 0; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
         <button type="button" onClick="{{th.toggleLike}}" style="display: flex; align-items: center; gap: 6px; border: none; background: transparent; cursor: pointer; padding: 0;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="{{th.likeFill}}" stroke="{{th.likeStroke}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"></path></svg>
-          <span style="font-size: 13px; font-weight: 600; color: #A1A1AA;">{{th.likeCount}}</span>
+          <span style="font-size: 13px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{th.likeCount}}</span>
         </button>
         <div style="display: flex; align-items: center; gap: 6px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-          <span style="font-size: 13px; font-weight: 600; color: #A1A1AA;">{{th.replyCount}} respostas</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--t-muted,#A1A1AA)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span style="font-size: 13px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{th.replyCount}} respostas</span>
         </div>
       </div>
 
       <div style="display: flex; flex-direction: column;">
         <div class="fr-title" style="font-size: 16px; font-weight: 600; padding-bottom: 4px;">Respostas</div>
         <sc-if value="{{th.noReplies}}" hint-placeholder-val="{{false}}">
-          <div style="padding: 18px 0; font-size: 13px; color: #8E8E99;">Ninguém respondeu ainda. Seja a primeira pessoa.</div>
+          <div style="padding: 18px 0; font-size: 13px; color: var(--t-muted2,#8E8E99);">Ninguém respondeu ainda. Seja a primeira pessoa.</div>
         </sc-if>
         <sc-for list="{{th.replies}}" as="r" hint-placeholder-count="4">
-          <div style="display: flex; gap: 10px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; gap: 10px; padding: 14px 0; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06);">
             <button class="hit" type="button" onClick="{{r.openAuthor}}" aria-label="Ver perfil de {{r.name}}" style="position: relative; width: 30px; height: 30px; padding: 0; border: none; background: transparent; cursor: pointer; flex-shrink: 0;">
               <svg width="30" height="30" viewBox="0 0 24 24" shape-rendering="crispEdges" style="display: block; border-radius: 8px;">
                 <rect x="0" y="0" width="24" height="24" fill="{{r.avBg}}"></rect>
@@ -240,11 +240,11 @@
               <image href="{{r.avUri}}" x="0" y="0" width="24" height="24"></image></svg>
             </button>
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px;">
-              <div style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700;">{{r.name}}<sc-if value="{{r.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: #8FC7FF;">Amigo</span></sc-if><span style="font-weight: 500; color: #8E8E99;">· {{r.when}}</span></div>
-              <div style="font-size: 13.5px; line-height: 1.5; color: #E4E4E7; text-wrap: pretty;">{{r.text}}</div>
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700;">{{r.name}}<sc-if value="{{r.isFriend}}" hint-placeholder-val="{{false}}"><span style="height: 17px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; background: rgba(0,111,238,0.16); color: var(--t-accsoft,#8FC7FF);">Amigo</span></sc-if><span style="font-weight: 500; color: var(--t-muted2,#8E8E99);">· {{r.when}}</span></div>
+              <div style="font-size: 13.5px; line-height: 1.5; color: var(--t-text,#E4E4E7); text-wrap: pretty;">{{r.text}}</div>
               <button type="button" onClick="{{r.toggleLike}}" style="align-self: flex-start; display: flex; align-items: center; gap: 5px; border: none; background: transparent; cursor: pointer; padding: 2px 0 0;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="{{r.likeFill}}" stroke="{{r.likeStroke}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"></path></svg>
-                <span style="font-size: 11.5px; font-weight: 600; color: #A1A1AA;">{{r.likeCount}}</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--t-muted,#A1A1AA);">{{r.likeCount}}</span>
               </button>
             </div>
           </div>
@@ -253,8 +253,8 @@
 
     </div>
 
-    <div style="flex: none; display: flex; align-items: center; gap: 10px; padding: 12px 16px 16px; border-top: 1px solid rgba(255,255,255,0.08); background: #09090B;">
-      <input value="{{replyDraft}}" onInput="{{onReplyDraft}}" onKeyDown="{{onReplyKey}}" placeholder="Escreva uma resposta" aria-label="Escreva uma resposta" style="flex: 1; min-width: 0; height: 44px; background: #212124; border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 0 16px; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14px; outline: none;">
+    <div style="flex: none; display: flex; align-items: center; gap: 10px; padding: 12px 16px 16px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-bg2,#09090B);">
+      <input value="{{replyDraft}}" onInput="{{onReplyDraft}}" onKeyDown="{{onReplyKey}}" placeholder="Escreva uma resposta" aria-label="Escreva uma resposta" style="flex: 1; min-width: 0; height: 44px; background: var(--t-card2,#212124); border: 1px solid rgba(var(--t-ink,255,255,255),0.08); border-radius: 999px; padding: 0 16px; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14px; outline: none;">
       <button type="button" onClick="{{sendReply}}" aria-label="Enviar resposta" style="{{sendStyle}}">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7Z"></path></svg>
       </button>
@@ -265,9 +265,9 @@
 
   <!-- ============ NOVO TÓPICO ============ -->
   <sc-if value="{{composerOpen}}" hint-placeholder-val="{{false}}">
-  <div data-sheet="composer" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}" style="position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; background: #000000;">
-    <div style="flex: none; display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <button class="hit" type="button" onClick="{{closeComposer}}" aria-label="Fechar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+  <div data-sheet="composer" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}" style="position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; background: var(--t-bg,#000000);">
+    <div style="flex: none; display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 12px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
+      <button class="hit" type="button" onClick="{{closeComposer}}" aria-label="Fechar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
       </button>
       <div class="fr-title" style="font-size: 17px; font-weight: 700;">Novo tópico</div>
@@ -285,15 +285,15 @@
       <div>
         <label for="fr-title-in" class="fr-label">Título</label>
         <input id="fr-title-in" class="fr-field" maxlength="80" placeholder="Resuma sua dúvida ou assunto" value="{{draftTitle}}" onInput="{{onDraftTitle}}">
-        <div style="margin-top: 6px; font-size: 11px; color: #8E8E99; text-align: right;">{{titleCount}}/80</div>
+        <div style="margin-top: 6px; font-size: 11px; color: var(--t-muted2,#8E8E99); text-align: right;">{{titleCount}}/80</div>
       </div>
       <div>
         <label for="fr-body-in" class="fr-label">Mensagem</label>
         <textarea id="fr-body-in" class="fr-field" rows="6" maxlength="400" placeholder="Explique o contexto para a galera responder melhor" value="{{draftBody}}" onInput="{{onDraftBody}}" style="resize: none; line-height: 1.5;"></textarea>
-        <div style="margin-top: 6px; font-size: 11px; color: #8E8E99; text-align: right;">{{bodyCount}}/400</div>
+        <div style="margin-top: 6px; font-size: 11px; color: var(--t-muted2,#8E8E99); text-align: right;">{{bodyCount}}/400</div>
       </div>
     </div>
-    <div style="flex: none; padding: 14px 16px 18px; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div style="flex: none; padding: 14px 16px 18px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
       <button type="button" onClick="{{publish}}" style="{{publishStyle}}">Publicar tópico</button>
     </div>
   </div>
@@ -349,7 +349,7 @@ class Component extends DCLogic {
       { bg: '#1C1A15', img: 'linear-gradient(90deg, #D8CFC0 0 22%, rgba(0,0,0,0) 22%)' },
       { bg: '#161B18', img: 'conic-gradient(from 90deg at 30% 40%, #4E8C7D 0 90deg, rgba(0,0,0,0) 90deg)' },
       { bg: '#1B1620', img: 'radial-gradient(circle at 26% 74%, #B07BAC 0 22%, rgba(0,0,0,0) 22%)' },
-      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, #E8C468 0 11%, rgba(0,0,0,0) 11%)' },
+      { bg: '#101A17', img: 'linear-gradient(160deg, #2F6F5E 0 38%, rgba(0,0,0,0) 38%), radial-gradient(circle at 74% 76%, var(--t-amber,#E8C468) 0 11%, rgba(0,0,0,0) 11%)' },
       { bg: '#1A1518', img: 'repeating-linear-gradient(90deg, #8C4A5A 0 6px, rgba(0,0,0,0) 6px 18px)' },
       { bg: '#131A22', img: 'conic-gradient(from 20deg at 70% 20%, #5B7DB1 0 70deg, rgba(0,0,0,0) 70deg)' },
       { bg: '#1D1913', img: 'radial-gradient(circle at 30% 32%, #C4763A 0 18%, rgba(0,0,0,0) 18%), linear-gradient(200deg, #6B4A2A 0 26%, rgba(0,0,0,0) 26%)' }
@@ -388,12 +388,12 @@ class Component extends DCLogic {
 
   forums() {
     return [
-      { id: 'f1', name: 'Metroidvanias', mode: 'digital', art: 9, color: '#9B5DE5', members: '12,4 mil', desc: 'Mapas interligados, backtracking e chefes que humilham. Spoilers sempre marcados.' },
-      { id: 'f2', name: 'Estratégia de mesa', mode: 'analog', art: 2, color: '#F5A524', members: '8,1 mil', desc: 'Regras, estratégia e partidas que fazem a mesa inteira pensar.' },
-      { id: 'f3', name: 'Coop e jogos para duas pessoas', mode: 'both', art: 3, color: '#17C964', members: '9,7 mil', desc: 'Indicações para jogar em dupla, no sofá ou na mesa, sem ninguém ficar para trás.' },
-      { id: 'f4', name: 'Competitivo e ranked', mode: 'digital', art: 5, color: '#F31260', members: '15,2 mil', desc: 'Formação de time, meta, comunicação e como lidar com partidas tóxicas.' },
-      { id: 'f5', name: 'Mesas de São Paulo', mode: 'analog', art: 12, color: '#22D3EE', members: '3,4 mil', desc: 'Dicas de jogos de mesa, ludotecas, espaços para jogar e como ensinar regras.' },
-      { id: 'f6', name: 'Indies e aventuras', mode: 'digital', art: 8, color: '#338EF7', members: '5,9 mil', desc: 'Jogos independentes, aventuras curtas e mistérios para explorar no seu ritmo.' }
+      { id: 'f1', name: 'Metroidvanias', mode: 'digital', art: 9, color: 'var(--t-purple,#9B5DE5)', members: '12,4 mil', desc: 'Mapas interligados, backtracking e chefes que humilham. Spoilers sempre marcados.' },
+      { id: 'f2', name: 'Estratégia de mesa', mode: 'analog', art: 2, color: 'var(--t-amber2,#F5A524)', members: '8,1 mil', desc: 'Regras, estratégia e partidas que fazem a mesa inteira pensar.' },
+      { id: 'f3', name: 'Coop e jogos para duas pessoas', mode: 'both', art: 3, color: 'var(--t-green,#17C964)', members: '9,7 mil', desc: 'Indicações para jogar em dupla, no sofá ou na mesa, sem ninguém ficar para trás.' },
+      { id: 'f4', name: 'Competitivo e ranked', mode: 'digital', art: 5, color: 'var(--t-red,#F31260)', members: '15,2 mil', desc: 'Formação de time, meta, comunicação e como lidar com partidas tóxicas.' },
+      { id: 'f5', name: 'Mesas de São Paulo', mode: 'analog', art: 12, color: 'var(--t-cyan,#22D3EE)', members: '3,4 mil', desc: 'Dicas de jogos de mesa, ludotecas, espaços para jogar e como ensinar regras.' },
+      { id: 'f6', name: 'Indies e aventuras', mode: 'digital', art: 8, color: 'var(--t-blue,#338EF7)', members: '5,9 mil', desc: 'Jogos independentes, aventuras curtas e mistérios para explorar no seu ritmo.' }
     ];
   }
 
@@ -532,10 +532,11 @@ class Component extends DCLogic {
   };
 
   chipStyle(on, accent) {
-    return 'flex-shrink: 0; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 1px solid ' + (on ? accent : 'rgba(255,255,255,0.12)') + '; background: ' + (on ? 'rgba(0,111,238,0.18)' : '#18181B') + '; color: ' + (on ? '#8FC7FF' : '#D4D4D8') + ';';
+    return 'flex-shrink: 0; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 1px solid ' + (on ? accent : 'rgba(var(--t-ink,255,255,255),0.12)') + '; background: ' + (on ? 'rgba(0,111,238,0.18)' : 'var(--t-card,#18181B)') + '; color: ' + (on ? 'var(--t-accsoft,#8FC7FF)' : 'var(--t-sec,#D4D4D8)') + ';';
   }
 
   soft(hex, alpha) {
+    const vm = /^var\(--[\w-]+,\s*(#[0-9a-fA-F]{6})\)$/.exec(String(hex)); if (vm) hex = vm[1];
     const n = parseInt(hex.slice(1), 16);
     return 'rgba(' + ((n >> 16) & 255) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + alpha + ')';
   }
@@ -567,7 +568,7 @@ class Component extends DCLogic {
         forumName: f.name, forumColor: f.color, forumSoft: this.soft(f.color, 0.16),
         authorName: a.name, avBg: a.avBg, avBody: a.avBody, avAccent: a.avAccent, avUri: a.avUri, isFriend: a.isFriend,
         likeCount: t.likes + (liked[likeKey] ? 1 : 0),
-        likeFill: liked[likeKey] ? accent : 'none', likeStroke: liked[likeKey] ? accent : '#A1A1AA',
+        likeFill: liked[likeKey] ? accent : 'none', likeStroke: liked[likeKey] ? accent : 'var(--t-muted,#A1A1AA)',
         replyCount: t.count + myR.length,
         modeLabel: t.mode === 'analog' ? 'Jogo de mesa' : 'Jogo digital',
         hasGame: !t.mine,
@@ -584,7 +585,7 @@ class Component extends DCLogic {
           return {
             name: ra.name, avBg: ra.avBg, avBody: ra.avBody, avAccent: ra.avAccent, avUri: ra.avUri, isFriend: ra.isFriend,
             text: r.text, when: r.when, likeCount: r.likes + (liked[rk] ? 1 : 0),
-            likeFill: liked[rk] ? accent : 'none', likeStroke: liked[rk] ? accent : '#A1A1AA',
+            likeFill: liked[rk] ? accent : 'none', likeStroke: liked[rk] ? accent : 'var(--t-muted,#A1A1AA)',
             toggleLike: () => this.toggleLike(rk),
             openAuthor: () => this.openAuthor(r.handle)
           };
@@ -604,14 +605,14 @@ class Component extends DCLogic {
         id: f.id, name: f.name, desc: f.desc,
         meta: f.members + ' membros · ' + count + (count === 1 ? ' tópico' : ' tópicos'),
         joinLabel: on ? 'Participando' : 'Entrar',
-        joinStyle: 'flex-shrink: 0; height: 34px; padding: 0 14px; border-radius: 10px; font-size: 12.5px; font-weight: 700; cursor: pointer; width: auto; border: ' + (on ? '1px solid rgba(255,255,255,0.16)' : 'none') + '; background: ' + (on ? 'transparent' : accent) + '; color: ' + (on ? '#D4D4D8' : '#FFFFFF') + ';',
+        joinStyle: 'flex-shrink: 0; height: 34px; padding: 0 14px; border-radius: 10px; font-size: 12.5px; font-weight: 700; cursor: pointer; width: auto; border: ' + (on ? '1px solid rgba(var(--t-ink,255,255,255),0.16)' : 'none') + '; background: ' + (on ? 'transparent' : accent) + '; color: ' + (on ? 'var(--t-sec,#D4D4D8)' : '#FFFFFF') + ';',
         onJoin: () => this.toggleJoin(f.id),
         open: () => this.openForumOf(f.id)
       }, this.art(f.art));
     };
 
-    const tabOn = { color: '#ECEDEE', weight: 700, bar: accent };
-    const tabOff = { color: '#A1A1AA', weight: 500, bar: 'transparent' };
+    const tabOn = { color: 'var(--t-text,#ECEDEE)', weight: 700, bar: accent };
+    const tabOff = { color: 'var(--t-muted,#A1A1AA)', weight: 500, bar: 'transparent' };
 
     const tFilters = [['todos', 'Todos'], ['digital', 'Digital'], ['analog', 'Analógico'], ['amigos', 'De amigos']];
     const cFilters = [['todas', 'Todas'], ['digital', 'Digital'], ['analog', 'Analógico'], ['minhas', 'Participando']];
@@ -663,7 +664,7 @@ class Component extends DCLogic {
       onReplyDraft: (e) => this.setState({ replyDraft: e.target.value }),
       onReplyKey: (e) => { if (e.key === 'Enter') this.sendReply(e); },
       sendReply: this.sendReply,
-      sendStyle: 'width: 44px; height: 44px; padding: 0; border: none; border-radius: 50%; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #FFFFFF; background: ' + (s.replyDraft.trim() ? accent : '#27272A') + ';',
+      sendStyle: 'width: 44px; height: 44px; padding: 0; border: none; border-radius: 50%; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #FFFFFF; background: ' + (s.replyDraft.trim() ? accent : 'var(--t-card3,#27272A)') + ';',
       goBack: this.goBack,
 
       query: s.query,
@@ -699,9 +700,9 @@ class Component extends DCLogic {
       titleCount: s.draftTitle.length,
       bodyCount: s.draftBody.length,
       publish: this.publish,
-      publishStyle: 'width: 100%; height: 48px; border: none; border-radius: 14px; font-size: 14.5px; font-weight: 700; cursor: ' + (canPublish ? 'pointer' : 'not-allowed') + '; background: ' + (canPublish ? accent : '#27272A') + '; color: ' + (canPublish ? '#FFFFFF' : '#71717A') + ';',
+      publishStyle: 'width: 100%; height: 48px; border: none; border-radius: 14px; font-size: 14.5px; font-weight: 700; cursor: ' + (canPublish ? 'pointer' : 'not-allowed') + '; background: ' + (canPublish ? accent : 'var(--t-card3,#27272A)') + '; color: ' + (canPublish ? '#FFFFFF' : 'var(--t-faint,#71717A)') + ';',
 
-      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-140%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: #28282C; border: 1px solid rgba(255,255,255,0.16); color: #ECEDEE; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
+      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-140%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: var(--t-card3,#28282C); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); color: var(--t-text,#ECEDEE); font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
       toastText: s.toast
     };
   }

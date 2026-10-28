@@ -15,23 +15,23 @@
     .hit::after { content: ''; position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
-    body { margin: 0; background: #000000; color: #ECEDEE; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: var(--t-bg,#000000); color: var(--t-text,#ECEDEE); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     * { box-sizing: border-box; }
     button { font-family: inherit; }
     .cf-title { font-family: 'Space Grotesk', 'Segoe UI', sans-serif; letter-spacing: -0.01em; }
-    .cf-label { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #8E8E99; margin: 0 0 8px; }
-    .cf-field { width: 100%; height: 48px; background: #212124; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0 14px; color: #ECEDEE; font-family: 'Manrope', sans-serif; font-size: 14.5px; outline: none; }
+    .cf-label { display: block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--t-muted2,#8E8E99); margin: 0 0 8px; }
+    .cf-field { width: 100%; height: 48px; background: var(--t-card2,#212124); border: 1px solid rgba(var(--t-ink,255,255,255),0.1); border-radius: 12px; padding: 0 14px; color: var(--t-text,#ECEDEE); font-family: 'Manrope', sans-serif; font-size: 14.5px; outline: none; }
     .cf-field:focus { border-color: rgba(51,142,247,0.7); }
     .cf-scrim { position: absolute; inset: 0; background: rgba(0,0,0,0); opacity: 0; pointer-events: none; transition: opacity .22s ease, background .22s ease; z-index: 40; }
     .cf-scrim.open { opacity: 1; pointer-events: auto; background: rgba(0,0,0,.66); }
-    .cf-sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86%; background: #18181B; border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 41; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.16); }
+    .cf-sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86%; background: var(--t-card,#18181B); border-radius: 22px 22px 0 0; transform: translateY(100%); transition: transform .3s cubic-bezier(.32,.72,0,1); z-index: 41; display: flex; flex-direction: column; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.16); }
     .cf-sheet.open { transform: translateY(0); }
   </style>
 </helmet>
-<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: #000000; display: flex; flex-direction: column;">
+<div style="position: relative; width: 390px; height: 776px; overflow: hidden; background: var(--t-bg,#000000); display: flex; flex-direction: column;">
 
   <div style="flex: none; display: flex; align-items: center; gap: 12px; padding: 14px 16px 12px;">
-    <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: #212124; color: #ECEDEE; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+    <button class="hit" type="button" onClick="{{goBack}}" aria-label="Voltar" style="position: relative; width: 38px; height: 38px; padding: 0; border: none; border-radius: 12px; background: var(--t-card2,#212124); color: var(--t-text,#ECEDEE); cursor: pointer; display: flex; align-items: center; justify-content: center;">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
     </button>
     <div class="cf-title" style="font-size: 22px; font-weight: 700;">Configurações</div>
@@ -39,27 +39,46 @@
 
   <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 4px 16px 32px; display: flex; flex-direction: column; gap: 24px;">
 
-    <div style="display: flex; align-items: center; gap: 14px; background: #18181B; border-radius: 16px; padding: 14px; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+    <div style="display: flex; align-items: center; gap: 14px; background: var(--t-card,#18181B); border-radius: 16px; padding: 14px; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
       <sc-if value="{{hasAvatar}}" hint-placeholder-val="{{false}}">
         <img src="{{avatarUri}}" alt="" width="52" height="52" style="display: block; border-radius: 14px; flex-shrink: 0;">
       </sc-if>
       <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
         <div class="cf-title" style="font-size: 17px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{handle}}</div>
-        <div style="font-size: 12.5px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{email}}</div>
+        <div style="font-size: 12.5px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{email}}</div>
       </div>
     </div>
 
     <div>
       <div class="cf-label">Conta</div>
-      <div style="background: #18181B; border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+      <div style="background: var(--t-card,#18181B); border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
         <sc-for list="{{accountRows}}" as="r" hint-placeholder-count="3">
-          <button type="button" onClick="{{r.onOpen}}" style="width: 100%; min-height: 62px; padding: 10px 14px; border: none; border-bottom: 1px solid rgba(255,255,255,0.06); background: transparent; color: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
+          <button type="button" onClick="{{r.onOpen}}" style="width: 100%; min-height: 62px; padding: 10px 14px; border: none; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06); background: transparent; color: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
               <div style="font-size: 13px; font-weight: 700;">{{r.label}}</div>
-              <div style="font-size: 13px; color: #A1A1AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.value}}</div>
-              <sc-if value="{{r.hasNote}}" hint-placeholder-val="{{false}}"><div style="font-size: 11.5px; color: #F5A524;">{{r.note}}</div></sc-if>
+              <div style="font-size: 13px; color: var(--t-muted,#A1A1AA); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.value}}</div>
+              <sc-if value="{{r.hasNote}}" hint-placeholder-val="{{false}}"><div style="font-size: 11.5px; color: var(--t-amber2,#F5A524);">{{r.note}}</div></sc-if>
             </div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 18l6-6-6-6"></path></svg>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div>
+      <div class="cf-label">Aparência</div>
+      <div role="radiogroup" aria-label="Tema do app" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <sc-for list="{{themeOpts}}" as="t" hint-placeholder-count="2">
+          <button type="button" role="radio" aria-checked="{{t.checked}}" onClick="{{t.pick}}" style="{{t.style}}">
+            <span aria-hidden="true" style="{{t.previewStyle}}">
+              <span style="{{t.barStyle}}"></span>
+              <span style="{{t.cardStyle}}"><span style="{{t.dotStyle}}"></span><span style="{{t.lineStyle}}"></span></span>
+              <span style="{{t.cardStyle}}"><span style="{{t.dotStyle}}"></span><span style="{{t.lineStyle}}"></span></span>
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; padding: 0 2px;">
+              <span style="{{t.radioStyle}}"><span style="{{t.radioDot}}"></span></span>
+              <span style="font-size: 13.5px; font-weight: 700;">{{t.label}}</span>
+            </span>
           </button>
         </sc-for>
       </div>
@@ -67,12 +86,12 @@
 
     <div>
       <div class="cf-label">Privacidade</div>
-      <div style="background: #18181B; border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+      <div style="background: var(--t-card,#18181B); border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
         <sc-for list="{{privacyRows}}" as="r" hint-placeholder-count="2">
-          <div style="padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px;">
+          <div style="padding: 12px 14px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06); display: flex; align-items: center; gap: 12px;">
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
               <div style="font-size: 13.5px; font-weight: 700;">{{r.label}}</div>
-              <div style="font-size: 12px; line-height: 1.4; color: #A1A1AA;">{{r.desc}}</div>
+              <div style="font-size: 12px; line-height: 1.4; color: var(--t-muted,#A1A1AA);">{{r.desc}}</div>
             </div>
             <button type="button" role="switch" aria-checked="{{r.checked}}" aria-label="{{r.label}}" onClick="{{r.onToggle}}" style="{{r.trackStyle}}"><span style="{{r.knobStyle}}"></span></button>
           </div>
@@ -82,12 +101,12 @@
 
     <div>
       <div class="cf-label">Notificações</div>
-      <div style="background: #18181B; border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,0.15);">
+      <div style="background: var(--t-card,#18181B); border-radius: 16px; overflow: hidden; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);">
         <sc-for list="{{notifRows}}" as="r" hint-placeholder-count="3">
-          <div style="padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px;">
+          <div style="padding: 12px 14px; border-bottom: 1px solid rgba(var(--t-ink,255,255,255),0.06); display: flex; align-items: center; gap: 12px;">
             <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px;">
               <div style="font-size: 13.5px; font-weight: 700;">{{r.label}}</div>
-              <div style="font-size: 12px; line-height: 1.4; color: #A1A1AA;">{{r.desc}}</div>
+              <div style="font-size: 12px; line-height: 1.4; color: var(--t-muted,#A1A1AA);">{{r.desc}}</div>
             </div>
             <button type="button" role="switch" aria-checked="{{r.checked}}" aria-label="{{r.label}}" onClick="{{r.onToggle}}" style="{{r.trackStyle}}"><span style="{{r.knobStyle}}"></span></button>
           </div>
@@ -96,18 +115,18 @@
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 10px;">
-      <button type="button" onClick="{{askLogout}}" style="height: 48px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 14px; font-weight: 700; cursor: pointer;">Sair da conta</button>
-      <button type="button" onClick="{{askDelete}}" style="height: 48px; border-radius: 14px; border: none; background: transparent; color: #F31260; font-size: 14px; font-weight: 700; cursor: pointer;">Excluir conta</button>
+      <button type="button" onClick="{{askLogout}}" style="height: 48px; border-radius: 14px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 700; cursor: pointer;">Sair da conta</button>
+      <button type="button" onClick="{{askDelete}}" style="height: 48px; border-radius: 14px; border: none; background: transparent; color: var(--t-red,#F31260); font-size: 14px; font-weight: 700; cursor: pointer;">Excluir conta</button>
     </div>
   </div>
 
   <!-- folha de edição -->
   <div class="{{scrimClass}}" onClick="{{closeSheet}}"></div>
   <div class="{{sheetClass}}" role="dialog" aria-label="{{sheetTitle}}" data-sheet="sheet" onTouchStart="{{dnStart}}" onTouchMove="{{dnMove}}" onTouchEnd="{{dnEnd}}" onTouchCancel="{{dnEnd}}">
-    <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px;"></div></div>
+    <div style="display: flex; justify-content: center; padding-top: 9px; flex: none;"><div style="width: 34px; height: 4px; background: rgba(var(--t-ink,255,255,255),0.16); border-radius: 999px;"></div></div>
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 18px 6px; flex: none;">
       <div class="cf-title" style="font-size: 18px; font-weight: 700;">{{sheetTitle}}</div>
-      <button class="hit" type="button" onClick="{{closeSheet}}" aria-label="Fechar" style="position: relative; width: 34px; height: 34px; padding: 0; border-radius: 11px; border: 1px solid rgba(255,255,255,0.08); background: #212124; color: #D4D4D8; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+      <button class="hit" type="button" onClick="{{closeSheet}}" aria-label="Fechar" style="position: relative; width: 34px; height: 34px; padding: 0; border-radius: 11px; border: 1px solid rgba(var(--t-ink,255,255,255),0.08); background: var(--t-card2,#212124); color: var(--t-sec,#D4D4D8); cursor: pointer; display: flex; align-items: center; justify-content: center;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"></path></svg>
       </button>
     </div>
@@ -118,12 +137,12 @@
         <div>
           <label for="cf-user" class="cf-label">Novo nome de usuário</label>
           <div style="position: relative;">
-            <span style="position: absolute; left: 14px; top: 0; height: 48px; display: flex; align-items: center; color: #8E8E99; font-size: 14.5px; font-weight: 600;">@</span>
+            <span style="position: absolute; left: 14px; top: 0; height: 48px; display: flex; align-items: center; color: var(--t-muted2,#8E8E99); font-size: 14.5px; font-weight: 600;">@</span>
             <input id="cf-user" class="cf-field" maxlength="20" autocapitalize="none" value="{{uDraft}}" onInput="{{onUser}}" style="padding-left: 32px;">
           </div>
           <div style="margin-top: 8px; font-size: 12.5px; line-height: 1.45; color: {{uColor}};">{{uMsg}}</div>
         </div>
-        <div style="font-size: 12px; line-height: 1.5; color: #8E8E99;">Seu @ aparece no perfil, nas avaliações e nos fóruns. Os links antigos deixam de funcionar.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: var(--t-muted2,#8E8E99);">Seu @ aparece no perfil, nas avaliações e nos fóruns. Os links antigos deixam de funcionar.</div>
       </sc-if>
 
       <sc-if value="{{isEmail}}" hint-placeholder-val="{{false}}">
@@ -132,7 +151,7 @@
           <input id="cf-email" class="cf-field" type="email" autocapitalize="none" placeholder="voce@exemplo.com" value="{{eDraft}}" onInput="{{onEmail}}">
           <div style="margin-top: 8px; font-size: 12.5px; line-height: 1.45; color: {{eColor}};">{{eMsg}}</div>
         </div>
-        <div style="font-size: 12px; line-height: 1.5; color: #8E8E99;">Enviaremos um link de confirmação para o novo endereço. O e-mail só muda depois que você confirmar.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: var(--t-muted2,#8E8E99);">Enviaremos um link de confirmação para o novo endereço. O e-mail só muda depois que você confirmar.</div>
       </sc-if>
 
       <sc-if value="{{isPass}}" hint-placeholder-val="{{false}}">
@@ -143,23 +162,23 @@
         <div>
           <label for="cf-p1" class="cf-label">Nova senha</label>
           <input id="cf-p1" class="cf-field" type="{{passType}}" autocomplete="new-password" value="{{pNew}}" onInput="{{onPNew}}">
-          <div style="margin-top: 8px; height: 6px; border-radius: 999px; background: #3F3F46; overflow: hidden;"><div style="height: 6px; border-radius: 999px; width: {{strengthPct}}%; background: {{strengthColor}}; transition: width .2s ease;"></div></div>
-          <div style="margin-top: 6px; font-size: 12px; color: #A1A1AA;">{{strengthLabel}}</div>
+          <div style="margin-top: 8px; height: 6px; border-radius: 999px; background: var(--t-line,#3F3F46); overflow: hidden;"><div style="height: 6px; border-radius: 999px; width: {{strengthPct}}%; background: {{strengthColor}}; transition: width .2s ease;"></div></div>
+          <div style="margin-top: 6px; font-size: 12px; color: var(--t-muted,#A1A1AA);">{{strengthLabel}}</div>
         </div>
         <div>
           <label for="cf-p2" class="cf-label">Confirmar nova senha</label>
           <input id="cf-p2" class="cf-field" type="{{passType}}" autocomplete="new-password" value="{{pConf}}" onInput="{{onPConf}}">
-          <div style="margin-top: 8px; font-size: 12.5px; color: #F31260;">{{pError}}</div>
+          <div style="margin-top: 8px; font-size: 12.5px; color: var(--t-red,#F31260);">{{pError}}</div>
         </div>
-        <button type="button" onClick="{{toggleShowPass}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; color: #8FC7FF; font-size: 12.5px; font-weight: 700; cursor: pointer;">{{showPassLabel}}</button>
+        <button type="button" onClick="{{toggleShowPass}}" style="align-self: flex-start; padding: 0; border: none; background: transparent; color: var(--t-accsoft,#8FC7FF); font-size: 12.5px; font-weight: 700; cursor: pointer;">{{showPassLabel}}</button>
       </sc-if>
 
       <sc-if value="{{isLogout}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 14px; line-height: 1.55; color: #D4D4D8;">Você vai precisar entrar de novo com o seu e-mail e a sua senha.</div>
+        <div style="font-size: 14px; line-height: 1.55; color: var(--t-sec,#D4D4D8);">Você vai precisar entrar de novo com o seu e-mail e a sua senha.</div>
       </sc-if>
 
       <sc-if value="{{isDelete}}" hint-placeholder-val="{{false}}">
-        <div style="font-size: 14px; line-height: 1.55; color: #D4D4D8;">Excluir a conta apaga o seu perfil, suas avaliações, listas e mensagens. Não dá para desfazer.</div>
+        <div style="font-size: 14px; line-height: 1.55; color: var(--t-sec,#D4D4D8);">Excluir a conta apaga o seu perfil, suas avaliações, listas e mensagens. Não dá para desfazer.</div>
         <div>
           <label for="cf-del" class="cf-label">Digite EXCLUIR para confirmar</label>
           <input id="cf-del" class="cf-field" autocapitalize="characters" value="{{delText}}" onInput="{{onDel}}">
@@ -167,9 +186,9 @@
       </sc-if>
     </div>
 
-    <div style="flex: none; display: flex; gap: 10px; padding: 12px 18px 18px; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div style="flex: none; display: flex; gap: 10px; padding: 12px 18px 18px; border-top: 1px solid rgba(var(--t-ink,255,255,255),0.08);">
       <sc-if value="{{showCancel}}" hint-placeholder-val="{{false}}">
-        <button type="button" onClick="{{closeSheet}}" style="flex: 1; height: 48px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #ECEDEE; font-size: 14px; font-weight: 700; cursor: pointer;">Cancelar</button>
+        <button type="button" onClick="{{closeSheet}}" style="flex: 1; height: 48px; border-radius: 14px; border: 1px solid rgba(var(--t-ink,255,255,255),0.16); background: transparent; color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 700; cursor: pointer;">Cancelar</button>
       </sc-if>
       <button type="button" onClick="{{confirm}}" style="{{confirmStyle}}">{{confirmLabel}}</button>
     </div>
@@ -243,18 +262,18 @@ class Component extends DCLogic {
 
   userState(draft, current) {
     const d = (draft || '').toLowerCase();
-    if (d === current) return { ok: false, color: '#A1A1AA', msg: 'Este já é o seu nome de usuário.' };
-    if (!/^[a-z0-9._]{3,20}$/.test(d)) return { ok: false, color: '#A1A1AA', msg: 'Use de 3 a 20 caracteres: letras minúsculas, números, ponto e sublinhado.' };
-    if (this.taken().indexOf(d) >= 0) return { ok: false, color: '#F31260', msg: '@' + d + ' já está em uso. Tente outro.' };
-    return { ok: true, color: '#17C964', msg: '@' + d + ' está disponível.' };
+    if (d === current) return { ok: false, color: 'var(--t-muted,#A1A1AA)', msg: 'Este já é o seu nome de usuário.' };
+    if (!/^[a-z0-9._]{3,20}$/.test(d)) return { ok: false, color: 'var(--t-muted,#A1A1AA)', msg: 'Use de 3 a 20 caracteres: letras minúsculas, números, ponto e sublinhado.' };
+    if (this.taken().indexOf(d) >= 0) return { ok: false, color: 'var(--t-red,#F31260)', msg: '@' + d + ' já está em uso. Tente outro.' };
+    return { ok: true, color: 'var(--t-green,#17C964)', msg: '@' + d + ' está disponível.' };
   }
 
   emailState(draft, current) {
     const d = (draft || '').trim().toLowerCase();
-    if (!d) return { ok: false, color: '#A1A1AA', msg: 'Digite o novo endereço.' };
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d)) return { ok: false, color: '#F31260', msg: 'Esse e-mail não parece válido.' };
-    if (d === current.toLowerCase()) return { ok: false, color: '#F5A524', msg: 'Esse já é o seu e-mail atual.' };
-    return { ok: true, color: '#17C964', msg: 'Pronto para enviar a confirmação.' };
+    if (!d) return { ok: false, color: 'var(--t-muted,#A1A1AA)', msg: 'Digite o novo endereço.' };
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d)) return { ok: false, color: 'var(--t-red,#F31260)', msg: 'Esse e-mail não parece válido.' };
+    if (d === current.toLowerCase()) return { ok: false, color: 'var(--t-amber2,#F5A524)', msg: 'Esse já é o seu e-mail atual.' };
+    return { ok: true, color: 'var(--t-green,#17C964)', msg: 'Pronto para enviar a confirmação.' };
   }
 
   strength(p) {
@@ -273,7 +292,7 @@ class Component extends DCLogic {
     const a = this.acc();
     const cfg = this.cfg();
     const set = (key) => (v) => { if (this.props.onSetting) this.props.onSetting(key, v); };
-    const track = (on) => 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (on ? accent : '#3F3F46') + '; transition: background .15s ease;';
+    const track = (on) => 'flex-shrink: 0; width: 46px; height: 28px; padding: 0; border: none; border-radius: 999px; cursor: pointer; position: relative; background: ' + (on ? accent : 'var(--t-line,#3F3F46)') + '; transition: background .15s ease;';
     const knob = (on) => 'position: absolute; top: 3px; left: ' + (on ? '21px' : '3px') + '; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; transition: left .15s ease;';
     const toggleRow = (key, label, desc) => ({ label: label, desc: desc, checked: cfg[key] ? 'true' : 'false', trackStyle: track(cfg[key]), knobStyle: knob(cfg[key]), onToggle: () => set(key)(!cfg[key]) });
 
@@ -310,7 +329,27 @@ class Component extends DCLogic {
       this.setState({ sheet: null });
     };
 
+    const curTheme = this.props.theme === 'light' ? 'light' : 'dark';
+    const themeOpts = [
+      { k: 'dark', label: 'Escuro', bg: '#000000', card: '#18181B', line: '#3F3F46' },
+      { k: 'light', label: 'Claro', bg: '#E9E9EE', card: '#FFFFFF', line: '#CDCDD5' }
+    ].map((o) => {
+      const on = curTheme === o.k;
+      return {
+        label: o.label, checked: on ? 'true' : 'false',
+        pick: () => { if (typeof this.props.setTheme === 'function') this.props.setTheme(o.k); },
+        style: 'display: flex; flex-direction: column; gap: 10px; padding: 10px; border-radius: 16px; cursor: pointer; text-align: left; color: inherit; font-family: inherit; background: var(--t-card,#18181B); border: 2px solid ' + (on ? accent : 'transparent') + '; box-shadow: inset 0px 0px 1px 0px rgba(var(--t-ink,255,255,255),0.15);',
+        previewStyle: 'display: flex; flex-direction: column; gap: 5px; height: 74px; padding: 8px; border-radius: 10px; box-sizing: border-box; background: ' + o.bg + '; border: 1px solid ' + o.line + ';',
+        barStyle: 'display: block; width: 46%; height: 6px; border-radius: 3px; background: ' + o.line + ';',
+        cardStyle: 'display: flex; align-items: center; gap: 5px; flex: 1; padding: 0 6px; border-radius: 6px; background: ' + o.card + ';',
+        dotStyle: 'display: block; width: 10px; height: 10px; border-radius: 3px; background: ' + accent + ';',
+        lineStyle: 'display: block; flex: 1; height: 4px; border-radius: 2px; background: ' + o.line + ';',
+        radioStyle: 'width: 18px; height: 18px; border-radius: 50%; box-sizing: border-box; border: 2px solid ' + (on ? accent : 'var(--t-line,#3F3F46)') + '; display: flex; align-items: center; justify-content: center; flex: none;',
+        radioDot: 'width: 8px; height: 8px; border-radius: 50%; background: ' + (on ? accent : 'transparent') + ';'
+      };
+    });
     return {
+      themeOpts: themeOpts,
       goBack: () => { if (this.props.back) this.props.back(); },
       hasAvatar: !!this.props.avatarUri,
       avatarUri: this.props.avatarUri || '',
@@ -357,9 +396,9 @@ class Component extends DCLogic {
       delText: s.delText, onDel: (e) => this.setState({ delText: e.target.value }),
       confirm: confirm,
       confirmLabel: confirmLabel,
-      confirmStyle: 'flex: 1.4; height: 48px; border: none; border-radius: 14px; font-size: 14px; font-weight: 700; cursor: ' + (enabled ? 'pointer' : 'default') + '; background: ' + (enabled ? (danger ? '#F31260' : accent) : '#27272A') + '; color: ' + (enabled ? '#FFFFFF' : '#71717A') + ';',
+      confirmStyle: 'flex: 1.4; height: 48px; border: none; border-radius: 14px; font-size: 14px; font-weight: 700; cursor: ' + (enabled ? 'pointer' : 'default') + '; background: ' + (enabled ? (danger ? '#F31260' : accent) : 'var(--t-card3,#27272A)') + '; color: ' + (enabled ? '#FFFFFF' : 'var(--t-faint,#71717A)') + ';',
 
-      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-160%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: #28282C; border: 1px solid rgba(255,255,255,0.16); color: #ECEDEE; font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
+      toastStyle: 'position: absolute; top: 14px; left: 50%; transform: translateX(-50%) translateY(' + (s.toast ? '0' : '-160%') + '); transition: transform .25s ease, opacity .25s ease; pointer-events: none; opacity: ' + (s.toast ? '1' : '0') + '; background: var(--t-card3,#28282C); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); color: var(--t-text,#ECEDEE); font-size: 12.5px; font-weight: 600; padding: 10px 16px; border-radius: 999px; z-index: 60; white-space: nowrap;',
       toastText: s.toast
     };
   }

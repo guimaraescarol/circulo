@@ -18,9 +18,9 @@
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
   :root{
-    --bg:#000000; --card:#18181B; --card2:#212124; --card3:#28282c;
-    --border:rgba(255,255,255,0.08); --border-strong:rgba(255,255,255,0.16);
-    --text-bright:#ECEDEE; --text-secondary:#D4D4D8; --text-muted:#A1A1AA; --text-faint:#71717A;
+    --bg:var(--t-bg,#000000); --card:var(--t-card,#18181B); --card2:var(--t-card2,#212124); --card3:var(--t-card3,#28282c);
+    --border:rgba(var(--t-ink,255,255,255),0.08); --border-strong:rgba(var(--t-ink,255,255,255),0.16);
+    --text-bright:var(--t-text,#ECEDEE); --text-secondary:var(--t-sec,#D4D4D8); --text-muted:var(--t-muted,#A1A1AA); --text-faint:var(--t-faint,#71717A);
     --accent:#006FEE; --accent-soft:rgba(0,111,238,0.16);
     --rose:#E0447B; --rose-soft:rgba(224,68,123,0.16);
     --font-display:'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
@@ -36,18 +36,18 @@
   .title{font-family:var(--font-display);font-size:24px;font-weight:700;margin:0;letter-spacing:-0.02em;}
   .top-actions{display:flex;gap:8px;}
   .icon-btn{position:relative;width:40px;height:40px;border-radius:12px;border:1px solid var(--border);background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);cursor:pointer;padding:0;flex:none;}
-  .icon-btn .badge{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#F31260;color:#fff;font-size: 11px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg);}
+  .icon-btn .badge{position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#DB0F57;color:#fff;font-size: 11px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg);}
   .summary-pill{margin:12px 16px 0;flex:none;display:flex;align-items:center;gap:9px;width:calc(100% - 32px);padding:11px 12px;border-radius:14px;background:var(--card);border:1px solid var(--border);color:var(--text-secondary);cursor:pointer;text-align:left;}
   .summary-pill .sp-text{flex:1;min-width:0;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .summary-pill .sp-count{font-size:12px;font-weight:800;color:#8FC7FF;white-space:nowrap;}
+  .summary-pill .sp-count{font-size:12px;font-weight:800;color:var(--t-accsoft,#8FC7FF);white-space:nowrap;}
   .chip{display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border-radius:999px;background:var(--card2);border:1px solid var(--border);color:var(--text-secondary);font-size:12px;font-weight:600;white-space:nowrap;}
-  .chip-accent{background:var(--accent-soft);border-color:rgba(0,111,238,0.35);color:#8FC7FF;}
+  .chip-accent{background:var(--accent-soft);border-color:rgba(0,111,238,0.35);color:var(--t-accsoft,#8FC7FF);}
   .chip-row{display:flex;gap:7px;flex-wrap:wrap;}
   .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:14px;border:none;cursor:pointer;padding:0 16px;height:50px;display:flex;align-items:center;justify-content:center;gap:8px;}
   .btn:active{transform:scale(.97);}
   .btn-primary{background:var(--accent);color:#fff;}
   .btn-ghost{background:var(--card2);color:var(--text-bright);border:1px solid var(--border-strong);}
-  .btn-rose{background:var(--rose);color:#fff;}
+  .btn-rose{background:var(--rose);color:var(--t-white,#fff);}
   .btn-text{background:transparent;border:none;color:var(--text-muted);font-size:13px;padding:8px;cursor:pointer;}
   .avatar{display:block;shape-rendering:crispEdges;border-radius:22%;}
 
@@ -57,14 +57,14 @@
   .peek.p2{top:20px;bottom:-20px;left:24px;right:24px;opacity:.4;}
   .card{position:absolute;inset:0;perspective:1600px;}
   .flip{position:absolute;inset:0;transform-style:preserve-3d;}
-  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;background:#16161B;padding:3px;border-style:solid;border-width:6px;display:flex;flex-direction:column;}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;background:var(--t-card,#16161B);padding:3px;border-style:solid;border-width:6px;display:flex;flex-direction:column;}
   .face.back{transform:rotateY(180deg);}
   .face-in{flex:1;min-height:0;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;border:1.5px solid transparent;}
   .c-stud{position:absolute;width:14px;height:14px;border-radius:50%;z-index:4;}
   .c-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;}
   .c-head .n{font-family:var(--font-display);font-size:20px;font-weight:700;line-height:1.1;letter-spacing:-0.01em;}
-  .c-head .s{font-size:11.5px;color:#A1A1AA;font-weight:600;margin-top:2px;}
-  .c-pct{flex:none;width:44px;height:44px;border-radius:50%;background:var(--rose);border:2px solid;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;}
+  .c-head .s{font-size:11.5px;color:var(--t-muted,#A1A1AA);font-weight:600;margin-top:2px;}
+  .c-pct{flex:none;width:44px;height:44px;border-radius:50%;background:var(--rose);border:2px solid;color:var(--t-white,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;}
   .c-pct span{font-family:var(--font-display);font-size:16px;font-weight:700;}
   .c-pct small{font-size: 11px;font-weight:700;}
   .c-art{position:relative;flex:none;height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -72,36 +72,36 @@
   .c-ribbon{position:absolute;left:10px;top:10px;font-size: 11px;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:999px;}
   .c-stars{position:absolute;right:10px;top:10px;font-size:12px;letter-spacing:1px;}
   .c-flipbtn{position:absolute;right:10px;bottom:10px;width:30px;height:30px;padding:0;border:none;border-radius:50%;background:rgba(0,0,0,.55);color:#ECEDEE;display:flex;align-items:center;justify-content:center;cursor:pointer;}
-  .c-type{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;font-size:11.5px;color:#A1A1AA;font-weight:600;}
+  .c-type{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;font-size:11.5px;color:var(--t-muted,#A1A1AA);font-weight:600;}
   .c-attacks{flex:1;min-height:0;overflow:hidden;padding:10px 12px 4px;display:flex;flex-direction:column;gap:8px;}
   .c-row{display:flex;align-items:center;gap:10px;}
-  .c-cover{width:28px;height:38px;flex:none;border-radius:6px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:13px;font-weight:700;color:#A1A1AA;}
+  .c-cover{width:28px;height:38px;flex:none;border-radius:6px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(var(--t-ink,255,255,255),.12);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--t-muted,#A1A1AA);}
   .c-row .t{font-size:14px;font-weight:700;line-height:1.2;}
   .c-row .g{font-size:11.5px;font-weight:600;}
-  .c-heart{width:18px;height:18px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;}
-  .c-sep{height:1px;background:rgba(255,255,255,.1);flex:none;}
+  .c-heart{width:18px;height:18px;border-radius:50%;background:var(--rose);color:var(--t-white,#fff);display:flex;align-items:center;justify-content:center;flex:none;}
+  .c-sep{height:1px;background:rgba(var(--t-ink,255,255,255),.1);flex:none;}
   .c-more{font-size:11.5px;font-weight:700;color:var(--text-faint);}
   .c-flavor{flex:none;margin:6px 10px 8px;padding:8px 11px;border-radius:8px;font-size:12.5px;line-height:1.5;font-style:italic;color:var(--text-secondary);}
-  .c-foot{flex:none;display:flex;justify-content:space-between;gap:8px;padding:7px 12px;font-size:11.5px;color:#A1A1AA;font-weight:600;border-top:1px solid rgba(255,255,255,.12);}
+  .c-foot{flex:none;display:flex;justify-content:space-between;gap:8px;padding:7px 12px;font-size:11.5px;color:var(--t-muted,#A1A1AA);font-weight:600;border-top:1px solid rgba(var(--t-ink,255,255,255),.12);}
   .b-title{flex:none;padding:11px 12px;text-align:center;font-family:var(--font-display);font-size:15px;font-weight:700;}
   .b-body{flex:1;min-height:0;overflow-y:auto;padding:12px 14px 6px;display:flex;flex-direction:column;gap:16px;}
   .b-label{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);margin-bottom:8px;}
   .b-rep{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;text-align:center;}
   .b-rep div{border-radius:10px;padding:8px 0;}
   .b-rep b{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;}
-  .b-rep span{font-size:11px;color:#A1A1AA;font-weight:600;}
+  .b-rep span{font-size:11px;color:var(--t-muted,#A1A1AA);font-weight:600;}
   .b-hint{flex:none;text-align:center;font-size:11.5px;color:var(--text-faint);padding:4px 0 10px;}
   .hero{position:relative;flex:none;height:136px;display:flex;align-items:flex-end;gap:12px;padding:0 16px 14px;}
   .hero-av{width:72px;height:72px;flex:none;border-radius:18px;box-shadow:0 0 0 3px var(--card);}
   .hero-id{min-width:0;padding-bottom:2px;}
   .hero-id h2{font-family:var(--font-display);font-size:21px;margin:0 0 1px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .hero-id .handle{font-size:12.5px;color:#D4D4D8;font-weight:600;}
-  .pct-pill{position:absolute;top:12px;right:12px;background:var(--rose);color:#fff;font-family:var(--font-display);font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;}
+  .hero-id .handle{font-size:12.5px;color:var(--t-sec,#D4D4D8);font-weight:600;}
+  .pct-pill{position:absolute;top:12px;right:12px;background:var(--rose);color:var(--t-white,#fff);font-family:var(--font-display);font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;}
   .card-body{flex:1;min-height:0;overflow-y:auto;padding:14px 16px 6px;display:flex;flex-direction:column;gap:14px;}
   .quote{margin:0;font-size:13px;color:var(--text-secondary);line-height:1.5;padding-left:12px;border-left:2px solid var(--rose);}
   .cv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
   .cv-item{min-width:0;display:flex;flex-direction:column;gap:5px;}
-  .cv-img{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;border-radius:9px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);font-family:var(--font-display);font-size:20px;font-weight:700;color:#A1A1AA;font-style:normal;}
+  .cv-img{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;border-radius:9px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(var(--t-ink,255,255,255),.1);font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--t-muted,#A1A1AA);font-style:normal;}
   .cv-item span{font-size:11px;font-weight:600;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .mode-switch{display:inline-flex;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:3px;}
   .mode-switch button{height:34px;padding:0 18px;border:none;border-radius:999px;background:transparent;color:var(--text-muted);font-family:var(--font-display);font-size:16px;font-weight:700;cursor:pointer;}
@@ -125,7 +125,7 @@
   .sq-list{flex:1;min-height:0;overflow-y:auto;padding:12px 16px 16px;display:flex;flex-direction:column;gap:10px;}
   .sq-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:12px;flex:none;}
   .sq-open{display:flex;gap:12px;width:100%;padding:0;border:none;background:transparent;color:inherit;font-family:inherit;text-align:left;cursor:pointer;}
-  .sq-cover{width:54px;height:72px;flex:none;border-radius:9px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:20px;font-weight:700;color:#A1A1AA;}
+  .sq-cover{width:54px;height:72px;flex:none;border-radius:9px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(var(--t-ink,255,255,255),.1);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--t-muted,#A1A1AA);}
   .sq-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;}
   .sq-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
   .sq-name{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -134,25 +134,25 @@
   .sq-when{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-muted);min-width:0;}
   .sq-foot{display:flex;align-items:center;gap:10px;}
   .sq-avs{display:flex;flex:none;}
-  .sq-avs img{width:26px;height:26px;border-radius:8px;border:2px solid var(--card);margin-left:-8px;image-rendering:pixelated;background:#27272A;}
+  .sq-avs img{width:26px;height:26px;border-radius:8px;border:2px solid var(--card);margin-left:-8px;image-rendering:pixelated;background:var(--t-card3,#27272A);}
   .sq-avs img:first-child{margin-left:0;}
   .sq-slots{flex:1;min-width:0;font-size:12px;font-weight:600;color:var(--text-muted);}
   .mini-seg{display:flex;gap:2px;background:var(--card2);border-radius:999px;padding:3px;}
   .mini-seg button{flex:1;height:30px;border:none;border-radius:999px;background:transparent;color:var(--text-muted);font-family:var(--font-body);font-size:12.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
-  .mini-seg button.on{background:var(--rose-soft);color:#F38CB0;}
+  .mini-seg button.on{background:var(--rose-soft);color:var(--t-pink,#F38CB0);}
   .mini-seg b{font-size: 11px;font-weight:800;opacity:.85;}
   .cv-wrap{position:relative;}
-  .cv-heart{position:absolute;top:5px;right:5px;width:20px;height:20px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(0,0,0,.35);}
-  .want-note{display:flex;align-items:flex-start;gap:7px;font-size:12px;font-weight:600;line-height:1.4;color:#F38CB0;}
+  .cv-heart{position:absolute;top:5px;right:5px;width:20px;height:20px;border-radius:50%;background:var(--rose);color:var(--t-white,#fff);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(0,0,0,.35);}
+  .want-note{display:flex;align-items:flex-start;gap:7px;font-size:12px;font-weight:600;line-height:1.4;color:var(--t-pink,#F38CB0);}
   .stamp{position:absolute;top:22px;z-index:6;pointer-events:none;font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:10px;border:3px solid;background:rgba(0,0,0,.4);}
-  .stamp-like{left:16px;color:#17C964;border-color:#17C964;transform:rotate(-10deg);}
-  .stamp-pass{right:16px;color:#F31260;border-color:#F31260;transform:rotate(10deg);}
+  .stamp-like{left:16px;color:var(--t-green,#17C964);border-color:#17C964;transform:rotate(-10deg);}
+  .stamp-pass{right:16px;color:var(--t-red,#F31260);border-color:#F31260;transform:rotate(10deg);}
   .sect{display:flex;flex-direction:column;gap:8px;}
   .sect-label{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);}
-  .sect-label b{background:var(--rose-soft);color:#F38CB0;border-radius:999px;padding:1px 7px;font-size: 11px;}
+  .sect-label b{background:var(--rose-soft);color:var(--t-pink,#F38CB0);border-radius:999px;padding:1px 7px;font-size: 11px;}
   .none-common{font-size:12.5px;color:var(--text-faint);}
   .meta-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
-  .meta-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:9px 11px;}
+  .meta-box{background:rgba(var(--t-ink,255,255,255),.03);border:1px solid var(--border);border-radius:12px;padding:9px 11px;}
   .meta-box .lbl{font-size: 11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);display:flex;align-items:center;gap:5px;margin-bottom:3px;}
   .meta-box .val{font-size:12.5px;font-weight:700;color:var(--text-bright);line-height:1.35;}
   .see-profile{margin-top:auto;align-self:center;background:none;border:none;color:var(--text-muted);font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:5px;cursor:pointer;padding:6px 8px;}
@@ -185,11 +185,11 @@
   .style-bar-track{flex:1;height:7px;background:var(--card3);border-radius:999px;overflow:hidden;}
   .style-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--rose));border-radius:999px;}
   .style-bar-row .pct{width:30px;flex:none;text-align:right;font-size:11px;color:var(--text-faint);font-weight:700;}
-  .avail-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--text-secondary);background:rgba(255,255,255,.03);border:1px solid var(--border);padding:9px 11px;border-radius:11px;margin-bottom:8px;}
+  .avail-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--text-secondary);background:rgba(var(--t-ink,255,255,255),.03);border:1px solid var(--border);padding:9px 11px;border-radius:11px;margin-bottom:8px;}
   .rating-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);}
   .rating-row .g{font-size:12.5px;color:var(--text-secondary);font-weight:600;}
-  .rating-row .stars{color:#F5A524;letter-spacing:1px;font-size:13px;}
-  .list-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:11px 12px;margin-bottom:8px;}
+  .rating-row .stars{color:var(--t-amber2,#F5A524);letter-spacing:1px;font-size:13px;}
+  .list-card{background:rgba(var(--t-ink,255,255,255),.03);border:1px solid var(--border);border-radius:12px;padding:11px 12px;margin-bottom:8px;}
   .list-card .lname{font-size:12.5px;font-weight:700;color:var(--text-bright);margin-bottom:2px;}
   .list-card .lmeta{font-size:11px;color:var(--text-faint);}
 
@@ -201,11 +201,11 @@
   .panel-intro{margin:0;font-size:13px;color:var(--text-muted);line-height:1.55;}
   .group{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:12px;}
   .group-head{display:flex;align-items:center;gap:10px;}
-  .group-head .gi{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:#8FC7FF;display:flex;align-items:center;justify-content:center;flex:none;}
+  .group-head .gi{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--t-accsoft,#8FC7FF);display:flex;align-items:center;justify-content:center;flex:none;}
   .group-head .gt{font-size:14px;font-weight:700;}
   .group-head .gs{font-size:11.5px;color:var(--text-faint);margin-top:1px;}
   .filter-chip{font-family:var(--font-body);display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;background:var(--card2);border:1px solid var(--border);color:var(--text-secondary);font-size:12.5px;font-weight:600;cursor:pointer;}
-  .filter-chip.on{background:var(--accent-soft);border-color:rgba(0,111,238,.4);color:#8FC7FF;}
+  .filter-chip.on{background:var(--accent-soft);border-color:rgba(0,111,238,.4);color:var(--t-accsoft,#8FC7FF);}
   .seg-row{display:flex;background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:4px;}
   .seg-btn{flex:1;text-align:center;padding:9px;border-radius:9px;font-size:12.5px;font-weight:700;color:var(--text-muted);cursor:pointer;background:transparent;border:none;}
   .seg-btn.on{background:var(--accent);color:#fff;}
@@ -252,7 +252,7 @@
   .convo .cn{font-size:14px;font-weight:700;}
   .convo .cp{font-size:12.5px;color:var(--text-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px;}
   .msg.sys{align-self:center;background:transparent;border:none;color:var(--text-faint);font-size:11.5px;text-align:center;max-width:90%;padding:2px 8px;}
-  .card-fade{position:sticky;bottom:-12px;flex:none;height:30px;margin-top:-30px;margin-bottom:-12px;background:linear-gradient(180deg,rgba(24,24,27,0),#18181B 85%);pointer-events:none;border-radius:0 0 24px 24px;}
+  .card-fade{position:sticky;bottom:-12px;flex:none;height:30px;margin-top:-30px;margin-bottom:-12px;background:linear-gradient(180deg,rgba(var(--t-cardrgb,24,24,27),0),var(--t-card,#18181B) 85%);pointer-events:none;border-radius:0 0 24px 24px;}
   .rate-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px 14px;}
   .rate-card .t{font-size:13.5px;font-weight:700;}
   .rate-card .s{font-size:12px;color:var(--text-muted);margin-top:2px;}
@@ -319,7 +319,7 @@
                   <div class="c-pct" style="border-color: {{cur.pctBorder}};"><span>{{cur.pct}}</span><small>%</small></div>
                 </div>
                 <div class="c-art" style="{{cur.heroStyle}}">
-                  <svg width="100%" height="150" viewBox="0 0 340 150" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0;"><g stroke="{{cur.foilColor}}" stroke-width="1.5" opacity="{{cur.foilOpacity}}"><line x1="-168" y1="150" x2="-18" y2="0"></line><line x1="-140" y1="150" x2="10" y2="0"></line><line x1="-112" y1="150" x2="38" y2="0"></line><line x1="-84" y1="150" x2="66" y2="0"></line><line x1="-56" y1="150" x2="94" y2="0"></line><line x1="-28" y1="150" x2="122" y2="0"></line><line x1="0" y1="150" x2="150" y2="0"></line><line x1="28" y1="150" x2="178" y2="0"></line><line x1="56" y1="150" x2="206" y2="0"></line><line x1="84" y1="150" x2="234" y2="0"></line><line x1="112" y1="150" x2="262" y2="0"></line><line x1="140" y1="150" x2="290" y2="0"></line><line x1="168" y1="150" x2="318" y2="0"></line><line x1="196" y1="150" x2="346" y2="0"></line><line x1="224" y1="150" x2="374" y2="0"></line><line x1="252" y1="150" x2="402" y2="0"></line><line x1="280" y1="150" x2="430" y2="0"></line><line x1="308" y1="150" x2="458" y2="0"></line><line x1="336" y1="150" x2="486" y2="0"></line><line x1="364" y1="150" x2="514" y2="0"></line><line x1="392" y1="150" x2="542" y2="0"></line></g><circle cx="42" cy="38" r="3" fill="{{cur.foilColor}}" opacity="{{cur.foilOpacity}}"></circle><circle cx="300" cy="110" r="2.5" fill="{{cur.foilColor}}" opacity="{{cur.foilOpacity}}"></circle><circle cx="288" cy="34" r="2" fill="#FFFFFF" opacity="{{cur.foilOpacity}}"></circle></svg>
+                  <svg width="100%" height="150" viewBox="0 0 340 150" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0;"><g stroke="{{cur.foilColor}}" stroke-width="1.5" opacity="{{cur.foilOpacity}}"><line x1="-168" y1="150" x2="-18" y2="0"></line><line x1="-140" y1="150" x2="10" y2="0"></line><line x1="-112" y1="150" x2="38" y2="0"></line><line x1="-84" y1="150" x2="66" y2="0"></line><line x1="-56" y1="150" x2="94" y2="0"></line><line x1="-28" y1="150" x2="122" y2="0"></line><line x1="0" y1="150" x2="150" y2="0"></line><line x1="28" y1="150" x2="178" y2="0"></line><line x1="56" y1="150" x2="206" y2="0"></line><line x1="84" y1="150" x2="234" y2="0"></line><line x1="112" y1="150" x2="262" y2="0"></line><line x1="140" y1="150" x2="290" y2="0"></line><line x1="168" y1="150" x2="318" y2="0"></line><line x1="196" y1="150" x2="346" y2="0"></line><line x1="224" y1="150" x2="374" y2="0"></line><line x1="252" y1="150" x2="402" y2="0"></line><line x1="280" y1="150" x2="430" y2="0"></line><line x1="308" y1="150" x2="458" y2="0"></line><line x1="336" y1="150" x2="486" y2="0"></line><line x1="364" y1="150" x2="514" y2="0"></line><line x1="392" y1="150" x2="542" y2="0"></line></g><circle cx="42" cy="38" r="3" fill="{{cur.foilColor}}" opacity="{{cur.foilOpacity}}"></circle><circle cx="300" cy="110" r="2.5" fill="{{cur.foilColor}}" opacity="{{cur.foilOpacity}}"></circle><circle cx="288" cy="34" r="2" fill="var(--t-white,#FFFFFF)" opacity="{{cur.foilOpacity}}"></circle></svg>
                   <svg class="avatar" viewBox="0 0 8 8">
                 <rect width="8" height="8" fill="{{cur.bg}}"></rect><rect x="1" y="1" width="6" height="6" fill="{{cur.body}}"></rect><rect x="1" y="1" width="1" height="1" fill="{{cur.bg}}"></rect><rect x="6" y="6" width="1" height="1" fill="{{cur.bg}}"></rect><rect x="2.5" y="3.5" width="1" height="1" fill="{{cur.light}}"></rect><rect x="4.5" y="3.5" width="1" height="1" fill="{{cur.light}}"></rect><rect x="3" y="5.5" width="2" height="0.6" fill="{{cur.bg}}"></rect><rect x="3.5" y="0" width="1" height="1" fill="{{cur.light}}"></rect>
               <image href="{{cur.avUri}}" x="0" y="0" width="8" height="8"></image></svg>
@@ -430,7 +430,7 @@
 
     <div class="sq-tools">
       <div class="sq-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         <input aria-label="Buscar squad ou jogo" placeholder="Buscar squad ou jogo" value="{{squadQuery}}" onInput="{{onSquadQuery}}">
       </div>
       <div class="sq-chips">
@@ -505,12 +505,12 @@
         <div style="height: 6px; border-radius: 999px; background: var(--card3); overflow: hidden; margin-bottom: 12px;"><div style="{{det.barStyle}}"></div></div>
         <sc-for list="{{det.members}}" as="m" hint-placeholder-count="3">
           <div style="display: flex; align-items: center; gap: 12px; padding: 7px 0;">
-            <img src="{{m.uri}}" alt="" style="width: 36px; height: 36px; border-radius: 10px; image-rendering: pixelated; background: #27272A;">
+            <img src="{{m.uri}}" alt="" style="width: 36px; height: 36px; border-radius: 10px; image-rendering: pixelated; background: var(--t-card3,#27272A);">
             <div style="flex: 1; min-width: 0;">
               <div style="font-size: 13.5px; font-weight: 700;">{{m.name}}</div>
               <div style="font-size: 11.5px; color: var(--text-faint);">{{m.handle}}</div>
             </div>
-            <sc-if value="{{m.isHost}}" hint-placeholder-val="{{false}}"><span class="kind-pill" style="background: rgba(224,68,123,0.16); color: #F38CB0;">Anfitrião</span></sc-if>
+            <sc-if value="{{m.isHost}}" hint-placeholder-val="{{false}}"><span class="kind-pill" style="background: rgba(224,68,123,0.16); color: var(--t-pink,#F38CB0);">Anfitrião</span></sc-if>
           </div>
         </sc-for>
       </div>
@@ -550,7 +550,7 @@
         <button type="button" onClick="{{crtPickGame}}" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--card2); color: inherit; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 12px;">
           <sc-if value="{{sd.hasGame}}" hint-placeholder-val="{{false}}"><div class="sq-cover" style="width: 36px; height: 48px; font-size: 15px; {{sd.coverStyle}}">{{sd.initial}}</div></sc-if>
           <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; color: {{sd.gameColor}};">{{sd.gameLabel}}</div>
-          <span style="font-size: 12px; font-weight: 700; color: #8FC7FF;">{{sd.changeLabel}}</span>
+          <span style="font-size: 12px; font-weight: 700; color: var(--t-accsoft,#8FC7FF);">{{sd.changeLabel}}</span>
         </button>
       </div>
       <div>
@@ -603,9 +603,9 @@
       <div>
         <div class="p-label">Vagas no total <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(com você)</span></div>
         <div style="display: flex; align-items: center; justify-content: space-between; height: 46px; padding: 0 6px; background: var(--card2); border: 1px solid var(--border); border-radius: 12px;">
-          <button class="hit" type="button" aria-label="Menos uma vaga" onClick="{{sd.dec}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">−</button>
+          <button class="hit" type="button" aria-label="Menos uma vaga" onClick="{{sd.dec}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">−</button>
           <span style="font-size: 15px; font-weight: 700;">{{sd.total}} jogadores</span>
-          <button class="hit" type="button" aria-label="Mais uma vaga" onClick="{{sd.inc}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #ECEDEE; font-size: 18px; line-height: 1; cursor: pointer;">+</button>
+          <button class="hit" type="button" aria-label="Mais uma vaga" onClick="{{sd.inc}}" style="position: relative; width: 34px; height: 34px; padding: 0; border: none; border-radius: 10px; background: rgba(var(--t-ink,255,255,255),0.08); color: var(--t-text,#ECEDEE); font-size: 18px; line-height: 1; cursor: pointer;">+</button>
         </div>
       </div>
       <div>
@@ -621,7 +621,7 @@
     <sc-if value="{{crtIsPick}}" hint-placeholder-val="{{false}}">
     <div class="sheet-body" style="display: flex; flex-direction: column; gap: 12px;">
       <div class="sq-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-faint,#71717A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         <input aria-label="Buscar jogo" placeholder="Buscar jogo" value="{{pickQ}}" onInput="{{onPickQ}}">
       </div>
       <sc-if value="{{pickEmpty}}" hint-placeholder-val="{{false}}"><div style="padding: 18px 12px; text-align: center; font-size: 13px; color: var(--text-faint);">Nenhum jogo encontrado.</div></sc-if>
@@ -646,7 +646,7 @@
       <div class="orbit-ring r2"></div>
       <div class="match-avatars">
         <svg class="avatar" style="width:104px;height:104px" viewBox="0 0 8 8">
-          <rect width="8" height="8" fill="#0B2A4A"></rect><rect x="1" y="1" width="6" height="6" fill="#1E5FA8"></rect><rect x="1" y="1" width="1" height="1" fill="#0B2A4A"></rect><rect x="6" y="6" width="1" height="1" fill="#0B2A4A"></rect><rect x="2.5" y="3.5" width="1" height="1" fill="#7DD3FC"></rect><rect x="4.5" y="3.5" width="1" height="1" fill="#7DD3FC"></rect><rect x="3" y="5.5" width="2" height="0.6" fill="#0B2A4A"></rect><rect x="3.5" y="0" width="1" height="1" fill="#7DD3FC"></rect>
+          <rect width="8" height="8" fill="#0B2A4A"></rect><rect x="1" y="1" width="6" height="6" fill="#1E5FA8"></rect><rect x="1" y="1" width="1" height="1" fill="#0B2A4A"></rect><rect x="6" y="6" width="1" height="1" fill="#0B2A4A"></rect><rect x="2.5" y="3.5" width="1" height="1" fill="var(--t-cyan,#7DD3FC)"></rect><rect x="4.5" y="3.5" width="1" height="1" fill="var(--t-cyan,#7DD3FC)"></rect><rect x="3" y="5.5" width="2" height="0.6" fill="#0B2A4A"></rect><rect x="3.5" y="0" width="1" height="1" fill="var(--t-cyan,#7DD3FC)"></rect>
         <image href="{{myAvUri}}" x="0" y="0" width="8" height="8"></image></svg>
         <svg class="avatar a2" style="width:104px;height:104px" viewBox="0 0 8 8">
           <rect width="8" height="8" fill="{{mp.bg}}"></rect><rect x="1" y="1" width="6" height="6" fill="{{mp.body}}"></rect><rect x="1" y="1" width="1" height="1" fill="{{mp.bg}}"></rect><rect x="6" y="6" width="1" height="1" fill="{{mp.bg}}"></rect><rect x="2.5" y="3.5" width="1" height="1" fill="{{mp.light}}"></rect><rect x="4.5" y="3.5" width="1" height="1" fill="{{mp.light}}"></rect><rect x="3" y="5.5" width="2" height="0.6" fill="{{mp.bg}}"></rect><rect x="3.5" y="0" width="1" height="1" fill="{{mp.light}}"></rect>
@@ -668,7 +668,7 @@
 
   <!-- PERFIL PÚBLICO (mesmo layout do perfil do usuário) -->
   <sc-if value="{{profileOpen}}" hint-placeholder-val="{{false}}">
-    <div data-back="profile" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;inset:0;z-index:50;background:#000;">
+    <div data-back="profile" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;inset:0;z-index:50;background:var(--t-bg,#000);">
       <dc-import name="PerfilCirculo" hint-size="390px,776px" avatars="{{avatars}}" person="{{pubPerson}}" following="{{pubFollowing}}" toggle-follow="{{pubToggleFollow}}" show-actions="{{pubShowActions}}" back="{{closeProfile}}" message="{{profileMessage}}" rate="{{profileRate}}" pass="{{passFromProfile}}" like="{{likeFromProfile}}"></dc-import>
     </div>
   </sc-if>
@@ -771,12 +771,12 @@
 
 <sc-if value="{{cfOpen}}" hint-placeholder-val="{{false}}">
   <div onClick="{{cfNo}}" style="position: absolute; inset: 0; z-index: 90; background: rgba(0,0,0,0.66);"></div>
-  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: #18181B; border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #ECEDEE;">
+  <div role="alertdialog" aria-modal="true" aria-label="{{cfTitle}}" style="position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 91; background: var(--t-card,#18181B); border: 1px solid rgba(var(--t-ink,255,255,255),0.16); border-radius: 20px; padding: 22px 18px 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: var(--t-text,#ECEDEE);">
     <div style="font-family: 'Space Grotesk', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 700;">{{cfTitle}}</div>
-    <div style="font-size: 13.5px; line-height: 1.55; color: #A1A1AA;">{{cfText}}</div>
+    <div style="font-size: 13.5px; line-height: 1.55; color: var(--t-muted,#A1A1AA);">{{cfText}}</div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
-      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: #27272A; color: #ECEDEE; font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
-      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #F31260; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
+      <button type="button" onClick="{{cfNo}}" style="height: 46px; border: none; border-radius: 12px; background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE); font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
+      <button type="button" onClick="{{cfYes}}" style="height: 46px; border: none; border-radius: 12px; background: #DB0F57; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer;">{{cfLabel}}</button>
     </div>
   </div>
 </sc-if>
@@ -880,11 +880,11 @@ class Component extends DCLogic {
   }
   kindOfGame(g) { return this.analogGames().indexOf(g) >= 0 ? 'analogico' : 'digital'; }
   kindStyle(kind) {
-    return kind === 'analogico' ? 'background: rgba(245,165,36,0.18); color: #F5C451;' : 'background: rgba(0,111,238,0.18); color: #8FC7FF;';
+    return kind === 'analogico' ? 'background: rgba(245,165,36,0.18); color: var(--t-amber,#F5C451);' : 'background: rgba(0,111,238,0.18); color: var(--t-accsoft,#8FC7FF);';
   }
   coverStyleFor(game) {
     const id = this.coverId(game);
-    return id ? { style: 'background-color: #16161A; background-image: url(./covers/' + id + '.jpg);', initial: '' } : { style: 'background-color: #26262B;', initial: game ? game.charAt(0).toUpperCase() : '' };
+    return id ? { style: 'background-color: var(--t-card,#16161A); background-image: url(./covers/' + id + '.jpg);', initial: '' } : { style: 'background-color: var(--t-card3,#26262B);', initial: game ? game.charAt(0).toUpperCase() : '' };
   }
   normS(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
 
@@ -1207,7 +1207,7 @@ class Component extends DCLogic {
   cardLook(p, wm, wh) {
     const r = this.rarityInfo(p.pct || 0);
     const kind = p.kindPref || 'ambos';
-    const frame = kind === 'digital' ? { c: '#378ADD', t: '#85B7EB', bg: '#1F2330' } : (kind === 'analogico' ? { c: '#F5A524', t: '#F5C451', bg: '#2A2316' } : { c: '#7F77DD', t: '#CECBF6', bg: '#24213A' });
+    const frame = kind === 'digital' ? { c: '#378ADD', t: '#85B7EB', bg: '#1F2330' } : (kind === 'analogico' ? { c: '#F5A524', t: 'var(--t-amber,#F5C451)', bg: '#2A2316' } : { c: '#7F77DD', t: '#CECBF6', bg: '#24213A' });
     const gamepad = 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.4 2 14.5 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.4-1.4a2 2 0 0 1 1.4-.6h4.4a2 2 0 0 1 1.4.6L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.5-.6-6.6-.7-7.3A4 4 0 0 0 17.3 5Z';
     const dice = 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01';
     const typeLabel = kind === 'digital' ? 'Jogador digital' : (kind === 'analogico' ? 'Jogador de mesa' : 'Jogador digital e de mesa');
@@ -1215,19 +1215,19 @@ class Component extends DCLogic {
     const wants = p.wants || [];
     const common = p.common || [];
     const rows = []
-      .concat(wm.map((g) => ({ g: g, tag: 'Vocês dois querem', color: '#F38CB0', heart: true })))
-      .concat(wh.map((g) => ({ g: g, tag: 'Você já joga', color: '#A1A1AA', heart: false })))
-      .concat(wants.filter((g) => wm.indexOf(g) < 0 && wh.indexOf(g) < 0).map((g) => ({ g: g, tag: 'Quer jogar', color: '#A1A1AA', heart: false })))
-      .concat(common.filter((g) => wants.indexOf(g) < 0).map((g) => ({ g: g, tag: 'Em comum', color: '#8FC7FF', heart: false })));
+      .concat(wm.map((g) => ({ g: g, tag: 'Vocês dois querem', color: 'var(--t-pink,#F38CB0)', heart: true })))
+      .concat(wh.map((g) => ({ g: g, tag: 'Você já joga', color: 'var(--t-muted,#A1A1AA)', heart: false })))
+      .concat(wants.filter((g) => wm.indexOf(g) < 0 && wh.indexOf(g) < 0).map((g) => ({ g: g, tag: 'Quer jogar', color: 'var(--t-muted,#A1A1AA)', heart: false })))
+      .concat(common.filter((g) => wants.indexOf(g) < 0).map((g) => ({ g: g, tag: 'Em comum', color: 'var(--t-accsoft,#8FC7FF)', heart: false })));
     const attackRows = rows.slice(0, 3).map((x) => {
       const id = this.coverId(x.g);
-      return { title: x.g, tag: x.tag, tagColor: x.color, hasHeart: x.heart, bg: id ? '#16161A' : '#26262B', img: id ? 'url(./covers/' + id + '.jpg)' : 'none', initial: id ? '' : x.g.charAt(0).toUpperCase() };
+      return { title: x.g, tag: x.tag, tagColor: x.color, hasHeart: x.heart, bg: id ? 'var(--t-card,#16161A)' : 'var(--t-card3,#26262B)', img: id ? 'url(./covers/' + id + '.jpg)' : 'none', initial: id ? '' : x.g.charAt(0).toUpperCase() };
     });
     const rep = p.rep || { n: 0, carry: 0, chill: 0, rage: 0, again: 0 };
-    const repBoxes = [['Carry', 'carry', '#F5A524', '#2A2412'], ['Chill', 'chill', '#22D3EE', '#10303A'], ['Rage', 'rage', '#FF6259', '#3A1512'], ['De novo', 'again', '#F38CB0', '#3A1526']].map((d) => ({ label: d[0], color: d[2], bg: d[3], pct: Math.round(((rep[d[1]] || 0) / 3) * 100) }));
+    const repBoxes = [['Carry', 'carry', '#F5A524', '#2A2412'], ['Chill', 'chill', 'var(--t-cyan,#22D3EE)', '#10303A'], ['Rage', 'rage', '#FF6259', '#3A1512'], ['De novo', 'again', 'var(--t-pink,#F38CB0)', '#3A1526']].map((d) => ({ label: d[0], color: d[2], bg: d[3], pct: Math.round(((rep[d[1]] || 0) / 3) * 100) }));
     return {
       frameColor: frame.c, frameText: frame.t, headBg: frame.bg, rarityColor: r.color, rarityLabel: r.label, rarityStars: r.stars, rarityStarColor: r.starColor,
-      hasStuds: r.studs, foilColor: r.foil, foilOpacity: r.foilOpacity, ribbonBg: r.ribbonBg, ribbonFg: r.ribbonFg, pctBorder: r.studs ? r.color : 'rgba(255,255,255,0.35)',
+      hasStuds: r.studs, foilColor: r.foil, foilOpacity: r.foilOpacity, ribbonBg: r.ribbonBg, ribbonFg: r.ribbonFg, pctBorder: r.studs ? r.color : 'rgba(var(--t-ink,255,255,255),0.35)',
       typeLabel: typeLabel, kindLine: (kind === 'digital' ? 'Digital' : (kind === 'analogico' ? 'Analógico' : 'Digital e analógico')) + ' · ' + modality,
       kindIcon: kind === 'analogico' ? dice : gamepad,
       tagLine: (p.tags || []).slice(0, 2).map((t) => '#' + t).join(' · '),
@@ -1240,10 +1240,10 @@ class Component extends DCLogic {
     const mk = (g) => {
       const id = this.coverId(g);
       const heart = !!hearts && hearts.indexOf(g) >= 0;
-      return id ? { bg: '#16161A', img: 'url(./covers/' + id + '.jpg)', moreText: '', label: g, hasHeart: heart } : { bg: '#26262B', img: 'none', moreText: g.charAt(0).toUpperCase(), label: g, hasHeart: heart };
+      return id ? { bg: 'var(--t-card,#16161A)', img: 'url(./covers/' + id + '.jpg)', moreText: '', label: g, hasHeart: heart } : { bg: 'var(--t-card3,#26262B)', img: 'none', moreText: g.charAt(0).toUpperCase(), label: g, hasHeart: heart };
     };
     if (list.length <= 4) return list.map(mk);
-    return list.slice(0, 3).map(mk).concat([{ bg: '#212124', img: 'none', moreText: '+' + (list.length - 3), label: 'e mais', hasHeart: false }]);
+    return list.slice(0, 3).map(mk).concat([{ bg: 'var(--t-card2,#212124)', img: 'none', moreText: '+' + (list.length - 3), label: 'e mais', hasHeart: false }]);
   }
 
   joinPt(list) {
@@ -1252,15 +1252,15 @@ class Component extends DCLogic {
   }
 
   rarityInfo(pct) {
-    if (pct >= 85) return { label: 'LENDÁRIA', stars: '★★★★', color: '#E8C468', studs: true, foil: '#F5D98A', foilOpacity: '0.22', ribbonBg: '#E8C468', ribbonFg: '#412402', starColor: '#F5D98A' };
-    if (pct >= 70) return { label: 'ÉPICA', stars: '★★★', color: '#9353D3', studs: true, foil: '#CECBF6', foilOpacity: '0.16', ribbonBg: '#9353D3', ribbonFg: '#FFFFFF', starColor: '#CECBF6' };
+    if (pct >= 85) return { label: 'LENDÁRIA', stars: '★★★★', color: 'var(--t-amber,#E8C468)', studs: true, foil: '#F5D98A', foilOpacity: '0.22', ribbonBg: 'var(--t-amber,#E8C468)', ribbonFg: '#412402', starColor: '#F5D98A' };
+    if (pct >= 70) return { label: 'ÉPICA', stars: '★★★', color: 'var(--t-purple,#9353D3)', studs: true, foil: '#CECBF6', foilOpacity: '0.16', ribbonBg: 'var(--t-purple,#9353D3)', ribbonFg: '#FFFFFF', starColor: '#CECBF6' };
     if (pct >= 55) return { label: 'RARA', stars: '★★', color: '#B4B2A9', studs: false, foil: '#D3D1C7', foilOpacity: '0.12', ribbonBg: '#5F5E5A', ribbonFg: '#F1EFE8', starColor: '#D3D1C7' };
-    return { label: 'COMUM', stars: '★', color: 'rgba(255,255,255,0.18)', studs: false, foil: '#FFFFFF', foilOpacity: '0', ribbonBg: 'rgba(0,0,0,0.5)', ribbonFg: '#D4D4D8', starColor: '#A1A1AA' };
+    return { label: 'COMUM', stars: '★', color: 'rgba(var(--t-ink,255,255,255),0.18)', studs: false, foil: 'var(--t-white,#FFFFFF)', foilOpacity: '0', ribbonBg: 'rgba(0,0,0,0.5)', ribbonFg: 'var(--t-sec,#D4D4D8)', starColor: 'var(--t-muted,#A1A1AA)' };
   }
 
   decorate(p) {
     if (!p) {
-      return { name: '', handle: '', bg: '#000', body: '#000', light: '#000', pct: 0, ringOffset: 295.3, status: '', statusColor: '#52525B', quoteText: '', commonCount: 0, hasCommon: false, noCommon: true, commonChips: [], frameColor: '#378ADD', frameText: '#85B7EB', headBg: '#1F2330', rarityColor: 'transparent', rarityLabel: '', rarityStars: '', rarityStarColor: '#fff', hasStuds: false, foilColor: '#fff', foilOpacity: '0', ribbonBg: '#000', ribbonFg: '#fff', pctBorder: '#fff', typeLabel: '', kindLine: '', kindIcon: '', tagLine: '', attackRows: [], hasMore: false, moreLabel: '', noAttacks: true, repBoxes: [], repCount: 0, kindPrefLabel: '', kindPrefStyle: '', commonTiles: [], wantTiles: [], wantCount: 0, shownTiles: [], hasTiles: false, noTiles: true, noTilesText: '', tabWantsCls: '', tabCommonCls: '', wantNote: '', hasNote: false, heroStyle: '', libraryChips: [], tagChips: [], styleBars: [], topStyle: [], ratingRows: [], listRows: [], availability: '', modalityText: '', bio: '', icebreaker: '', commonLabel: '', commonText: '' };
+      return { name: '', handle: '', bg: 'var(--t-bg,#000)', body: 'var(--t-bg,#000)', light: 'var(--t-bg,#000)', pct: 0, ringOffset: 295.3, status: '', statusColor: 'var(--t-faint2,#52525B)', quoteText: '', commonCount: 0, hasCommon: false, noCommon: true, commonChips: [], frameColor: '#378ADD', frameText: '#85B7EB', headBg: '#1F2330', rarityColor: 'transparent', rarityLabel: '', rarityStars: '', rarityStarColor: 'var(--t-white,#fff)', hasStuds: false, foilColor: 'var(--t-white,#fff)', foilOpacity: '0', ribbonBg: 'var(--t-bg,#000)', ribbonFg: 'var(--t-white,#fff)', pctBorder: 'var(--t-white,#fff)', typeLabel: '', kindLine: '', kindIcon: '', tagLine: '', attackRows: [], hasMore: false, moreLabel: '', noAttacks: true, repBoxes: [], repCount: 0, kindPrefLabel: '', kindPrefStyle: '', commonTiles: [], wantTiles: [], wantCount: 0, shownTiles: [], hasTiles: false, noTiles: true, noTilesText: '', tabWantsCls: '', tabCommonCls: '', wantNote: '', hasNote: false, heroStyle: '', libraryChips: [], tagChips: [], styleBars: [], topStyle: [], ratingRows: [], listRows: [], availability: '', modalityText: '', bio: '', icebreaker: '', commonLabel: '', commonText: '' };
     }
     const stars = (n) => '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n);
     const hasCommon = p.common.length > 0;
@@ -1275,7 +1275,7 @@ class Component extends DCLogic {
     const wantNote = wm.length ? 'Vocês dois querem jogar ' + this.joinPt(wm) + '.' : (wh.length ? 'Você já joga ' + this.joinPt(wh) + ', que ' + p.name + ' quer jogar.' : '');
     return Object.assign({}, p, {
       ringOffset: Math.round(295.3 * (1 - p.pct / 100) * 10) / 10,
-      statusColor: p.online ? '#17C964' : '#52525B',
+      statusColor: p.online ? '#17C964' : 'var(--t-faint2,#52525B)',
       quoteText: p.bio,
       commonCount: p.common.length,
       hasCommon: hasCommon,
@@ -1434,9 +1434,9 @@ class Component extends DCLogic {
     const ctaInfo = (s, openFn) => {
       const full = s.members.length >= s.total;
       const base = 'flex: none; height: 34px; padding: 0 14px; border-radius: 10px; border: none; font-size: 12.5px; font-weight: 700; cursor: pointer; ';
-      if (s.mine || s.members.indexOf('@marina.rolls') >= 0) return { label: 'Abrir chat', style: base + 'background: rgba(23,201,100,0.16); color: #5FE3A1;', run: () => this.openSquadChatFor(s.id) };
-      if (full) return { label: 'Lotado', style: base + 'background: #27272A; color: #8E8E99;', run: openFn };
-      if (requested[s.id]) return { label: 'Pedido enviado', style: base + 'background: rgba(23,201,100,0.16); color: #5FE3A1;', run: openFn };
+      if (s.mine || s.members.indexOf('@marina.rolls') >= 0) return { label: 'Abrir chat', style: base + 'background: rgba(23,201,100,0.16); color: var(--t-mint,#5FE3A1);', run: () => this.openSquadChatFor(s.id) };
+      if (full) return { label: 'Lotado', style: base + 'background: var(--t-card3,#27272A); color: var(--t-muted2,#8E8E99);', run: openFn };
+      if (requested[s.id]) return { label: 'Pedido enviado', style: base + 'background: rgba(23,201,100,0.16); color: var(--t-mint,#5FE3A1);', run: openFn };
       return { label: 'Pedir para entrar', style: base + 'background: #006FEE; color: #FFFFFF;', run: () => this.requestJoin(s.id) };
     };
     const squadsFiltered = this.state.squads.filter((s) => (sKind === 'todos' || this.kindOfGame(s.game) === sKind) && (!onlyOpen || s.members.length < s.total) && (!sq || this.normS(s.name + ' ' + s.game).indexOf(sq) >= 0));
@@ -1445,7 +1445,7 @@ class Component extends DCLogic {
       const cv = this.coverStyleFor(s.game);
       const info = ctaInfo(s, () => this.openDetail(s.id));
       return {
-        name: s.name, game: s.game, when: s.when, where: this.whereOf(s.where).label, whereIcon: this.whereOf(s.where).icon, wherePill: 'max-width: 100%; height: 22px; padding: 0 9px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; color: #D4D4D8; background: #27272A;', kindLabel: kind === 'analogico' ? 'Analógico' : 'Digital', kindIcon: kind === 'analogico' ? 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01' : 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 8A3 3 0 0 0 5.1 20c.8 0 1.5-.4 2-1l1.4-1.8c.4-.5 1-.8 1.6-.8h3.8c.6 0 1.2.3 1.6.8l1.4 1.8c.5.6 1.2 1 2 1a3 3 0 0 0 2.9-3.8l-1.6-8A4 4 0 0 0 17.3 5Z', kindStyle: this.kindStyle(kind),
+        name: s.name, game: s.game, when: s.when, where: this.whereOf(s.where).label, whereIcon: this.whereOf(s.where).icon, wherePill: 'max-width: 100%; height: 22px; padding: 0 9px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; color: var(--t-sec,#D4D4D8); background: var(--t-card3,#27272A);', kindLabel: kind === 'analogico' ? 'Analógico' : 'Digital', kindIcon: kind === 'analogico' ? 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01' : 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 8A3 3 0 0 0 5.1 20c.8 0 1.5-.4 2-1l1.4-1.8c.4-.5 1-.8 1.6-.8h3.8c.6 0 1.2.3 1.6.8l1.4 1.8c.5.6 1.2 1 2 1a3 3 0 0 0 2.9-3.8l-1.6-8A4 4 0 0 0 17.3 5Z', kindStyle: this.kindStyle(kind),
         coverStyle: cv.style, initial: cv.initial,
         avs: s.members.slice(0, 4).map((h) => ({ uri: avMap[h] || '' })),
         slotsLabel: slotsText(s), ctaLabel: info.label, ctaStyle: info.style, cta: info.run,
@@ -1468,16 +1468,16 @@ class Component extends DCLogic {
       const pct = Math.round((detS.members.length / detS.total) * 100);
       const bigBase = 'width: 100%; ';
       let cta;
-      if (detS.mine) cta = { label: 'Apagar squad', style: bigBase + 'background: rgba(243,18,96,0.16); color: #F31260;', run: () => this.ask('Apagar este squad?', 'O squad "' + detS.name + '" e o chat do grupo serão apagados para todos. Não dá para desfazer.', 'Apagar', () => this.deleteSquad(detS.id)) };
-      else if (detS.members.indexOf('@marina.rolls') >= 0) cta = { label: 'Sair do squad', style: bigBase + 'background: #27272A; color: #ECEDEE;', run: () => this.ask('Sair do squad?', 'Você sai de "' + detS.name + '" e perde o acesso ao chat do grupo. Dá para pedir para entrar de novo se houver vaga.', 'Sair', () => this.leaveSquad(detS.id)) };
-      else if (full) cta = { label: 'Squad lotado', style: bigBase + 'background: #27272A; color: #8E8E99;', run: this.closeDetail };
-      else if (requested[detS.id]) cta = { label: 'Cancelar pedido', style: bigBase + 'background: #27272A; color: #ECEDEE;', run: () => this.cancelRequest(detS.id) };
+      if (detS.mine) cta = { label: 'Apagar squad', style: bigBase + 'background: rgba(243,18,96,0.16); color: var(--t-red,#F31260);', run: () => this.ask('Apagar este squad?', 'O squad "' + detS.name + '" e o chat do grupo serão apagados para todos. Não dá para desfazer.', 'Apagar', () => this.deleteSquad(detS.id)) };
+      else if (detS.members.indexOf('@marina.rolls') >= 0) cta = { label: 'Sair do squad', style: bigBase + 'background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE);', run: () => this.ask('Sair do squad?', 'Você sai de "' + detS.name + '" e perde o acesso ao chat do grupo. Dá para pedir para entrar de novo se houver vaga.', 'Sair', () => this.leaveSquad(detS.id)) };
+      else if (full) cta = { label: 'Squad lotado', style: bigBase + 'background: var(--t-card3,#27272A); color: var(--t-muted2,#8E8E99);', run: this.closeDetail };
+      else if (requested[detS.id]) cta = { label: 'Cancelar pedido', style: bigBase + 'background: var(--t-card3,#27272A); color: var(--t-text,#ECEDEE);', run: () => this.cancelRequest(detS.id) };
       else cta = { label: 'Pedir para entrar', style: bigBase + 'background: #006FEE; color: #FFFFFF;', run: () => this.requestJoin(detS.id) };
       det = {
         name: detS.name, game: detS.game, when: detS.when, where: this.whereOf(detS.where).label, whereIcon: this.whereOf(detS.where).icon, kindLabel: kind === 'analogico' ? 'Analógico' : 'Digital', kindIcon: kind === 'analogico' ? 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8 8h.01M16 8h.01M12 12h.01M8 16h.01M16 16h.01' : 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1.6 8A3 3 0 0 0 5.1 20c.8 0 1.5-.4 2-1l1.4-1.8c.4-.5 1-.8 1.6-.8h3.8c.6 0 1.2.3 1.6.8l1.4 1.8c.5.6 1.2 1 2 1a3 3 0 0 0 2.9-3.8l-1.6-8A4 4 0 0 0 17.3 5Z', kindStyle: this.kindStyle(kind),
         coverStyle: cv.style, initial: cv.initial, hasDesc: !!detS.desc, desc: detS.desc,
         slotsLabel: slotsText(detS),
-        barStyle: 'height: 6px; border-radius: 999px; width: ' + pct + '%; background: ' + (full ? '#71717A' : '#006FEE') + ';',
+        barStyle: 'height: 6px; border-radius: 999px; width: ' + pct + '%; background: ' + (full ? 'var(--t-faint,#71717A)' : '#006FEE') + ';',
         members: detS.members.map((h) => ({ name: this.personName(h), handle: h === '@marina.rolls' ? 'Você' : h, uri: avMap[h] || '', isHost: h === detS.host })),
         hasChat: !!detS.mine || detS.members.indexOf('@marina.rolls') >= 0,
         chat: () => { this.closeDetail(); this.openSquadChatFor(detS.id); },
@@ -1489,7 +1489,7 @@ class Component extends DCLogic {
     const valid = !!sdRaw.game;
     const sd = {
       hasGame: !!sdRaw.game, coverStyle: sdCv.style, initial: sdCv.initial,
-      gameLabel: sdRaw.game || 'Escolher jogo', gameColor: sdRaw.game ? '#ECEDEE' : '#71717A', changeLabel: sdRaw.game ? 'Trocar' : 'Escolher',
+      gameLabel: sdRaw.game || 'Escolher jogo', gameColor: sdRaw.game ? 'var(--t-text,#ECEDEE)' : 'var(--t-faint,#71717A)', changeLabel: sdRaw.game ? 'Trocar' : 'Escolher',
       name: sdRaw.name, namePlaceholder: 'Squad de ' + (sdRaw.game || 'jogo'), onName: (e) => this.setSq({ name: e.target.value }),
       minDate: this.nowDraft().date, date: sdRaw.date, time: sdRaw.time,
       onDate: (e) => this.setSq({ date: e.target.value }), onTime: (e) => this.setSq({ time: e.target.value }),
@@ -1499,7 +1499,7 @@ class Component extends DCLogic {
       isPresencial: sdRaw.where === 'presencial', local: sdRaw.local, onLocal: (e) => this.setSq({ local: e.target.value }),
       total: sdRaw.total, dec: () => this.setSq({ total: Math.max(3, sdRaw.total - 1) }), inc: () => this.setSq({ total: Math.min(15, sdRaw.total + 1) }),
       desc: sdRaw.desc, onDesc: (e) => this.setSq({ desc: e.target.value }),
-      ctaStyle: 'width: 100%; ' + (valid ? 'background: #006FEE; color: #FFFFFF;' : 'background: #27272A; color: #8E8E99;')
+      ctaStyle: 'width: 100%; ' + (valid ? 'background: #006FEE; color: #FFFFFF;' : 'background: var(--t-card3,#27272A); color: var(--t-muted2,#8E8E99);')
     };
     const crtView = this.state.createView;
     const pq = this.normS(this.state.pickQ);

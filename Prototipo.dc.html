@@ -16,7 +16,7 @@
 <style>
     * { scrollbar-width: none; -ms-overflow-style: none; }
     *::-webkit-scrollbar { width: 0; height: 0; display: none; }
-  html,body{margin:0;background:#000000;overflow:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%;touch-action:manipulation;overscroll-behavior:none;}
+  html,body{margin:0;background:var(--t-bg,#000000);overflow:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%;touch-action:manipulation;overscroll-behavior:none;}
   button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
 </style>
 </helmet>
@@ -50,35 +50,35 @@
 
   <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
     <div style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:45;">
-      <dc-import name="Menu" hint-size="390px,844px" room-info="{{room}}" go-news="{{menuNews}}" go-play="{{menuPlay}}" avatar-uri="{{avatarUri}}" handle="{{myHandle}}" presence="{{presence}}" set-presence="{{setPresence}}" notif-count="{{notifCount}}" unread="{{unreadTotal}}" close="{{closeMenu}}" go-perfil="{{menuPerfil}}" go-room="{{menuRoom}}" go-notifs="{{menuNotifs}}" go-inbox="{{menuInbox}}" go-avatar="{{menuAvatar}}" go-settings="{{menuSettings}}" go-reviews="{{menuReviews}}" go-forums="{{menuForums}}" logout="{{menuLogout}}"></dc-import>
+      <dc-import name="Menu" hint-size="390px,844px" theme="{{theme}}" toggle-theme="{{toggleTheme}}" room-info="{{room}}" go-news="{{menuNews}}" go-play="{{menuPlay}}" avatar-uri="{{avatarUri}}" handle="{{myHandle}}" presence="{{presence}}" set-presence="{{setPresence}}" notif-count="{{notifCount}}" unread="{{unreadTotal}}" close="{{closeMenu}}" go-perfil="{{menuPerfil}}" go-room="{{menuRoom}}" go-notifs="{{menuNotifs}}" go-inbox="{{menuInbox}}" go-avatar="{{menuAvatar}}" go-settings="{{menuSettings}}" go-reviews="{{menuReviews}}" go-forums="{{menuForums}}" logout="{{menuLogout}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showInbox}}" hint-placeholder-val="{{false}}">
-    <div data-back="inbox" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:{{inboxZ}};background:#000000;">
+    <div data-back="inbox" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:{{inboxZ}};background:var(--t-bg,#000000);">
       <dc-import name="Mensagens" hint-size="390px,776px" room-info="{{room}}" friends-list="{{composeFriends}}" open-my-room="{{openRoom}}" avatars="{{avatars}}" conversations="{{conversations}}" squads="{{squadRows}}" starters="{{starters}}" initial-filter="{{inboxFilter}}" back="{{closeInbox}}" presence="{{presence}}" set-presence="{{setPresence}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showNotifs}}" hint-placeholder-val="{{false}}">
-    <div data-back="notifs" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:16;background:#000000;">
+    <div data-back="notifs" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:16;background:var(--t-bg,#000000);">
       <dc-import name="Notificacoes" hint-size="390px,776px" notifs="{{notifs}}" avatars="{{avatars}}" back="{{closeNotifs}}" on-open="{{notifOpen}}" on-answer="{{notifAnswer}}" on-mark-all="{{notifMarkAll}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showSettings}}" hint-placeholder-val="{{false}}">
-    <div data-back="settings" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:55;background:#000000;">
-      <dc-import name="Configuracoes" hint-size="390px,776px" account="{{account}}" settings="{{settings}}" on-update="{{updateAccount}}" on-setting="{{setSetting}}" on-logout="{{logout}}" avatar-uri="{{avatarUri}}" back="{{closeSettings}}"></dc-import>
+    <div data-back="settings" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:55;background:var(--t-bg,#000000);">
+      <dc-import name="Configuracoes" hint-size="390px,776px" theme="{{theme}}" set-theme="{{setTheme}}" account="{{account}}" settings="{{settings}}" on-update="{{updateAccount}}" on-setting="{{setSetting}}" on-logout="{{logout}}" avatar-uri="{{avatarUri}}" back="{{closeSettings}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showOnboarding}}" hint-placeholder-val="{{false}}">
-    <div style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:59;background:#000000;">
+    <div style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:59;background:var(--t-bg,#000000);">
       <dc-import name="Onboarding" hint-size="390px,844px" avatars="{{avatars}}" me-uri="{{avatarUri}}" finish="{{finishOnboarding}}" skip="{{skipOnboarding}}" open-avatar="{{openAvatar}}"></dc-import>
     </div>
   </sc-if>
   <sc-if value="{{showAvatarMaker}}" hint-placeholder-val="{{false}}">
-    <div data-back="avatar" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:60;background:#09090B;">
+    <div data-back="avatar" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:844px;z-index:60;background:var(--t-bg2,#09090B);">
       <dc-import name="CriadorAvatar" hint-size="390px,776px" avatar="{{avatarCfg}}" on-save="{{saveAvatar}}" back="{{closeAvatar}}"></dc-import>
     </div>
   </sc-if>
@@ -96,30 +96,30 @@
   </sc-if>
 
   <sc-if value="{{showView}}" hint-placeholder-val="{{false}}">
-    <div data-back="view" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:20;background:#000000;">
+    <div data-back="view" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:20;background:var(--t-bg,#000000);">
       <dc-import name="PerfilCirculo" hint-size="390px,776px" avatars="{{avatars}}" visit-room="{{openRoomVisit}}" person="{{viewPerson}}" following="{{viewFollowing}}" toggle-follow="{{viewToggleFollow}}" back="{{closeView}}" rate="{{rateFromView}}" message="{{messageFromView}}" open-game="{{openGame}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showSquadChat}}" hint-placeholder-val="{{false}}">
-    <div data-back="squadchat" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:26;background:#000000;">
+    <div data-back="squadchat" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:26;background:var(--t-bg,#000000);">
       <dc-import name="ConversaSquad" hint-size="390px,776px" squad="{{squadChatView}}" messages="{{squadChatMsgs}}" send="{{sendSquadChat}}" back="{{closeSquadChat}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showChat}}" hint-placeholder-val="{{false}}">
-    <div data-back="chat" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:25;background:#000000;">
+    <div data-back="chat" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:25;background:var(--t-bg,#000000);">
       <dc-import name="Conversa" hint-size="390px,776px" preset-draft="{{chatPreset}}" presence="{{chatPresence}}" enter-room="{{enterRoomFromChat}}" avatars="{{avatars}}" person="{{chatPerson}}" messages="{{chatMessages}}" send="{{sendChat}}" back="{{closeChat}}" open-profile="{{openProfileFromChat}}" rate="{{rateFromChat}}" my-discord="{{myDiscord}}" save-discord="{{saveDiscord}}"></dc-import>
     </div>
   </sc-if>
 
   <sc-if value="{{showRate}}" hint-placeholder-val="{{false}}">
-    <div data-back="rate" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:30;background:#000000;">
+    <div data-back="rate" onTouchStart="{{swStart}}" onTouchMove="{{swMove}}" onTouchEnd="{{swEnd}}" onTouchCancel="{{swEnd}}" style="position:absolute;left:0;top:0;width:390px;height:776px;z-index:30;background:var(--t-bg,#000000);">
       <dc-import name="AvaliarParceiro" hint-size="390px,776px" avatars="{{avatars}}" person="{{ratePerson}}" initial="{{rateInitial}}" submit="{{submitRating}}" back="{{closeRate}}"></dc-import>
     </div>
   </sc-if>
 
-  <nav aria-label="Navegação principal" style="position:absolute;left:0;right:0;bottom:0;height:68px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#09090B;border-top:1px solid rgba(255,255,255,0.08);z-index:40;">
+  <nav aria-label="Navegação principal" style="position:absolute;left:0;right:0;bottom:0;height:68px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:var(--t-bg2,#09090B);border-top:1px solid rgba(var(--t-ink,255,255,255),0.08);z-index:40;">
     <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
       <button type="button" onClick="{{t.onClick}}" aria-current="{{t.current}}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0 0 6px;border:none;background:transparent;cursor:pointer;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{t.color}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{t.icon}}"></path></svg>
@@ -133,13 +133,13 @@
       <sc-if value="{{tourNoSpot}}" hint-placeholder-val="{{false}}"><div style="position:absolute;inset:0;background:rgba(0,0,0,0.66);"></div></sc-if>
       <div role="dialog" aria-modal="true" aria-label="Tour do Círculo" style="{{tourCardStyle}}">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
-          <span style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8FC7FF;">{{tourCount}}</span>
-          <button type="button" onClick="{{tourSkip}}" style="height:32px;padding:0 6px;border:none;background:transparent;color:#A1A1AA;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Pular tour</button>
+          <span style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t-accsoft,#8FC7FF);">{{tourCount}}</span>
+          <button type="button" onClick="{{tourSkip}}" style="height:32px;padding:0 6px;border:none;background:transparent;color:var(--t-muted,#A1A1AA);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Pular tour</button>
         </div>
-        <div style="margin-top:4px;font-family:'Space Grotesk','Segoe UI',sans-serif;font-size:20px;font-weight:700;line-height:1.2;color:#ECEDEE;">{{tourTitle}}</div>
-        <div style="margin-top:6px;font-size:14px;line-height:1.55;color:#D4D4D8;">{{tourText}}</div>
+        <div style="margin-top:4px;font-family:'Space Grotesk','Segoe UI',sans-serif;font-size:20px;font-weight:700;line-height:1.2;color:var(--t-text,#ECEDEE);">{{tourTitle}}</div>
+        <div style="margin-top:6px;font-size:14px;line-height:1.55;color:var(--t-sec,#D4D4D8);">{{tourText}}</div>
         <div style="margin-top:16px;display:flex;gap:8px;">
-          <sc-if value="{{tourCanBack}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{tourBack}}" style="height:46px;padding:0 18px;border-radius:13px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#ECEDEE;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">Voltar</button></sc-if>
+          <sc-if value="{{tourCanBack}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{tourBack}}" style="height:46px;padding:0 18px;border-radius:13px;border:1px solid rgba(var(--t-ink,255,255,255),0.16);background:transparent;color:var(--t-text,#ECEDEE);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">Voltar</button></sc-if>
           <button type="button" onClick="{{tourNext}}" style="flex:1;height:46px;border:none;border-radius:13px;background:#006FEE;color:#FFFFFF;font-size:14.5px;font-weight:800;cursor:pointer;font-family:inherit;">{{tourCta}}</button>
         </div>
         <span style="{{tourArrow}}"></span>
@@ -149,15 +149,15 @@
 
   <div style="{{toastStyle}}">{{toastText}}</div>
   <sc-if value="{{hasMsgBanner}}" hint-placeholder-val="{{false}}">
-    <div role="status" style="position:absolute;left:12px;right:12px;top:12px;z-index:96;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 8px;border-radius:18px;background:#212124;border:1px solid rgba(255,255,255,0.14);box-shadow:0 14px 34px rgba(0,0,0,0.55);">
-      <button type="button" onClick="{{openMsgBanner}}" aria-label="Abrir conversa" style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:4px;border:none;background:transparent;color:#ECEDEE;cursor:pointer;text-align:left;font-family:inherit;">
+    <div role="status" style="position:absolute;left:12px;right:12px;top:12px;z-index:96;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 8px;border-radius:18px;background:var(--t-card2,#212124);border:1px solid rgba(var(--t-ink,255,255,255),0.14);box-shadow:0 14px 34px rgba(0,0,0,0.55);">
+      <button type="button" onClick="{{openMsgBanner}}" aria-label="Abrir conversa" style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:4px;border:none;background:transparent;color:var(--t-text,#ECEDEE);cursor:pointer;text-align:left;font-family:inherit;">
         <span style="flex:none;width:36px;height:36px;border-radius:11px;background:#006FEE;display:flex;align-items:center;justify-content:center;color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
         <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;">
           <span style="font-size:13.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{msgBannerTitle}}</span>
-          <span style="font-size:12.5px;color:#A1A1AA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{msgBannerText}}</span>
+          <span style="font-size:12.5px;color:var(--t-muted,#A1A1AA);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{msgBannerText}}</span>
         </span>
       </button>
-      <button type="button" onClick="{{closeMsgBanner}}" aria-label="Fechar aviso" style="flex:none;width:40px;height:40px;padding:0;border:none;border-radius:12px;background:transparent;color:#A1A1AA;cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+      <button type="button" onClick="{{closeMsgBanner}}" aria-label="Fechar aviso" style="flex:none;width:40px;height:40px;padding:0;border:none;border-radius:12px;background:transparent;color:var(--t-muted,#A1A1AA);cursor:pointer;display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
     </div>
   </sc-if>
 
@@ -184,7 +184,7 @@ class Component extends DCLogic {
       ensureMeta('apple-mobile-web-app-capable', 'yes');
       ensureMeta('mobile-web-app-capable', 'yes');
       ensureMeta('apple-mobile-web-app-status-bar-style', 'black');
-      ensureMeta('theme-color', '#000000');
+      ensureMeta('theme-color', 'var(--t-bg,#000000)');
       vw = window.innerWidth;
       vh = window.innerHeight;
       const measure = () => this.setState({ vw: window.innerWidth, vh: window.innerHeight });
@@ -250,7 +250,7 @@ class Component extends DCLogic {
       discord: saved.discord || { user: '', tag: '' },
       presence: saved.presence || 'online',
       account: Object.assign({ username: 'carolguimaraes', email: 'carol@exemplo.com', pendingEmail: '', passInfo: 'Alterada há 3 meses' }, saved.account || {}),
-      settings: Object.assign({ sounds: true, showRep: true, inMatch: true, notifMsg: true, notifRoom: true, notifMatch: true, notifRating: true, notifForum: true, notifFollow: true }, saved.settings || {}),
+      settings: Object.assign({ theme: 'dark', sounds: true, showRep: true, inMatch: true, notifMsg: true, notifRoom: true, notifMatch: true, notifRating: true, notifForum: true, notifFollow: true }, saved.settings || {}),
       location: saved.location !== undefined ? saved.location : 'Rio de Janeiro, RJ',
       showLocation: saved.showLocation !== undefined ? saved.showLocation : true,
       myLists: [
@@ -635,9 +635,9 @@ class Component extends DCLogic {
     const cx = spot ? Math.round(st.tab * tw + tw / 2) : 195;
     return {
       showTour: true, tourHasSpot: spot, tourNoSpot: !spot,
-      tourSpot: 'position:absolute;left:' + Math.round(st.tab * tw + 5) + 'px;top:780px;width:' + Math.round(tw - 10) + 'px;height:60px;border-radius:16px;box-shadow:0 0 0 2px #8FC7FF, 0 0 0 9999px rgba(0,0,0,0.66);pointer-events:none;',
-      tourCardStyle: 'position:absolute;left:16px;right:16px;' + (spot ? 'bottom:96px;' : 'top:50%;transform:translateY(-50%);') + 'padding:16px 16px 16px 18px;border-radius:22px;background:#18181B;border:1px solid rgba(255,255,255,0.14);box-shadow:0 20px 50px rgba(0,0,0,0.6);font-family:Manrope,system-ui,sans-serif;',
-      tourArrow: spot ? 'position:absolute;bottom:-7px;left:' + (cx - 16 - 7) + 'px;width:14px;height:14px;background:#18181B;border-right:1px solid rgba(255,255,255,0.14);border-bottom:1px solid rgba(255,255,255,0.14);transform:rotate(45deg);' : 'display:none;',
+      tourSpot: 'position:absolute;left:' + Math.round(st.tab * tw + 5) + 'px;top:780px;width:' + Math.round(tw - 10) + 'px;height:60px;border-radius:16px;box-shadow:0 0 0 2px var(--t-accsoft,#8FC7FF), 0 0 0 9999px rgba(0,0,0,0.66);pointer-events:none;',
+      tourCardStyle: 'position:absolute;left:16px;right:16px;' + (spot ? 'bottom:96px;' : 'top:50%;transform:translateY(-50%);') + 'padding:16px 16px 16px 18px;border-radius:22px;background:var(--t-card,#18181B);border:1px solid rgba(var(--t-ink,255,255,255),0.14);box-shadow:0 20px 50px rgba(0,0,0,0.6);font-family:Manrope,system-ui,sans-serif;',
+      tourArrow: spot ? 'position:absolute;bottom:-7px;left:' + (cx - 16 - 7) + 'px;width:14px;height:14px;background:var(--t-card,#18181B);border-right:1px solid rgba(var(--t-ink,255,255,255),0.14);border-bottom:1px solid rgba(var(--t-ink,255,255,255),0.14);transform:rotate(45deg);' : 'display:none;',
       tourCount: (i + 1) + ' de ' + steps.length, tourTitle: st.title, tourText: st.text,
       tourCanBack: i > 0, tourCta: last ? 'Entrar no meu quarto' : 'Próximo',
       tourNext: this.tourNext, tourBack: this.tourBack, tourSkip: this.tourSkip
@@ -924,14 +924,28 @@ class Component extends DCLogic {
     setTimeout(() => this.setState({ toast: '' }), 2200);
   };
 
+  themeVars() { return {'bg': '#E9E9EE', 'bg2': '#F1F1F4', 'card': '#FFFFFF', 'card2': '#EEEEF2', 'card3': '#E0E0E6', 'line': '#CDCDD5', 'faint2': '#B3B3BC', 'faint': '#62626C', 'muted2': '#5A5A64', 'muted': '#4D4D57', 'sec': '#3F3F46', 'text': '#18181B', 'white': '#0F0F12', 'accsoft': '#003F8C', 'blue': '#0058C2', 'green': '#08672F', 'purple': '#6A2FB5', 'red': '#C80E4F', 'red2': '#B01F16', 'rose': '#A11D4E', 'tintblue': '#E8F0FC', 'acctext': '#0058C2', 'dcbg': '#E7E9FF', 'dcgrad': '#D9DCFF', 'dckick': '#3B45C4', 'dcsub': '#4B5080', 'dcoff': '#C8CCF3', 'dcofftext': '#4A4F8C', 'invbg': '#E1F4E8', 'amber': '#8A5600', 'amber2': '#8F5300', 'pink': '#C42D6A', 'mint': '#0A6B3D', 'cyan': '#046A93', 'violet': '#6B3FD0', 'ink': '24,24,27', 'bg2rgb': '241,241,244', 'cardrgb': '255,255,255'}; }
+  darkFix() { return { faint: '#8A8A94', blue: '#3D8BFF', purple: '#A877EC' }; }
+  applyTheme(t) {
+    if (this._themeApplied === t || typeof document === 'undefined') return;
+    this._themeApplied = t;
+    const st = document.documentElement.style; const v = this.themeVars();
+    Object.keys(v).forEach((k) => { if (t === 'light') st.setProperty('--t-' + k, v[k]); else st.removeProperty('--t-' + k); });
+    if (t !== 'light') { const d = this.darkFix(); Object.keys(d).forEach((k) => st.setProperty('--t-' + k, d[k])); }
+    st.colorScheme = t === 'light' ? 'light' : 'dark';
+  }
+  setTheme = (t) => this.setSetting('theme', t === 'light' ? 'light' : 'dark');
+  toggleTheme = () => this.setTheme(this.curTheme() === 'light' ? 'dark' : 'light');
+  curTheme() { return (this.state.settings && this.state.settings.theme === 'light') ? 'light' : 'dark'; }
   renderVals() {
+    this.applyTheme(this.curTheme());
     const screen = this.state.screen;
     const vw = this.state.vw;
     const vh = this.state.vh;
     // Escala para preencher a tela do aparelho (aumenta ou reduz), mantendo a proporção 390×844
     const fit = (vw >= 200 && vh >= 200) ? Math.min(vw / 390, vh / 844) : 1;
     const padTop = (vh >= 200) ? Math.max(0, Math.floor((vh - 844 * fit) / 2)) : 0;
-    const fitFont = "font-family:'Manrope','Segoe UI',system-ui,sans-serif;color:#ECEDEE;";
+    const fitFont = "font-family:'Manrope','Segoe UI',system-ui,sans-serif;color:var(--t-text,#ECEDEE);";
     const layer = (id) => 'position:absolute;left:0;top:0;width:390px;height:776px;overflow:hidden;display:' + (screen === id ? 'block' : 'none') + ';';
     const defs = [
       { id: 'inicio', label: 'Início', icon: 'M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z' },
@@ -945,7 +959,7 @@ class Component extends DCLogic {
       return {
         label: d.label,
         icon: d.icon,
-        color: on ? '#338EF7' : '#A1A1AA',
+        color: on ? 'var(--t-blue,#338EF7)' : 'var(--t-muted,#A1A1AA)',
         weight: on ? 700 : 500,
         current: on ? 'page' : 'false',
         onClick: () => this.go(d.id)
@@ -971,7 +985,7 @@ class Component extends DCLogic {
         preview: last ? (last.from === 'me' ? 'Você: ' : '') + (last.discord ? 'Cartão do Discord' : last.text) : (p.matched ? 'Vocês formaram um Duo — comece a conversa!' : 'Vocês são amigos — comece a conversa!'),
         when: last ? (last.when || 'agora') : 'novo',
         hasUnread: count > 0, unreadCount: count,
-        avUri: avatars[h] || '', is24: !!p.pix24, is8: !p.pix24, pix: p.pix24 || blank, av: { bg: p.bg || '#000000', body: p.body || '#000000', light: p.light || '#000000' },
+        avUri: avatars[h] || '', is24: !!p.pix24, is8: !p.pix24, pix: p.pix24 || blank, av: { bg: p.bg || 'var(--t-bg,#000000)', body: p.body || 'var(--t-bg,#000000)', light: p.light || 'var(--t-bg,#000000)' },
         onOpen: () => this.openChat(h)
       });
     });
@@ -998,8 +1012,8 @@ class Component extends DCLogic {
     });
     const ratePerson = rt && rt.pix24 ? this.buildReviewer(rt.handle) : rt;
     return {
-      fitOuter: 'position:relative;width:' + Math.floor(390 * fit) + 'px;height:' + Math.floor(844 * fit) + 'px;overflow:hidden;margin:' + padTop + 'px auto 0;background:#000000;',
-      fitInner: 'position:relative;width:390px;height:844px;background:#000000;overflow:hidden;' + fitFont + 'transform:scale(' + fit + ');transform-origin:0 0;',
+      fitOuter: 'position:relative;width:' + Math.floor(390 * fit) + 'px;height:' + Math.floor(844 * fit) + 'px;overflow:hidden;margin:' + padTop + 'px auto 0;background:var(--t-bg,#000000);',
+      fitInner: 'position:relative;width:390px;height:844px;background:var(--t-bg,#000000);overflow:hidden;' + fitFont + 'transform:scale(' + fit + ');transform-origin:0 0;',
       go: this.go,
       savePrefs: this.savePrefs,
       notify: this.notify,
@@ -1030,6 +1044,7 @@ class Component extends DCLogic {
       showSettings: this.state.settingsOpen,
       account: this.state.account,
       settings: this.state.settings,
+      theme: this.curTheme(), toggleTheme: this.toggleTheme, setTheme: this.setTheme,
       myHandle: '@' + this.state.account.username,
       location: this.state.location,
       showLocation: this.state.showLocation,
@@ -1063,14 +1078,14 @@ class Component extends DCLogic {
       soundOn: !(this.state.settings && this.state.settings.sounds === false), openGameFromRoom: this.openGameFromRoom,
       showNotifs: this.state.notifsOpen, notifs: this.visibleNotifs(), notifCount: this.visibleNotifs().filter((n) => !n.read).length,
       openNotifs: this.openNotifs, closeNotifs: this.closeNotifs, notifOpen: this.notifOpen, notifAnswer: this.notifAnswer, notifMarkAll: this.notifMarkAll,
-      roomLayerStyle: 'position:absolute;left:0;top:0;width:390px;height:844px;background:#09090B;z-index:' + (!this.state.roomTop && (this.state.viewHandle || this.state.chatHandle || this.state.rateTarget || this.state.gameView || this.state.inboxOpen || this.state.squadChatId) ? 18 : 58) + ';',
+      roomLayerStyle: 'position:absolute;left:0;top:0;width:390px;height:844px;background:var(--t-bg2,#09090B);z-index:' + (!this.state.roomTop && (this.state.viewHandle || this.state.chatHandle || this.state.rateTarget || this.state.gameView || this.state.inboxOpen || this.state.squadChatId) ? 18 : 58) + ';',
       room: this.state.room,
       openRoom: this.openRoom, openRoomVisit: this.openRoomVisit,
       closeRoom: this.closeRoom,
       saveRoom: this.saveRoom,
       showGame: !!this.state.gameView,
       gameView: this.state.gameView,
-      gameLayerStyle: 'position:absolute;left:0;top:0;width:390px;height:776px;background:#000000;z-index:' + (this.state.gameView && this.state.gameView.top ? 22 : 17) + ';',
+      gameLayerStyle: 'position:absolute;left:0;top:0;width:390px;height:776px;background:var(--t-bg,#000000);z-index:' + (this.state.gameView && this.state.gameView.top ? 22 : 17) + ';',
       myLists: this.state.myLists,
       toggleInList: this.toggleInList,
       createList: this.createList,
@@ -1129,7 +1144,7 @@ class Component extends DCLogic {
       submitRating: this.submitRating,
       closeRate: this.closeRate,
       hasMsgBanner: !!this.state.msgBanner, msgBannerTitle: this.state.msgBanner ? this.state.msgBanner.title : '', msgBannerText: this.state.msgBanner ? this.state.msgBanner.text : '', openMsgBanner: this.openMsgBanner, closeMsgBanner: () => this.setState({ msgBanner: null }),
-      toastStyle: 'position:absolute;top:14px;left:50%;transform:translateX(-50%) translateY(' + (this.state.toast ? '0' : '-160%') + ');transition:transform .25s ease,opacity .25s ease;opacity:' + (this.state.toast ? '1' : '0') + ';pointer-events:none;background:#28282C;border:1px solid rgba(255,255,255,0.16);color:#ECEDEE;font-size:12.5px;font-weight:600;padding:10px 16px;border-radius:999px;z-index:100;white-space:nowrap;',
+      toastStyle: 'position:absolute;top:14px;left:50%;transform:translateX(-50%) translateY(' + (this.state.toast ? '0' : '-160%') + ');transition:transform .25s ease,opacity .25s ease;opacity:' + (this.state.toast ? '1' : '0') + ';pointer-events:none;background:var(--t-card3,#28282C);border:1px solid rgba(var(--t-ink,255,255,255),0.16);color:var(--t-text,#ECEDEE);font-size:12.5px;font-weight:600;padding:10px 16px;border-radius:999px;z-index:100;white-space:nowrap;',
       toastText: this.state.toast,
       inicioStyle: layer('inicio'),
       forunsStyle: layer('foruns'),
