@@ -25,9 +25,7 @@ rather than copy wholesale.
 - `MatchCirculo.dc.html` — referenced resource
 - `Mensagens.dc.html` — referenced resource
 - `Menu.dc.html` — referenced resource
-- `Noticias.dc.html` — referenced resource
 - `Notificacoes.dc.html` — referenced resource
-- `Onboarding.dc.html` — referenced resource
 - `PerfilCirculo.dc.html` — referenced resource
 - `Quarto.dc.html` — referenced resource
 - `assets/` — files uploaded to the design (images, fonts, media)

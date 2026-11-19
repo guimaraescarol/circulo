@@ -250,7 +250,7 @@ class Component extends DCLogic {
       discord: saved.discord || { user: '', tag: '' },
       presence: saved.presence || 'online',
       account: Object.assign({ username: 'carolguimaraes', email: 'carol@exemplo.com', pendingEmail: '', passInfo: 'Alterada há 3 meses' }, saved.account || {}),
-      settings: Object.assign({ theme: 'dark', sounds: true, showRep: true, inMatch: true, notifMsg: true, notifRoom: true, notifMatch: true, notifRating: true, notifForum: true, notifFollow: true }, saved.settings || {}),
+      settings: Object.assign({ theme: 'light', themeV: 2, sounds: true, showRep: true, inMatch: true, notifMsg: true, notifRoom: true, notifMatch: true, notifRating: true, notifForum: true, notifFollow: true }, saved.settings || {}, (saved.settings && saved.settings.themeV === 2) ? {} : { theme: 'light', themeV: 2 }),
       location: saved.location !== undefined ? saved.location : 'Rio de Janeiro, RJ',
       showLocation: saved.showLocation !== undefined ? saved.showLocation : true,
       myLists: [
